@@ -115,7 +115,7 @@ const aboutTemplate = (content, title) => `
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>Email: contact@ronnielutaro.com</p>
+                <p>Email: ronnielutaro@outlook.com</p>
                 <p>Location: Africa</p>
             </div>
             <div class="footer-section">
