@@ -1,7 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
 const { marked } = require('marked');
-const chokidar = require('chokidar');
 
 // Configure marked for security
 marked.setOptions({
@@ -224,14 +223,5 @@ async function processAllMarkdownFiles() {
     }
 }
 
-// Watch mode
-if (process.argv.includes('--watch')) {
-    console.log('Watching for changes...');
-    chokidar.watch('content/**/*.md').on('change', (filePath) => {
-        console.log(`File ${filePath} has been changed`);
-        processMarkdownFile(filePath);
-    });
-} else {
-    // Build mode
-    processAllMarkdownFiles();
-} 
+// Build mode
+processAllMarkdownFiles(); 
