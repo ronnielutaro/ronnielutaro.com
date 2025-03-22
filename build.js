@@ -119,7 +119,7 @@ const aboutTemplate = (content, title) => `
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>Email: ronnielutaro@outlook.com</p>
-                <p>Location: Africa</p>
+                <p>Location: Kampala, Uganda</p>
             </div>
             <div class="footer-section">
                 <h3>Social</h3>
