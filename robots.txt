@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /about.html
+Allow: /portfolio.html
+Allow: /blog.html
+Allow: /contact.html
+Allow: /sitemap.xml
+Allow: /assets/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+
+Sitemap: https://ronnielutaro.github.io/sitemap.xml 

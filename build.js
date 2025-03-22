@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const { marked } = require('marked');
+const { generateSEOTags } = require('./assets/js/seo-config.js');
 
 // Configure marked for security
 marked.setOptions({
@@ -15,6 +16,7 @@ const blogTemplate = (content, title, date, category) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ${generateSEOTags('blog')}
     <title>${title} - Ronnie Lutaro</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -82,6 +84,7 @@ const aboutTemplate = (content, title) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ${generateSEOTags('about')}
     <title>${title} - Ronnie Lutaro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
