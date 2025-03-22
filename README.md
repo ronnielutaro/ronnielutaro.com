@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Thi
 
 Visit the live website at: [https://ronnielutaro.github.io](https://ronnielutaro.github.io)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - HTML5
 - CSS3
