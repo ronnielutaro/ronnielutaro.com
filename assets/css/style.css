@@ -1099,8 +1099,8 @@ body {
 
 /* Blog Post Page Styles */
 .blog-post-page {
-    padding: 120px 5% 4rem;
-    max-width: 800px;
+    padding: 8rem 5% 5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1109,6 +1109,7 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .blog-post-content h1 {
@@ -1193,7 +1194,11 @@ body {
 /* Responsive Design for Blog Post Page */
 @media (max-width: 768px) {
     .blog-post-page {
-        padding: 100px 5% 2rem;
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .blog-post-content {
+        padding: 1.5rem;
     }
 
     .blog-post-content h1 {
