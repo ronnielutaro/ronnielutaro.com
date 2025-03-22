@@ -1,6 +1,6 @@
 ---
 title: Programmatic Advertising in Africa
-date: March 5, 2024
+date: March 5, 2025
 category: AdTech
 ---
 

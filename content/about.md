@@ -3,70 +3,30 @@ title: About Me
 template: about
 ---
 
-# About Ronnie Lutaro The GREAT
+# About Ronnie Lutaro 
 
-## Professional Overview
+For over 5 years, I have helped businesses and organizations maximize their impact and ROI through **Data-Driven Project Management**, **Digital Transformation**, and **Venture Building**.
 
-I am a technology professional specializing in AI, Digital Transformation, and AdTech solutions across Africa. With a passion for innovation and a deep understanding of the African tech landscape, I help businesses leverage cutting-edge technologies to achieve their goals.
+At **[StartHub Africa](https://starthubafrica.org/)**, I lead innovation & venture-building projects, helping early-stage founders develop scalable products, secure customers, and drive revenue growth. To date, I’ve worked on projects that have supported **100+ startups**, guiding them from idea generation to market readiness.
 
-## Expertise
+Previously, I worked as a Software Engineer & Consultant with leading organizations & companies like Andela, United Nations (UN Women) and early-stage startups such as Agri-Logistics Uganda. My experience includes leading the design and development of software products, equipping me with a solid foundation in creating solutions that solve real-world problems.
 
-### Artificial Intelligence
-- Machine Learning Solutions
-- AI Strategy Development
-- Natural Language Processing
-- Computer Vision Applications
+### Current Focus Areas
 
-### Digital Transformation
-- Business Process Optimization
-- Technology Integration
-- Change Management
-- Digital Strategy Consulting
+I’m currently exploring how **Artificial Intelligence (AI)** and **Advertising Technology (AdTech)** can empower African businesses to:
+- Optimize Ad spend in real-time  
+- Boost campaign efficiency & reduce budget waste  
+- Unlock new possibilities in programmatic advertising  
 
-### AdTech
-- Programmatic Advertising
-- Data Analytics
-- Campaign Optimization
-- Market Analysis
+> Through R&D, I’m developing **AI-driven AdTech tools tailored for Africa** to enhance business performance, reduce costs, and scale growth.
 
-## Experience
+### Skills & Tech Stack  
+   `C#`, `ASP.NET Core`, `Entity Framework Core`, `JavaScript`, `React.js`, `Next.js`, `Python`, `SQL`, `PostHog`, `Microsoft Azure`, `Git`, `GitHub`
 
-With over [X] years of experience in the technology sector, I have:
-- Led digital transformation projects for major African enterprises
-- Developed AI solutions for various industries
-- Implemented successful AdTech strategies
-- Consulted for leading technology companies
+### Let’s Connect!
 
-## Education
+- [LinkedIn](https://www.linkedin.com/in/ronnie-lutaro-b73240aa/)  
+- [Portfolio](https://ronnielutaro.github.io)
+- [Email](mailto:ronnielutaro@outlook.com)
 
-- Master's Degree in Computer Science
-- Professional certifications in AI and Digital Marketing
-- Continuous learning and professional development
-
-## Speaking & Writing
-
-I regularly contribute to technology discussions through:
-- Conference presentations
-- Industry workshops
-- Technical blog posts
-- Professional publications
-
-## Personal Projects
-
-I am passionate about:
-- Open source contributions
-- Technology education in Africa
-- Innovation in emerging markets
-- Community building
-
-## Values
-
-I believe in:
-- Innovation with purpose
-- Ethical technology development
-- Knowledge sharing
-- Community empowerment
-
-## Let's Connect
-
-I'm always interested in discussing new opportunities, collaborations, or just having a great conversation about technology. Feel free to reach out through my [contact page](/contact.html) or connect with me on social media. 
+I'm always interested in discussing new opportunities, collaborations, or just having a great conversation about Venture Building, Artificial Intelligence (AI), or Advertising Technology. Feel free to reach out through my [contact page](/contact.html) or connect with me on social media. 

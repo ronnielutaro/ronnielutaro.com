@@ -1,6 +1,6 @@
 ---
 title: The Future of AI in Africa
-date: March 15, 2024
+date: March 15, 2025
 category: AI
 ---
 

@@ -129,7 +129,7 @@ const aboutTemplate = (content, title) => `
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Ronnie Lutaro. All rights reserved.</p>
+            <p>&copy; 2025 Ronnie Lutaro. All rights reserved.</p>
         </div>
     </footer>
 

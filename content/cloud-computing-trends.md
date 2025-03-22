@@ -1,6 +1,6 @@
 ---
 title: Cloud Computing Trends
-date: March 1, 2024
+date: March 1, 2025
 category: Technology
 ---
 

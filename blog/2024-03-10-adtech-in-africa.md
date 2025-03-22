@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The Rise of AI in AdTech: An African Perspective
-date: 2024-03-10
+date: 2025-03-10
 ---
 
 AI is reshaping advertising globally—but Africa presents unique challenges and opportunities.

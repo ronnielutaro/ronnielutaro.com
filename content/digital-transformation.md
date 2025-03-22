@@ -1,6 +1,6 @@
 ---
 title: Digital Transformation Strategies
-date: March 10, 2024
+date: March 10, 2025
 category: Digital Transformation
 ---
 
