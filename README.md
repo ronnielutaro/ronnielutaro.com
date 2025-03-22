@@ -94,14 +94,4 @@ While this is a personal portfolio website, suggestions and feedback are welcome
 
 This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-- Email: ronnielutaro@outlook.com
-- Location: Kampala, Uganda - Africa
-- LinkedIn: [Your LinkedIn Profile]
-- Twitter: [Your Twitter Handle]
-- GitHub: [ronnielutaro](https://github.com/ronnielutaro)
-
----
-
 **Note:** This website is currently undergoing a significant redesign to enhance user experience and add new features. During this process, you may notice some temporary inconsistencies or minor issues. Stay tuned for the upcoming release!
