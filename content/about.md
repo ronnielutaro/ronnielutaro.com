@@ -26,7 +26,7 @@ I’m currently exploring how **Artificial Intelligence (AI)** and **Advertising
 ### Let’s Connect!
 
 - [LinkedIn](https://www.linkedin.com/in/ronnie-lutaro-b73240aa/)  
-- [Portfolio](https://rlutaro.github.io)
+- [Portfolio](https://ronnielutaro.github.io)
 - [Email](mailto:ronnielutaro@outlook.com)
 
 I'm always interested in discussing new opportunities, collaborations, or just having a great conversation about Venture Building, Artificial Intelligence (AI), or Advertising Technology. Feel free to reach out through my [contact page](/contact.html) or connect with me on social media. 
