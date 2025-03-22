@@ -3,7 +3,7 @@ title: About Me
 template: about
 ---
 
-# About Ronnie Lutaro 
+# About
 
 For over 5 years, I have helped businesses and organizations maximize their impact and ROI through **Data-Driven Project Management**, **Digital Transformation**, and **Venture Building**.
 
