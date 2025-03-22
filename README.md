@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with HTML, CSS, and JavaScript. This website serves as a showcase for my professional work, skills, and experiences.
 
-## 🌟 Features
+## Features
 
 - **Responsive Design**: Fully responsive layout that works seamlessly across all devices
 - **Blog System**: Built-in blog functionality with Markdown support
@@ -11,7 +11,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Thi
 - **Modern UI**: Clean and professional design with smooth animations
 - **Performance Optimized**: Fast loading times and efficient resource usage
 
-## 🚀 Live Demo
+## Live Demo
 
 Visit the live website at: [https://ronnielutaro.github.io](https://ronnielutaro.github.io)
 
@@ -23,7 +23,7 @@ Visit the live website at: [https://ronnielutaro.github.io](https://ronnielutaro
 - Marked.js (for Markdown processing)
 - Font Awesome (for icons)
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
    ```bash
@@ -40,7 +40,7 @@ Visit the live website at: [https://ronnielutaro.github.io](https://ronnielutaro
    npm run build
    ```
 
-## 💻 Development
+## Development
 
 The website uses a custom build system that:
 - Processes Markdown files into HTML
@@ -74,7 +74,7 @@ ronnielutaro.github.io/
 3. Write your content in Markdown
 4. Run `npm run build` to generate the HTML
 
-## 🚀 Deployment
+## Deployment
 
 The website is automatically deployed using GitHub Actions when changes are pushed to the main branch. The deployment process:
 
@@ -82,7 +82,7 @@ The website is automatically deployed using GitHub Actions when changes are push
 2. Uploads the generated files as artifacts
 3. Deploys to GitHub Pages
 
-## 🤝 Contributing
+## Contributing
 
 While this is a personal portfolio website, suggestions and feedback are welcome! Feel free to:
 
@@ -90,11 +90,11 @@ While this is a personal portfolio website, suggestions and feedback are welcome
 2. Create a feature branch
 3. Submit a pull request
 
-## 📝 License
+## License
 
 This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
 
-## 📧 Contact
+## Contact
 
 - Email: ronnielutaro@outlook.com
 - Location: Kampala, Uganda - Africa
