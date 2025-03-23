@@ -1,8 +1,8 @@
 const seoConfig = {
     default: {
-        title: 'Ronnie Lutaro - Project Manager | Software Engineer | Product Manager',
+        title: 'Ronnie Lutaro - Data-Driven Product & Project Manager | Building AI-Powered Advertising Technology in Africa (AdTech) | Software Engineer',
         description: 'Professional portfolio of Ronnie Lutaro, specializing in Digital Transformation, AI Solutions, and Product Management in African markets.',
-        keywords: 'Ronnie Lutaro, Project Manager, Software Engineer, Product Manager, Digital Transformation, Advertising, Technology, AdTech, AI Solutions, Africa',
+        keywords: 'Ronnie Lutaro, Product Manager, Project Manager, Software Engineer, Digital Transformation, Expert, Advertising, Technology, AdTech, C#, .NET, JavaScript, React, Python, AI Solutions, Azure, Innovation, Kampala, Uganda, Africa',
         author: 'Ronnie Lutaro',
         ogImage: 'https://ronnielutaro.github.io/assets/images/og-image.jpg',
         twitterHandle: '@r_lutaro',
@@ -18,12 +18,12 @@ const seoConfig = {
         about: {
             title: 'About Ronnie Lutaro - Professional Background',
             description: 'Learn about my professional journey, expertise in Digital Transformation, and experience in African markets.',
-            keywords: 'about, professional background, experience, expertise, digital transformation, Africa',
+            keywords: 'about, professional background, experience, expertise, digital transformation, Kampala, Uganda, Africa',
             canonicalUrl: 'https://ronnielutaro.github.io/about.html'
         },
         portfolio: {
             title: 'Portfolio - Projects & Work by Ronnie Lutaro',
-            description: 'Explore my portfolio of successful projects in Digital Transformation, AI Solutions, and Product Management.',
+            description: 'Explore my portfolio of successful projects in Digital Transformation, AI Solutions, Product and Product Management.',
             keywords: 'portfolio, projects, work, digital transformation, AI solutions, case studies',
             canonicalUrl: 'https://ronnielutaro.github.io/portfolio.html'
         },
