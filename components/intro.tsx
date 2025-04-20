@@ -14,6 +14,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import Link from "next/link";
 
 const expertiseList = [
+    "Project Management",
     "Product Development",
     "Building Advertising Technology (AdTech) in Africa",
     "Visual Storytelling"
