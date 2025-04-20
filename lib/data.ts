@@ -16,15 +16,6 @@ export const links = [
         hash: '#projects'
     },
     {
-        name: 'Storytelling',
-        hash: '#experience'
-    },
-    {
-        name: 'AdTech',
-        hash: '#experience'
-    }
-    ,
-    {
         name: 'Contact',
         hash: '#experience'
     }
