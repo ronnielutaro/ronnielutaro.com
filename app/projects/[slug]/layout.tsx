@@ -14,7 +14,7 @@ export default function ProjectLayout({ children }: Props) {
     const { setActiveSection } = useActiveSectionContext();
 
     useEffect(() => {
-        setActiveSection("Product Development");
+        setActiveSection("Projects");
     }, [setActiveSection]);
 
     return (
