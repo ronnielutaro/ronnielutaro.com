@@ -1,5 +1,7 @@
 # Ronnie Lutaro's Portfolio Website
+
 [![Deploy Next.js site to Pages](https://github.com/ronnielutaro/ronnielutaro.github.io/actions/workflows/nextjs.yml/badge.svg)](https://github.com/ronnielutaro/ronnielutaro.github.io/actions/workflows/nextjs.yml)
+
 Welcome to my portfolio website! This project showcases my professional work, skills, and experiences through a modern, responsive, and performance-optimized design.
 
 ## Features
