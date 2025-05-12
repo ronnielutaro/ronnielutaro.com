@@ -1,0 +1,14 @@
+samwise.config.json merge=ours
+src/app/posts/** merge=ours
+public/images/** merge=ours
+public/photography/** merge=ours
+public/downloads/** merge=ours
+public/icons/** merge=ours
+public/icon.webp merge=ours
+public/manifest.json merge=ours
+public/manifest.prod.json merge=ours
+src/app/about/page.mdx merge=ours
+README.md merge=ours
+package.json merge=ours
+package-lock.json merge=ours
+next.config.mjs merge=ours

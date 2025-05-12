@@ -1,0 +1,93 @@
+import { AUTHOR, SITE_URL, DEFAULT_KEYWORDS } from '@/config';
+import Link from 'next/link';
+import UniqueViewers from './unique-viewers';
+import Section from './section';
+import { Badge } from './blog/components/badge';
+
+export const photographyImages = [
+  '/images/me.jpg'
+];
+
+export const metadata = {
+  title: `${AUTHOR.name}`,
+  image: `/images/me.WEBP`,
+  description: `Venture Builder, Product Strategist, and Innovation Leader based in Uganda, helping African businesses and ecosystems grow smarter, faster, and more sustainably.`,
+  openGraph: {
+    title: `${AUTHOR.name}`,
+    description: `Venture Builder, Product Strategist, and Innovation Leader based in Uganda, helping African businesses and ecosystems grow smarter, faster, and more sustainably.`,
+    siteName: `${AUTHOR.name}'s website`,
+    media: [
+      {
+        url: `/images/me.WEBP`,
+        width: 400,
+        height: 400,
+        alt: `${AUTHOR.name}'s profile picture`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: `${AUTHOR.twitterHandle}`,
+    creator: `${AUTHOR.twitterHandle}`,
+    media: [
+      {
+        url: `/images/me.WEBP`,
+        alt: `${AUTHOR.name}'s profile picture`,
+      },
+    ],
+  },
+  keywords: DEFAULT_KEYWORDS.concat([
+    AUTHOR.name,
+    'Venture Builder',
+    'Product Strategist',
+    'Innovation',
+    'Advertising Technology',
+    'AdTech',
+    'Kampala',
+    'Uganda',
+    'Africa',
+    'Project Manager',
+    'Product Manager',
+    'Consulting',
+    'Product Manager',
+    'Entrepreneurship',
+    'Mentorship',
+    'Coaching',
+  ]),
+  metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: SITE_URL
+    }
+};
+
+# About [#about]
+
+<UniqueViewers />
+
+<Image
+  src="/images/ronnie-headshot.jpg"
+  alt="Ronnie Lutaro"
+  className="bg-gray-100 block mt-5 mb-5 mx-auto w-40 rounded-full h-auto sm:float-right sm:ml-5 sm:mb-5 object-cover overflow-hidden aspect-square"
+  width={200}
+  height={200}
+  priority
+  quality={100}
+/>
+
+With 5+ years of experience across **technical product development, startup acceleration, and ecosystem building**, I’ve helped 100+ founders across East Africa move from idea to market, building real products, acquiring customers, and growing revenue.
+
+Currently at **[StartHub Africa](https://starthubafrica.org/)**, I lead programs that turn ideas into scalable businesses by working closely with universities, innovation hubs, and ecosystem partners. My past work includes designing and building software products, training young women in STEM under the UN Women’s African Girls Can Code Initiative and building logistics and geospatial data tools for infrastructure development, equipping me with a solid foundation in creating solutions that solve real-world problems.
+
+**What I’m Currently Building:** a new class of Advertising Technology (AdTech) solutions that empower African agencies to:
+- Boost campaign efficiency
+- Reduce budget waste and maximize ROI
+- Unlock new possibilities in programmatic advertising
+
+I’m passionate about enabling real progress through products, people, and platforms. If you're working on something exciting in AdTech, Venture Building, or Product Strategy in African markets, **let's connect** on [LinkedIn](https://www.linkedin.com/in/ronnie-lutaro-b73240aa/), or reach out via [E-mail](mailto:ronnielutaro@outlook.com) for business inquiries.
+
+## Writing [#writing]
+
+I keep a personal blog where I share my thoughts and learnings across technical product development, startup acceleration, and ecosystem building in African Markets.
+
+Each essay or blog post is written with just enough to deliver valuable ideas without overwhelming the reader. Read
+the latest posts on [my blog page](/blog).
