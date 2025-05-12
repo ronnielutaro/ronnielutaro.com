@@ -43,3 +43,5 @@ export async function GET(req: NextRequest) {
     );
   }
 }
+
+const regex = /pattern/; // Replace \/ with /

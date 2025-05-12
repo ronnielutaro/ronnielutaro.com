@@ -4,7 +4,6 @@ import { AUTHOR, SITE_URL, SOCIAL_URLS, DEFAULT_KEYWORDS } from '@/config';
 import { doge } from './doge';
 import { themeEffect } from '@/components/theme-effect';
 import Header from './header';
-import { Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from './analytics';
 import { SpeedInsights } from '@vercel/speed-insights/next';

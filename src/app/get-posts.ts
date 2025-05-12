@@ -45,15 +45,6 @@ type PostsData = {
   posts: BasePost[];
 };
 
-// 4) Cast the imported JSON to `PostsData`
-const typedPostsData = postsData as PostsData;
-
-/**
- * 5) We'll store an array of `BasePost` for non-draft posts.
- *    (No `views` or `viewsFormatted` here)
- */
-const cachedNonDraftPosts: BasePost[] | null = null;
-
 /**
  * Fetch all posts, optionally filtering out drafts.
  *

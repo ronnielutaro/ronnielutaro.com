@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { Check } from '@phosphor-icons/react/dist/ssr';
 
 interface BadgeProps {

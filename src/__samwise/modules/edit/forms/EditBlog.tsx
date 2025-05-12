@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent } from 'react';
 import Image from 'next/image';
 import { useFormik, FormikProvider, FieldArray, getIn } from 'formik';
 import { useDropzone } from 'react-dropzone';
@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { ImageIcon, XIcon } from 'lucide-react';
 import Switch from 'react-switch';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 // Import necessary constants from config.ts
 import {

@@ -4,7 +4,6 @@ import { useState, useCallback, useRef, memo, useEffect } from 'react';
 
 interface MemoizedVideoProps {
   src: string;
-  alt: string;
   width: number;
   height: number;
   className?: string;
@@ -12,7 +11,6 @@ interface MemoizedVideoProps {
 
 export const MemoizedVideo = memo(function MemoizedVideo({
   src,
-  alt,
   width,
   height,
   className = '',
@@ -21,7 +19,6 @@ export const MemoizedVideo = memo(function MemoizedVideo({
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const scrollPositionRef = useRef(0);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
@@ -108,7 +105,6 @@ export const MemoizedVideo = memo(function MemoizedVideo({
             muted
             loop
             onClick={openModal}
-            onLoadedData={() => setIsLoaded(true)}
           >
             Your browser does not support the video tag.
           </video>

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { Suspense } from 'react';
-import type { ReactNode } from 'react';
 
 // Explicitly type the dynamic import
 const LazyReactMP3 = React.lazy(

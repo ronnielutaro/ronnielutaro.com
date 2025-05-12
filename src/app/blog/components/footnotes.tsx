@@ -1,7 +1,6 @@
 'use client';
 
 import { A } from './a';
-import { P } from './p';
 import { ReactNode, useCallback } from 'react';
 
 interface FootNotesProps {

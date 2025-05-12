@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Dynamically import the ToastContainer from react-toastify
