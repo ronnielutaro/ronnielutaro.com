@@ -3,7 +3,7 @@ import { getAllPosts } from '../../get-posts';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(req: Request) {
+export async function handler() {
   return NextResponse.json(
     await getAllPosts(process.env.NODE_ENV === 'production'),
   );

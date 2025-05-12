@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { SocialPlatform } from '@/__samwise/types/SocialPlatform';
 import { urlMapping, SocialIcon } from '@/components/social-icon';
 import Subscribe from '@/components/subscribe';
-import { HR } from '@/app/blog/components/hr';
 
 export const urlMapping: Record<SocialPlatform, string> = {
   github: 'https://github.com/ronnielutaro',

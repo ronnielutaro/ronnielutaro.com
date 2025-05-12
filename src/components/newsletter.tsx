@@ -39,6 +39,13 @@ const Newsletter: React.FC<NewsletterProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    const currentRef = ref.current;
+    return () => {
+      // Use currentRef in cleanup
+    };
+  }, [ref]);
+
   return (
     <motion.section
       ref={ref}
