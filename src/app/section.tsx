@@ -2,7 +2,7 @@
 
 import type React from 'react';
 import { memo, useMemo } from 'react';
-import MediaCarousel from './media-carousel';
+import MediaCarousel from '../media-carousel';
 import { ArrowUpRight } from '@phosphor-icons/react';
 
 interface MediaItem {

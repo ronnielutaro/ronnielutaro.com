@@ -1,5 +1,5 @@
 import PostList from './post-list';
-import { Post } from '@/app/get-posts';
+import { Post } from '../app/get-posts';
 
 interface RelatedPostsProps {
   currentPostSlug: string;

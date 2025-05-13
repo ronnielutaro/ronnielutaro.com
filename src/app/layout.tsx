@@ -1,13 +1,12 @@
 import './globals.css';
 import './atom-one-dark.css';
-import { AUTHOR, SITE_URL, SOCIAL_URLS, DEFAULT_KEYWORDS } from '@/config';
+import { AUTHOR, SITE_URL, SOCIAL_URLS, DEFAULT_KEYWORDS, GA_MEASUREMENT_ID } from '../config';
 import { doge } from './doge';
-import { themeEffect } from '@/components/theme-effect';
+import { themeEffect } from '../components/theme-effect';
 import Header from './header';
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from './analytics';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GA_MEASUREMENT_ID } from '@/config';
+import { SpeedInsights } from '../node_modules/@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import ClientComponents from './client';
 

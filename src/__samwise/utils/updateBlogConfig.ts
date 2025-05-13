@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { BlogConfigData } from '@/__samwise/types/BlogConfig';
+import { BlogConfigData } from '../types/BlogConfig';
 import { v4 as uuidv4 } from 'uuid';
 
 const configPath = path.resolve(process.cwd(), 'samwise.config.json');

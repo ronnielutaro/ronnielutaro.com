@@ -1,6 +1,6 @@
 'use client';
-import Link from 'next/link';
-import { AUTHOR } from '@/config';
+import Link from '../link';
+import { AUTHOR } from '../config';
 import { useRef } from 'react';
 
 export function Logo() {

@@ -1,7 +1,7 @@
 'use client';
 
-import { Analytics as AnalyticsComponent } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics as AnalyticsComponent } from '../components/Analytics';
+import { SpeedInsights } from '../components/SpeedInsights';
 
 export function Analytics() {
   return (

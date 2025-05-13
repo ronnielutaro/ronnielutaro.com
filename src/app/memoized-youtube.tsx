@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, memo, useEffect, useRef } from 'react';
-import { YouTube } from '@/app/blog/components/youtube';
+import { YouTube } from '../blog/components/youtube';
 import Image from 'next/image';
 
 interface MemoizedYouTubeProps {

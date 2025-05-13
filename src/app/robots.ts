@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/config'; // Adjust the path based on your project structure
+import { SITE_URL } from '../config'; // Updated to use a relative path
 
 export default function robots(): MetadataRoute.Robots {
   return {
