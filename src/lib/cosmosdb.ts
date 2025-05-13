@@ -1,4 +1,4 @@
-import { CosmosClient } from '../node_modules/@azure/cosmos';
+import { CosmosClient } from '@azure/cosmos';
 
 const connectionString = process.env.COSMOSDB_CONNECTION_STRING;
 const databaseName = process.env.COSMOSDB_DATABASE_NAME;
