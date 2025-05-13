@@ -3,6 +3,10 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import createMDX from '@next/mdx';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Use `fileURLToPath` and `path.dirname` to get the directory name
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Define the configuration for MDX
 const withMDX = createMDX({
@@ -85,19 +89,10 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src'), // Use the updated `__dirname`
     };
     return config;
   },
 };
 
-const withBoth = (config) =>
-  withPWA({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
-  })(withMDX(config));
-
-// Export configuration
-export default withBoth(nextConfig);
+export default withPWA(withMDX(nextConfig));
