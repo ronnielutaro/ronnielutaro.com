@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Import `samwise.config.json` using an absolute path
-import configData from './samwise.config.json' assert { type: 'json' }; // Use a relative path for ES Modules
+import configData from './samwise.config.json' with { type: 'json' }; // Use a relative path for ES Modules
 
 // Define the configuration for MDX
 const withMDX = createMDX({
@@ -26,6 +26,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
+    domains: ['img.youtube.com'], // Add any other domains as needed
     remotePatterns: [
       {
         protocol: 'https',
@@ -77,4 +78,43 @@ export const USE_LOGO_IN_NAVBAR = configData.USE_LOGO_IN_NAVBAR;
 export const USE_LOGO_FOR_HEADSHOT = configData.USE_LOGO_FOR_HEADSHOT;
 export const USE_ARCHIVE = configData.USE_ARCHIVE;
 
-export default withPWA(withMDX(nextConfig));
+export default withPWA(
+  withMDX({
+    reactStrictMode: true,
+    experimental: {
+      mdxRs: true,
+    },
+    images: {
+      domains: ['img.youtube.com'], // Add any other domains as needed
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'img.youtube.com',
+          port: '',
+          pathname: '/vi/**',
+        },
+      ],
+    },
+    async headers() {
+      return [
+        {
+          source: '/blog',
+          headers: [
+            {
+              key: 'cache-control',
+              value: 'public, max-age=60, stale-while-revalidate=600',
+            },
+          ],
+        },
+      ];
+    },
+    pageExtensions: ['ts', 'tsx', 'mdx'],
+    webpack: (config) => {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
+      };
+      return config;
+    },
+  }),
+);
