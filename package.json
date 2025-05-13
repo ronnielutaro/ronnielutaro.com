@@ -38,8 +38,6 @@
     "@next/mdx": "^15.0.3",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@vercel/analytics": "^1.4.1",
-    "@vercel/speed-insights": "^1.1.0",
     "clsx": "^2.1.1",
     "comma-number": "^2.1.0",
     "date-fns": "^4.1.0",

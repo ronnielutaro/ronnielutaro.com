@@ -1,12 +1,8 @@
 import './globals.css';
 import './atom-one-dark.css';
-import { AUTHOR, SITE_URL, SOCIAL_URLS, DEFAULT_KEYWORDS, GA_MEASUREMENT_ID } from '../config';
-import { doge } from './doge';
-import { themeEffect } from '../components/theme-effect';
+import { AUTHOR, SITE_URL, SOCIAL_URLS, DEFAULT_KEYWORDS } from '../config';
 import Header from './header';
 import type { Metadata, Viewport } from 'next';
-import { Analytics } from './analytics';
-import { SpeedInsights } from '../node_modules/@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import ClientComponents from './client';
 
@@ -60,9 +56,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: '/icons/192x192.png', sizes: '192x192', type: 'image/png' }],
-    apple: [{ url: '/icons/180x180.png', sizes: '180x180', type: 'image/png' }],
   },
-  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({
@@ -71,48 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} font-sans antialiased`}
-    >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(${themeEffect.toString()})();(${doge.toString()})();`,
-          }}
-        />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Ronnie Lutaro's Blog"
-          href={`${SITE_URL}/api/rss`}
-        />
-        <link rel="icon" href="/icons/32x32.png" sizes="any" />
-      </head>
-      <body className="text-gray-800 dark:text-gray-300 pt-3 sm:pt-6 p-6 sm:px-4">
+    <html lang="en" className={inter.variable}>
+      <body>
         <Header />
-        <main className="z-[100] min-h-screen max-w-2xl pt-12 m-auto text-pretty">
-          {children}
-        </main>
+        {children}
         <ClientComponents />
-        <Analytics />
-        <SpeedInsights />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        />
-        <script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `,
-          }}
-        />
       </body>
     </html>
   );
