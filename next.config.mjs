@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Import `samwise.config.json` using an absolute path
-import configData from path.resolve(process.cwd(), 'samwise.config.json');
+import configData from './samwise.config.json'; // Use a relative path for ES Modules
 
 // Define the configuration for MDX
 const withMDX = createMDX({
