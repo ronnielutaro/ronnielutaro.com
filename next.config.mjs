@@ -4,7 +4,7 @@ import rehypeHighlight from 'rehype-highlight';
 import createMDX from '@next/mdx';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import configData from '../samwise.config.json';
+import configData from './samwise.config.json';
 
 // Use `fileURLToPath` and `path.dirname` to get the directory name
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
