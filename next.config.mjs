@@ -95,4 +95,51 @@ const nextConfig = {
   },
 };
 
-export default withPWA(withMDX(nextConfig));
+export default withPWA(
+  withMDX({
+    reactStrictMode: true,
+    experimental: {
+      mdxRs: true,
+    },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'img.youtube.com',
+          port: '',
+          pathname: '/vi/**',
+        },
+      ],
+    },
+    async headers() {
+      return [
+        {
+          source: '/blog',
+          headers: [
+            {
+              key: 'cache-control',
+              value: 'public, max-age=60, stale-while-revalidate=600',
+            },
+          ],
+        },
+        {
+          source: '/images/me.WEBP',
+          headers: [
+            {
+              key: 'cache-control',
+              value: 'public, max-age=31536000, immutable',
+            },
+          ],
+        },
+      ];
+    },
+    pageExtensions: ['ts', 'tsx', 'mdx'],
+    webpack: (config) => {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
+      };
+      return config;
+    },
+  }),
+);

@@ -1,5 +1,5 @@
 'use client';
-import Link from '../link';
+import Link from 'next/link';
 import { AUTHOR } from '../config';
 import { useRef } from 'react';
 
