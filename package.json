@@ -27,7 +27,9 @@
     "generate-posts-json": "ts-node scripts/generate-posts-json.ts",
     "create-blog": "ts-node scripts/create-blog.ts && ts-node scripts/generate-pwa-icons.ts",
     "create-post": "ts-node scripts/create-post.ts && ts-node scripts/generate-slugs.ts && ts-node scripts/update-reading-time.ts",
-    "update-reading-time": "ts-node scripts/update-reading-time.ts"
+    "update-reading-time": "ts-node scripts/update-reading-time.ts",
+    "verify-ts-config": "cat tsconfig.json",
+    "debug-module-resolution": "node -e \"console.log(require.resolve('@/lib/cosmosdb'))\""
   },
   "dependencies": {
     "@azure/cosmos": "^4.3.0",

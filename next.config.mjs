@@ -2,6 +2,7 @@ import withPWA from 'next-pwa';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import createMDX from '@next/mdx';
+import path from 'path';
 
 // Define the configuration for MDX
 const withMDX = createMDX({
@@ -81,6 +82,13 @@ const nextConfig = {
     ];
   },
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, 'src'),
+    };
+    return config;
+  },
 };
 
 const withBoth = (config) =>
