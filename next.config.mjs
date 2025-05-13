@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Import `samwise.config.json` using an absolute path
-import configData from './samwise.config.json' with { type: 'json' }; // Use a relative path for ES Modules
+import configData from './samwise.config.json' with { type: 'json' };
 
 // Define the configuration for MDX
 const withMDX = createMDX({
@@ -19,64 +19,6 @@ const withMDX = createMDX({
     rehypePlugins: [rehypeHighlight],
   },
 });
-
-const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    mdxRs: true,
-  },
-  images: {
-    domains: ['img.youtube.com'], // Add any other domains as needed
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'img.youtube.com',
-        port: '',
-        pathname: '/vi/**',
-      },
-    ],
-  },
-  async headers() {
-    return [
-      {
-        source: '/blog',
-        headers: [
-          {
-            key: 'cache-control',
-            value: 'public, max-age=60, stale-while-revalidate=600',
-          },
-        ],
-      },
-    ];
-  },
-  pageExtensions: ['ts', 'tsx', 'mdx'],
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
-    };
-    return config;
-  },
-};
-
-export const PRODUCTION_URL = configData.PRODUCTION_URL;
-
-export const SITE_URL =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : PRODUCTION_URL;
-
-export const AUTHOR = {
-  ...configData.AUTHOR,
-  url: `${PRODUCTION_URL}/about`,
-};
-
-export const SOCIAL_URLS = configData.SOCIAL_URLS;
-export const GA_MEASUREMENT_ID = configData.GA_MEASUREMENT_ID;
-export const DEFAULT_KEYWORDS = configData.DEFAULT_KEYWORDS;
-export const USE_LOGO_IN_NAVBAR = configData.USE_LOGO_IN_NAVBAR;
-export const USE_LOGO_FOR_HEADSHOT = configData.USE_LOGO_FOR_HEADSHOT;
-export const USE_ARCHIVE = configData.USE_ARCHIVE;
 
 export default withPWA(
   withMDX({
@@ -92,6 +34,12 @@ export default withPWA(
           hostname: 'img.youtube.com',
           port: '',
           pathname: '/vi/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'ronnielutaro.com',
+          port: '',
+          pathname: '/images/**',
         },
       ],
     },
