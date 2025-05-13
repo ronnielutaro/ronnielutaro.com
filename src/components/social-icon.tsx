@@ -1,7 +1,7 @@
-import { SOCIAL_URLS } from '@/config';
-import { SocialPlatform } from '@/__samwise/types/SocialPlatform';
-import { XLogo } from '@phosphor-icons/react/dist/ssr';
-import { Rss } from 'lucide-react';
+import { SOCIAL_URLS } from '../../config';
+import { SocialPlatform } from '../../__samwise/types/SocialPlatform';
+import { XLogo } from '../../node_modules/@phosphor-icons/react/dist/ssr';
+import { Rss } from '../../node_modules/lucide-react';
 
 export const urlMapping: Record<SocialPlatform, string> = {
   github: SOCIAL_URLS.github,

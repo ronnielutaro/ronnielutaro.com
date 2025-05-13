@@ -1,4 +1,4 @@
-import { container } from '@/lib/cosmosdb';
+import { container } from '../../../lib/cosmosdb';
 import postsData from '@/app/posts.json';
 import commaNumber from 'comma-number';
 import { NextResponse } from 'next/server';
