@@ -26,10 +26,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20' # Use Node.js 20.x or a compatible version
+      - name: Set TS_NODE_PROJECT
+        run: echo "TS_NODE_PROJECT=tsconfig.json" >> $GITHUB_ENV
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
       - name: Build Application
         run: npm run build
+      - name: Debug Module Resolution
+        run: node -e "console.log(require.resolve('@/lib/cosmosdb'))"
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
