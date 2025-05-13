@@ -27,7 +27,6 @@ export default withPWA(
       mdxRs: true,
     },
     images: {
-      domains: ['img.youtube.com'], // Add any other domains as needed
       remotePatterns: [
         {
           protocol: 'https',
