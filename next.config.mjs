@@ -43,26 +43,6 @@ export default withPWA(
         },
       ],
     },
-    async headers() {
-      return [
-        {
-          source: '/blog',
-          headers: [
-            {
-              key: 'cache-control',
-              value: 'public, max-age=60, stale-while-revalidate=600',
-            },
-          ],
-        },
-      ];
-    },
     pageExtensions: ['ts', 'tsx', 'mdx'],
-    webpack: (config) => {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': path.resolve(__dirname, 'src'),
-      };
-      return config;
-    },
   }),
 );
