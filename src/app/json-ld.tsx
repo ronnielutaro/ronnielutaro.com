@@ -1,6 +1,6 @@
 'use client';
 
-import { AUTHOR, SITE_URL, SOCIAL_URLS } from '../config';
+import { AUTHOR, SITE_URL, SOCIAL_URLS } from '@/config';
 
 export default function JsonLdScript() {
   const jsonLd = {

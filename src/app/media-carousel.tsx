@@ -2,10 +2,10 @@
 
 import type React from 'react';
 import { memo, useRef, useState, useEffect } from 'react';
-import { MemoizedImage } from '../components/memoized-image';
+import { MemoizedImage } from '@/components/memoized-image';
 import { MemoizedVideo } from './memoized-video';
 import { MemoizedYouTube } from './memoized-youtube';
-import { useMobile } from '../hooks/use-mobile';
+import { useMobile } from '@/hooks/use-mobile';
 
 interface MediaItem {
   type: 'image' | 'video' | 'youtube';

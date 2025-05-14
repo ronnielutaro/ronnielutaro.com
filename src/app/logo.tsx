@@ -1,9 +1,11 @@
 'use client';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { AUTHOR } from '../config';
+import { AUTHOR } from '@/config';
 import { useRef } from 'react';
 
 export function Logo() {
+  const pathname = usePathname();
   const logoRef = useRef(null);
 
   return (

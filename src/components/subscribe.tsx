@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { CheckCircle } from '../../node_modules/@phosphor-icons/react';
-import { cn } from '../lib/utils';
+import { CheckCircle } from '@phosphor-icons/react';
+import { cn } from '@/lib/utils';
 
 interface SubscribeProps {
   redisApiEndpoint?: string;

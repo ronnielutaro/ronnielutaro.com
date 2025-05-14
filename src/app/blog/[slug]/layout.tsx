@@ -8,6 +8,7 @@ import { TableOfContents } from '@/app/blog/components/toc';
 import { redirect } from 'next/navigation';
 import PillarMenu from '@/components/pillar-menu';
 import { ButtonsArrayType } from '@/__samwise/types/Buttons';
+import Newsletter from '@/components/newsletter'; // Adjust the import path based on your project structure
 
 export const revalidate = 60;
 

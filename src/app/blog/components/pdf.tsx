@@ -8,9 +8,14 @@ import { FileText } from 'lucide-react';
 interface PDFViewerProps {
   file: string;
   caption?: string | null;
+  previewImage?: string; // Optional preview image
 }
 
-const PDF: React.FC<PDFViewerProps> = ({ file, caption = null }) => {
+const PDF: React.FC<PDFViewerProps> = ({
+  file,
+  caption = null,
+  previewImage,
+}) => {
   const [iframeSrc, setIframeSrc] = useState<string>('about:blank');
 
   useEffect(() => {

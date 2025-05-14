@@ -1,12 +1,11 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
 import Image from 'next/image';
 import { useFormik, FormikProvider, FieldArray, getIn } from 'formik';
 import { useDropzone } from 'react-dropzone';
 import * as Yup from 'yup';
-import { ImageIcon, XIcon } from 'lucide-react';
+import { ImageIcon, Info, XIcon } from 'lucide-react';
 import Switch from 'react-switch';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 
 // Import necessary constants from config.ts
 import {
@@ -26,8 +25,8 @@ import {
 // Import SocialPlatform type
 import { SocialPlatform } from '@/__samwise/types/SocialPlatform';
 
-// Remove TooltipWrapper import if not used
-// import TooltipWrapper from '@/components/tooltip';
+// Import Tooltip component
+import TooltipWrapper from '@/components/tooltip';
 
 type SocialLink = {
   type: string;
@@ -527,13 +526,12 @@ const EditBlogForm: React.FC<EditBlogFormProps> = ({
               <div className="mb-4">
                 <div className="flex items-center mb-2">
                   <label className="font-semibold">Logo</label>
-                  {/* Remove TooltipWrapper if not used */}
-                  {/* <TooltipWrapper message="This logo will be used for the favicon, PWA, and default SEO image."> */}
-                  {/*   <Info */}
-                  {/*     className="text-gray-500 dark:text-gray-400 ml-2" */}
-                  {/*     size={16} */}
-                  {/*   /> */}
-                  {/* </TooltipWrapper> */}
+                  <TooltipWrapper message="This logo will be used for the favicon, PWA, and default SEO image.">
+                    <Info
+                      className="text-gray-500 dark:text-gray-400 ml-2"
+                      size={16}
+                    />
+                  </TooltipWrapper>
                 </div>
                 <div
                   {...getRootProps()}
@@ -594,13 +592,12 @@ const EditBlogForm: React.FC<EditBlogFormProps> = ({
               <div className="mb-4">
                 <div className="flex items-center mb-2">
                   <label className="font-semibold">Headshot</label>
-                  {/* Remove TooltipWrapper if not used */}
-                  {/* <TooltipWrapper message="This will be shown on your about page."> */}
-                  {/*   <Info */}
-                  {/*     className="text-gray-500 dark:text-gray-400 ml-2" */}
-                  {/*     size={16} */}
-                  {/*   /> */}
-                  {/* </TooltipWrapper> */}
+                  <TooltipWrapper message="This will be shown on your about page.">
+                    <Info
+                      className="text-gray-500 dark:text-gray-400 ml-2"
+                      size={16}
+                    />
+                  </TooltipWrapper>
                 </div>
                 {!values.useLogoForHeadshot && (
                   <div
@@ -668,13 +665,12 @@ const EditBlogForm: React.FC<EditBlogFormProps> = ({
               <div className="mb-4">
                 <div className="flex items-center mb-1">
                   <label className="font-semibold">Keywords</label>
-                  {/* Remove TooltipWrapper if not used */}
-                  {/* <TooltipWrapper message="Adding keywords helps improve your website's ranking in search engines."> */}
-                  {/*   <Info */}
-                  {/*     className="text-gray-500 dark:text-gray-400 ml-2" */}
-                  {/*     size={16} */}
-                  {/*   /> */}
-                  {/* </TooltipWrapper> */}
+                  <TooltipWrapper message="Adding keywords helps improve your website's ranking in search engines.">
+                    <Info
+                      className="text-gray-500 dark:text-gray-400 ml-2"
+                      size={16}
+                    />
+                  </TooltipWrapper>
                 </div>
                 <input
                   type="text"
@@ -811,13 +807,12 @@ const EditBlogForm: React.FC<EditBlogFormProps> = ({
               <div className="mb-4">
                 <div className="flex items-center mb-1">
                   <label className="font-semibold">CTA Social Platform</label>
-                  {/* Remove TooltipWrapper if not used */}
-                  {/* <TooltipWrapper message="This will be the link in the navbar."> */}
-                  {/*   <Info */}
-                  {/*     className="text-gray-500 dark:text-gray-400 ml-2" */}
-                  {/*     size={16} */}
-                  {/*   /> */}
-                  {/* </TooltipWrapper> */}
+                  <TooltipWrapper message="This will be the link in the navbar.">
+                    <Info
+                      className="text-gray-500 dark:text-gray-400 ml-2"
+                      size={16}
+                    />
+                  </TooltipWrapper>
                 </div>
                 <select
                   name="ctaSocialPlatform"
@@ -901,13 +896,12 @@ const EditBlogForm: React.FC<EditBlogFormProps> = ({
                     <label className="font-semibold">
                       Number of items to show in archive
                     </label>
-                    {/* Remove TooltipWrapper if not used */}
-                    {/* <TooltipWrapper message="A recommended number of items for the archive is between 10 and 20 for optimal user experience."> */}
-                    {/*   <Info */}
-                    {/*     className="text-gray-500 dark:text-gray-400 ml-2" */}
-                    {/*     size={16} */}
-                    {/*   /> */}
-                    {/* </TooltipWrapper> */}
+                    <TooltipWrapper message="A recommended number of items for the archive is between 10 and 20 for optimal user experience.">
+                      <Info
+                        className="text-gray-500 dark:text-gray-400 ml-2"
+                        size={16}
+                      />
+                    </TooltipWrapper>
                   </div>
                   <input
                     name="archiveItemsToShow"

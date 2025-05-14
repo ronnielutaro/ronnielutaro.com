@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import readingTime from 'reading-time';
-import { container } from '../../lib/cosmosdb'; // Adjusted relative path
+import { container } from '@/lib/cosmosdb';
 
 // Define the directory where posts are located
 const postsDirectory = path.join(process.cwd(), 'src', 'posts');

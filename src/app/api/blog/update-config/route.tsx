@@ -5,6 +5,7 @@ import { generatePwaIcons } from '@/__samwise/utils/generateIcons';
 import { updateManifest } from '@/__samwise/utils/updateManifest';
 import { processHeadshotImage } from '@/__samwise/utils/processHeadshotImage'; // Import the new function
 import { createSVGFromBase64 } from '@/__samwise/utils/createSVGFromBase64'; // Import the new SVG generation function
+import fs from 'fs';
 import path from 'path';
 
 export async function POST(req: Request) {

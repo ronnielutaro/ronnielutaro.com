@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import useSWR from 'swr';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import Image from 'next/image';
 
 // --- Types
 
@@ -308,11 +307,9 @@ function HoverPreviewModal({ hoveredPost, mousePos }: HoverPreviewModalProps) {
           </div>
         ) : (
           <div>
-            <Image
+            <img
               src={postDetails.image}
               alt={hoveredPost.title}
-              width={500}
-              height={300}
               className="w-48 h-32 object-cover mb-2"
             />
             <p className="text-sm text-muted-foreground">

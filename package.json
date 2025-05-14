@@ -27,9 +27,7 @@
     "generate-posts-json": "ts-node scripts/generate-posts-json.ts",
     "create-blog": "ts-node scripts/create-blog.ts && ts-node scripts/generate-pwa-icons.ts",
     "create-post": "ts-node scripts/create-post.ts && ts-node scripts/generate-slugs.ts && ts-node scripts/update-reading-time.ts",
-    "update-reading-time": "ts-node scripts/update-reading-time.ts",
-    "verify-ts-config": "cat tsconfig.json",
-    "debug-module-resolution": "node -e \"console.log(require.resolve('@/lib/cosmosdb'))\""
+    "update-reading-time": "ts-node scripts/update-reading-time.ts"
   },
   "dependencies": {
     "@azure/cosmos": "^4.3.0",
@@ -38,6 +36,8 @@
     "@next/mdx": "^15.0.3",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "clsx": "^2.1.1",
     "comma-number": "^2.1.0",
     "date-fns": "^4.1.0",
@@ -97,10 +97,10 @@
     "fs-extra": "^11.2.0",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
-    "react": "^19.0.0",
+    "react": "^18.3.1",
     "react-audio-player": "^0.17.0",
     "react-datepicker": "^7.5.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^18.3.1",
     "react-dropzone": "^14.3.5",
     "react-switch": "^7.0.0",
     "react-toastify": "^10.0.6",

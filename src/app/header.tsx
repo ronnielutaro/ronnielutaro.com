@@ -1,8 +1,8 @@
-import ThemeSwitcher from '../components/theme-switcher';
+import ThemeSwitcher from '@/components/theme-switcher';
 import { Logo } from './logo';
-import { SOCIAL_URLS, CTA_SOCIAL_PLATFORM } from '../config';
-import { SocialIcon } from '../components/social-icon';
-import type { SocialPlatform } from '../__samwise/types/SocialPlatform';
+import { SOCIAL_URLS, CTA_SOCIAL_PLATFORM } from '@/config';
+import { SocialIcon } from '@/components/social-icon';
+import type { SocialPlatform } from '@/__samwise/types/SocialPlatform';
 import ActiveLink from './active-link';
 
 // Mappings

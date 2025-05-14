@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { AUTHOR } from '../config';
+import { AUTHOR } from '@/config';
 import { Share } from 'lucide-react'; // Import Share icon from lucide-react
 
 interface ShareButtonProps {

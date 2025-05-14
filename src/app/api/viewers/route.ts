@@ -1,14 +1,6 @@
 // app/api/viewers/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { container } from '../../../lib/cosmosdb';
-import { updateBlogConfig } from '../../../__samwise/utils/updateBlogConfig';
-import { generatePwaIcons } from '../../../__samwise/utils/generateIcons';
-import { updateManifest } from '../../../__samwise/utils/updateManifest';
-import { processHeadshotImage } from '../../../__samwise/utils/processHeadshotImage';
-import { createSVGFromBase64 } from '../../../__samwise/utils/createSVGFromBase64';
-import { updateReadingTime } from '../../../__samwise/utils/updateReadingTime';
-import { getAllPosts } from '../../get-posts';
-import { SITE_URL } from '../../config';
+import { container } from '@/lib/cosmosdb';
 
 export async function GET(req: NextRequest) {
   // Get the URL for the request
@@ -51,7 +43,3 @@ export async function GET(req: NextRequest) {
     );
   }
 }
-
-const regex = /pattern/; // Replace \/ with /
-
-delete require.cache[require.resolve('../../../posts/slugs.json')];

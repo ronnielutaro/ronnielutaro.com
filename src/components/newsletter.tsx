@@ -15,7 +15,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
   subtitle = "Like what you're reading? Subscribe to get notified when I publish new posts.",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -38,17 +38,6 @@ const Newsletter: React.FC<NewsletterProps> = ({
       }
     };
   }, []);
-
-  useEffect(() => {
-    const currentRef = ref.current;
-
-    return () => {
-      // Use the stable reference
-      if (currentRef) {
-        // Cleanup logic here
-      }
-    };
-  }, [ref]);
 
   return (
     <motion.section
