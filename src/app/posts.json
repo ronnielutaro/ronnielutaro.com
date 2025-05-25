@@ -2,7 +2,7 @@
   "posts": [
     {
       "slug": "what-school-still-cant-see",
-      "date": "May 12, 2025",
+      "date": "December 5, 2025",
       "title": "What School Still Can’t See: Lessons & Reflections from Mentoring at the 10th Stanbic National Schools Championship",
       "draft": true,
       "description": "In this essay, I explore why grades don’t capture full potential, what education should be measuring, what I’ve learned from working with StartHub Africa, Stanbic Bank Uganda and student innovators across Uganda.",
@@ -14,8 +14,8 @@
         "writing"
       ],
       "author": "Ronnie Lutaro",
-      "authorUrl": "https://ronnielutaro.com",
-      "image": "/images/what-school-still-cant-see/nsc-cover-photo.png",
+      "authorUrl": "https://ronnielutaro.com/",
+      "image": "/images/what-school-still-cant-see/what-school-still-cant-see.webp",
       "readingTime": 4
     }
   ]
