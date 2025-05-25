@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   const rawPath = url.searchParams.get('path') || '/';
 
   // Sanitize the path to create a valid Cosmos DB id
-  const sanitizedPath = rawPath.replace(/[\/\\?#%]/g, '_'); // Replace illegal characters with '_'
+  const sanitizedPath = rawPath.replace(/[/?#%]/g, '_');
 
   // Retrieve the IP address from the x-forwarded-for header
   const forwarded = req.headers.get('x-forwarded-for');

@@ -21,6 +21,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off', // Disable prop-types rule for TypeScript
   },
   ignorePatterns: ['node_modules/', '.next/', 'dist/', 'public/'],
 };
