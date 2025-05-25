@@ -5,19 +5,6 @@ import { urlMapping, SocialIcon } from '@/components/social-icon';
 import Subscribe from '@/components/subscribe';
 import { HR } from '@/app/blog/components/hr';
 
-export const urlMapping: Record<SocialPlatform, string> = {
-  github: 'https://github.com/ronnielutaro',
-  twitter: 'https://x.com/theronnielutaro',
-  instagram: 'https://www.instagram.com/theronnielutaro/',
-  reddit: '',
-  tiktok: '',
-  email: '',
-  patreon: '',
-  linkedin: 'https://www.linkedin.com/in/ronnie-lutaro-b73240aa/',
-  youtube: 'https://www.youtube.com/@RonnieLutaro',
-  rss: '/api/rss', // Ensure this points to the correct RSS feed endpoint
-};
-
 export default function Footer() {
   return (
     <>
