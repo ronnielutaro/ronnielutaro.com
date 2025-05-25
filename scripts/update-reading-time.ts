@@ -1,5 +1,4 @@
 import { container } from '../src/lib/cosmosdb';
-import { updateAllReadingTimes } from '../src/__samwise/utils/updateReadingTime'; // Adjust the path as needed
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -38,16 +37,3 @@ export async function POST(request: NextRequest) {
     { status: 200 },
   );
 }
-
-(async () => {
-  try {
-    updateAllReadingTimes();
-    console.log('✅ Reading times updated successfully!');
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error('❌ Error updating reading times:', error.message);
-    } else {
-      console.error('❌ Unknown error occurred while updating reading times.');
-    }
-  }
-})();
