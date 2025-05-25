@@ -16,8 +16,8 @@
     "dev": "next dev",
     "build": "next lint --fix && ts-node scripts/generate-slugs.ts && ts-node scripts/generate-posts-json.ts && ts-node scripts/update-reading-time.ts && ts-node scripts/generate-pwa-icons.ts && next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test": "echo \"No test specified\" && exit 1",
     "clean": "rm -rf .next node_modules",
@@ -84,15 +84,19 @@
     "@types/stringify-object": "^4.0.5",
     "@types/uuid": "^10.0.0",
     "@types/xml": "^1.0.11",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
     "@uiw/codemirror-theme-atomone": "^4.23.6",
     "@uiw/react-codemirror": "^4.23.6",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
     "boxen": "^4.2.0",
-    "eslint": "^9",
+    "eslint": "^8.57.0",
     "eslint-config-next": "15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "formik": "^2.4.6",
     "fs-extra": "^11.2.0",
     "postcss": "^8.4.49",
@@ -123,5 +127,10 @@
       "@types/react": "19.0.0",
       "@types/react-dom": "19.0.0"
     }
+  },
+  "eslint": {
+    "files": [
+      "**/*.{js,jsx,ts,tsx}"
+    ]
   }
 }
