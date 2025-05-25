@@ -1,4 +1,4 @@
-import { container } from '@/lib/cosmosdb';
+import { container } from '../src/lib/cosmosdb';
 import { updateAllReadingTimes } from '../src/__samwise/utils/updateReadingTime'; // Adjust the path as needed
 import { NextRequest, NextResponse } from 'next/server';
 
