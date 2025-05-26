@@ -54,6 +54,7 @@ jobs:
           output_location: "" # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+        timeout-minutes: 30 # Increased timeout to 30 minutes
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
