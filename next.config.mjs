@@ -80,6 +80,7 @@ const nextConfig = {
     ];
   },
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  output: 'export', // Use 'export' for static exports
 };
 
 // Export configuration without PWA
