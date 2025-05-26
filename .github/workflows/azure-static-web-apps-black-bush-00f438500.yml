@@ -37,16 +37,9 @@ jobs:
 
       - name: Build project
         run: npm run build
-        env:
-          COSMOSDB_CONNECTION_STRING: ${{ secrets.COSMOSDB_CONNECTION_STRING }}
-          COSMOSDB_DATABASE_NAME: ${{ secrets.COSMOSDB_DATABASE_NAME }}
-          COSMOSDB_CONTAINER_NAME: ${{ secrets.COSMOSDB_CONTAINER_NAME }}
 
-      - name: Debug Environment Variables
-        run: |
-          echo "COSMOSDB_CONNECTION_STRING is set"
-        env:
-          COSMOSDB_CONNECTION_STRING: ${{ secrets.COSMOSDB_CONNECTION_STRING }}
+      - name: Lint Code
+        run: npm run lint || true
 
       - name: Build And Deploy
         id: builddeploy
