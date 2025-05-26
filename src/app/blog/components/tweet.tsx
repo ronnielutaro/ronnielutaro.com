@@ -1,5 +1,4 @@
 import { type ReactNode, Suspense } from 'react';
-import { container } from '@/lib/cosmosdb';
 import { type Tweet, getTweet } from 'react-tweet/api';
 import {
   EmbeddedTweet,
@@ -15,35 +14,14 @@ interface TweetArgs {
   caption: ReactNode;
 }
 
-async function getAndCacheTweet(id: string): Promise<Tweet | undefined> {
-  try {
-    // Check if the tweet is already cached in Cosmos DB
-    const { resource: cachedTweet } = await container.item(id, id).read();
-
-    if (cachedTweet) {
-      return cachedTweet as Tweet;
-    }
-
-    // Fetch the tweet from the API
-    const tweet = await getTweet(id);
-
-    if (tweet) {
-      // Cache the tweet in Cosmos DB
-      await container.items.create({
-        id,
-        ...tweet,
-      });
-      return tweet;
-    }
-  } catch (error) {
-    console.error('Error fetching or caching tweet:', error);
-  }
-
-  return undefined;
+// Placeholder function to simulate fetching a tweet
+async function getTweetPlaceholder(id: string): Promise<Tweet | undefined> {
+  console.warn(`Fetching tweet with ID: ${id} (placeholder logic)`);
+  return undefined; // Replace with actual logic later if needed
 }
 
 const TweetContent = async ({ id, components }: TweetProps) => {
-  const tweet = id ? await getAndCacheTweet(id) : undefined;
+  const tweet = id ? await getTweetPlaceholder(id) : undefined;
 
   if (!tweet) {
     return <TweetNotFound />;

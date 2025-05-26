@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import readingTime from 'reading-time';
-import { container } from '../../lib/cosmosdb';
 
 // Define the directory where posts are located
 const postsDirectory = path.join(process.cwd(), 'src', 'posts');
@@ -32,18 +31,7 @@ export async function updateReadingTime(slug: string) {
   // Write the updated content back to the file
   fs.writeFileSync(filePath, updatedContent, 'utf8');
 
-  const { resource: post } = await container.item(slug, slug).read();
-
-  if (post) {
-    post.readingTime = readingTimeInMinutes;
-    await container.items.upsert(post);
-  } else {
-    await container.items.create({
-      id: slug,
-      type: 'post',
-      readingTime: readingTimeInMinutes,
-    });
-  }
+  console.log(`✅ Updated reading time for ${slug}: ${readingTimeInMinutes} minutes`);
 }
 
 // Function to update the metadata in the MDX file
@@ -66,7 +54,7 @@ function updateMetadata(content: string, readingTimeInMinutes: number): string {
       `readingTime: ${readingTimeInMinutes}`,
     );
   } else {
-    // Remove any trailing comma and whitespace before the closing }
+    // Add readingTime to the metadata
     metadataString = metadataString.replace(
       /,?\s*}$/,
       `, readingTime: ${readingTimeInMinutes} }`,

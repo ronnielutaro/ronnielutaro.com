@@ -1,5 +1,4 @@
 // app/api/subscribe/route.ts
-import { container } from '@/lib/cosmosdb';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -12,17 +11,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { resources: existingSubscribers } = await container.items
-    .query({
-      query: 'SELECT * FROM c WHERE c.type = @type AND c.email = @email',
-      parameters: [
-        { name: '@type', value: 'subscriber' },
-        { name: '@email', value: email },
-      ],
-    })
-    .fetchAll();
-
-  if (existingSubscribers.length > 0) {
+  // Placeholder logic for checking existing subscribers
+  const existingSubscribers = ['test@example.com']; // Replace with real data later
+  if (existingSubscribers.includes(email)) {
     return NextResponse.json(
       {
         success: true,
@@ -33,12 +24,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  await container.items.create({
-    id: email,
-    type: 'subscriber',
-    email,
-    subscribedAt: new Date().toISOString(),
-  });
+  // Placeholder logic for adding a new subscriber
+  console.log(`New subscriber added: ${email}`); // Replace with real data later
 
   return NextResponse.json(
     { success: true, message: 'Successfully subscribed' },

@@ -1,4 +1,3 @@
-import { container } from '@/lib/cosmosdb';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -12,34 +11,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { resources: existingSubscribers } = await container.items
-      .query({
-        query: 'SELECT * FROM c WHERE c.type = @type AND c.email = @email',
-        parameters: [
-          { name: '@type', value: 'subscriber' },
-          { name: '@email', value: email },
-        ],
-      })
-      .fetchAll();
-
-    if (existingSubscribers.length === 0) {
-      return NextResponse.json(
-        { success: false, message: 'Email not found in subscribers list' },
-        { status: 404 },
-      );
-    }
-
-    await container
-      .item(existingSubscribers[0].id, existingSubscribers[0].id)
-      .delete();
-
+    // Placeholder response for unsubscribing
     return NextResponse.json(
-      { success: true, message: 'Successfully unsubscribed' },
+      { success: true, message: 'Unsubscribed successfully (placeholder)' },
       { status: 200 },
     );
   } catch (error) {
+    console.error('Error unsubscribing:', error);
     return NextResponse.json(
-      { success: false, message: 'Server error' },
+      { success: false, message: 'Failed to unsubscribe' },
       { status: 500 },
     );
   }

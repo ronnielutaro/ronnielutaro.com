@@ -30,9 +30,9 @@
     "update-reading-time": "ts-node scripts/update-reading-time.ts"
   },
   "dependencies": {
-    "@azure/cosmos": "^4.3.0",
     "@fontsource/inter": "^5.1.0",
     "@fontsource/roboto-mono": "^5.1.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/mdx": "^15.0.3",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/line-clamp": "^0.4.4",

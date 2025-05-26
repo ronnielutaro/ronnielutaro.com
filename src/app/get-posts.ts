@@ -1,7 +1,9 @@
 // getAllPosts.ts
-import { container } from '@/lib/cosmosdb'; // Updated import
-import postsData from '@/app/posts.json';
+import fs from 'fs';
+import path from 'path';
+import slugs from '@/posts/slugs.json';
 import commaNumber from 'comma-number';
+import postsData from '@/app/posts.json';
 
 /**
  * 1) Matches exactly what appears in your `posts.json`
@@ -60,51 +62,45 @@ const cachedNonDraftPosts: BasePost[] | null = null;
  * @param filterDrafts - if `true`, returns only published (non-draft) posts.
  * @returns Post[] - list of posts with dynamic `views` added.
  */
-export const getAllPosts = async (
-  filterDrafts: boolean = false,
-): Promise<Post[]> => {
-  // Cache non-draft posts if we haven't yet
-  const cachedNonDraftPosts = postsData.posts.filter((post) => !post.draft);
+export const getAllPosts = async (): Promise<Post[]> => {
+  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
 
-  const { resources: allViews } = await container.items
-    .query('SELECT c.id, c.views FROM c')
-    .fetchAll();
+  const posts = slugs.map((slug) => {
+    const filePath = path.join(postsDirectory, slug, 'page.mdx');
 
-  const viewsMap = allViews.reduce(
-    (map, item) => {
-      map[item.id] = item.views || 0;
-      return map;
-    },
-    {} as Record<string, number>,
-  );
+    if (!fs.existsSync(filePath)) {
+      console.warn(`⚠️ Missing page.mdx for slug: ${slug}`);
+      return null; // Skip this slug
+    }
 
-  // Attach `views`/`viewsFormatted` on the fly
-  const postsWithViews: Post[] = cachedNonDraftPosts.map((post) => {
-    const views = viewsMap[post.slug] || 0;
-    return {
-      ...post,
-      views,
-      viewsFormatted: commaNumber(views),
-    };
+    try {
+      // Read the file contents
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+
+      // Extract metadata using regex
+      const metadataRegex = /export const metadata = ({[\s\S]*?});/;
+      const match = fileContents.match(metadataRegex);
+
+      if (!match || match.length < 2) {
+        console.warn(`⚠️ Missing metadata in page.mdx for slug: ${slug}`);
+        return null;
+      }
+
+      // Parse the metadata string into an object
+      const metadata = eval(`(${match[1]})`);
+
+      return {
+        slug,
+        ...metadata,
+        views: 0, // Placeholder for views
+        viewsFormatted: commaNumber(0), // Placeholder for formatted views
+      };
+    } catch (error) {
+      console.error(`❌ Error loading page.mdx for slug: ${slug}`, error);
+      return null;
+    }
   });
 
-  // If user wants ONLY non-draft (published) posts, we’re done
-  if (filterDrafts) {
-    return postsWithViews;
-  }
-
-  // Otherwise, also include draft posts.
-  const draftPosts: Post[] = postsData.posts
-    .filter((post) => post.draft)
-    .map((post) => {
-      const views = viewsMap[post.slug] || 0;
-      return {
-        ...post,
-        views,
-        viewsFormatted: commaNumber(views),
-      };
-    });
-
-  // Combine published + draft
-  return [...postsWithViews, ...draftPosts];
+  // Filter out null values (slugs with missing files or metadata)
+  return posts.filter((post) => post !== null) as Post[];
 };

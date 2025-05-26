@@ -1,4 +1,3 @@
-import { container } from '@/lib/cosmosdb';
 import postsData from '@/app/posts.json';
 import commaNumber from 'comma-number';
 import { NextResponse } from 'next/server';
@@ -24,27 +23,15 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const isProduction = process.env.VERCEL_ENV === 'production';
+  // Placeholder logic for views
+  const placeholderViews = 123; // Replace with real data later
+  const incrementViews = url.searchParams.get('incr') != null;
 
-  if (isProduction && url.searchParams.get('incr') != null) {
-    const { resource: viewData } = await container.item(id, id).read();
-    const views = (viewData?.views || 0) + 1;
+  const views = incrementViews ? placeholderViews + 1 : placeholderViews;
 
-    await container.items.upsert({ id, views });
-
-    return NextResponse.json({
-      ...post,
-      views,
-      viewsFormatted: commaNumber(views),
-    });
-  } else {
-    const { resource: viewData } = await container.item(id, id).read();
-    const views = viewData?.views || 0;
-
-    return NextResponse.json({
-      ...post,
-      views,
-      viewsFormatted: commaNumber(views),
-    });
-  }
+  return NextResponse.json({
+    ...post,
+    views,
+    viewsFormatted: commaNumber(views),
+  });
 }
