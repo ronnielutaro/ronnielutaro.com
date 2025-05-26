@@ -1,4 +1,3 @@
-import withPWA from 'next-pwa';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import createMDX from '@next/mdx';
@@ -83,13 +82,5 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'mdx'],
 };
 
-const withBoth = (config) =>
-  withPWA({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
-  })(withMDX(config));
-
-// Export configuration
-export default withBoth(nextConfig);
+// Export configuration without PWA
+export default withMDX(nextConfig);
