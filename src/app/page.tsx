@@ -14,7 +14,7 @@ export default function Maintenance() {
         <h1>ronnielutaro.com</h1>
       </header>
       <main className={styles.main}>
-        <h2>We're currently under maintenance</h2>
+        <h2>We&apos;re currently under maintenance</h2>
         <p>Please check back soon!</p>
       </main>
       <footer className={styles.footer}>
