@@ -1,37 +1,65 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  grid-template-rows: auto 1fr auto;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+    background-color: var(--background);
+    color: var(--foreground);
   }
+}
+
+.maintenance {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.maintenance h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.maintenance p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align logo and text */
+  justify-content: center;
+  gap: 0.5rem; /* Add spacing between logo and text */
+}
+
+.header h1 {
+  font-size: 2rem;
+  text-align: center; /* Ensure text is centered */
 }
 
 .main {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  grid-row-start: 2;
+  margin: 2rem auto;
+  text-align: center; /* Center-align all text inside the main section */
+}
+
+.main p {
+  margin-top: 1rem; /* Add spacing above the paragraph */
+  text-align: center; /* Ensure the paragraph is centered */
 }
 
 .main ol {
@@ -93,19 +121,21 @@ a.secondary {
 }
 
 .footer {
-  grid-row-start: 3;
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-size: 0.9rem;
 }
 
 .footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.footer img {
-  flex-shrink: 0;
+.footer a:hover {
+  text-decoration: underline;
 }
 
 /* Enable hover only on non-touch devices */
