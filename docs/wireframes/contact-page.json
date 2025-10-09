@@ -1,0 +1,870 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "screenName": "Contact Page",
+  "screenId": "contact-001",
+  "version": "1.0.0",
+  "designSystem": "Liquid Glass + MUI",
+  "viewport": {
+    "mobile": "375x812",
+    "tablet": "768x1024",
+    "desktop": "1440x900"
+  },
+  "layout": {
+    "type": "centered-form-layout",
+    "sections": [
+      {
+        "id": "contact-hero",
+        "component": "Box",
+        "muiComponent": "Box",
+        "styling": {
+          "background": "linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)",
+          "paddingTop": "120px",
+          "paddingBottom": "80px",
+          "position": "relative"
+        },
+        "content": {
+          "container": {
+            "component": "Container",
+            "maxWidth": "md",
+            "content": {
+              "title": {
+                "component": "Typography",
+                "variant": "h1",
+                "text": "Let's Build Something Together",
+                "styling": {
+                  "fontWeight": 800,
+                  "fontSize": {
+                    "mobile": "2.5rem",
+                    "desktop": "4rem"
+                  },
+                  "textAlign": "center",
+                  "marginBottom": "16px",
+                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                  "backgroundClip": "text",
+                  "WebkitBackgroundClip": "text",
+                  "WebkitTextFillColor": "transparent"
+                }
+              },
+              "subtitle": {
+                "component": "Typography",
+                "variant": "h5",
+                "text": "I'm always open to discussing product work, collaboration opportunities, or just having a chat about building great products",
+                "styling": {
+                  "textAlign": "center",
+                  "color": "text.secondary",
+                  "maxWidth": "700px",
+                  "margin": "0 auto",
+                  "fontWeight": 400,
+                  "lineHeight": 1.6
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "availability-status",
+        "component": "Container",
+        "maxWidth": "sm",
+        "styling": {
+          "marginTop": "-40px",
+          "marginBottom": "64px",
+          "position": "relative",
+          "zIndex": 10
+        },
+        "content": {
+          "card": {
+            "component": "Card",
+            "styling": {
+              "background": "rgba(255, 255, 255, 0.8)",
+              "backdropFilter": "blur(20px)",
+              "borderRadius": "16px",
+              "border": "1px solid rgba(255, 255, 255, 0.18)",
+              "padding": "24px",
+              "textAlign": "center",
+              "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.1)"
+            },
+            "content": {
+              "statusBadge": {
+                "component": "Chip",
+                "muiComponent": "Chip",
+                "icon": "FiberManualRecordIcon",
+                "label": "Available for Projects",
+                "color": "success",
+                "styling": {
+                  "background": "rgba(76, 175, 80, 0.15)",
+                  "color": "#2e7d32",
+                  "fontWeight": 600,
+                  "fontSize": "0.95rem",
+                  "padding": "8px 16px",
+                  "height": "auto",
+                  "iconColor": "#4caf50"
+                }
+              },
+              "responseTime": {
+                "component": "Typography",
+                "variant": "body2",
+                "text": "Typical response time: 24-48 hours",
+                "styling": {
+                  "color": "text.secondary",
+                  "marginTop": "12px"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "main-content",
+        "component": "Container",
+        "maxWidth": "lg",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "grid": {
+            "component": "Grid",
+            "container": true,
+            "spacing": 4,
+            "columns": [
+              {
+                "id": "contact-form-section",
+                "gridItem": {
+                  "xs": 12,
+                  "md": 7
+                },
+                "content": {
+                  "card": {
+                    "component": "Card",
+                    "styling": {
+                      "background": "rgba(255, 255, 255, 0.7)",
+                      "backdropFilter": "blur(30px)",
+                      "borderRadius": "24px",
+                      "border": "1px solid rgba(255, 255, 255, 0.18)",
+                      "padding": "48px",
+                      "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.08)"
+                    },
+                    "content": {
+                      "formTitle": {
+                        "component": "Typography",
+                        "variant": "h4",
+                        "text": "Send a Message",
+                        "styling": {
+                          "fontWeight": 700,
+                          "marginBottom": "32px"
+                        }
+                      },
+                      "form": {
+                        "component": "form",
+                        "muiComponent": "Box",
+                        "htmlElement": "form",
+                        "fields": [
+                          {
+                            "component": "TextField",
+                            "muiComponent": "TextField",
+                            "name": "name",
+                            "label": "Your Name",
+                            "required": true,
+                            "fullWidth": true,
+                            "variant": "outlined",
+                            "styling": {
+                              "marginBottom": "24px",
+                              "input": {
+                                "background": "rgba(255, 255, 255, 0.8)",
+                                "borderRadius": "12px"
+                              }
+                            },
+                            "validation": {
+                              "required": "Name is required",
+                              "minLength": {
+                                "value": 2,
+                                "message": "Name must be at least 2 characters"
+                              }
+                            }
+                          },
+                          {
+                            "component": "TextField",
+                            "name": "email",
+                            "label": "Email Address",
+                            "type": "email",
+                            "required": true,
+                            "fullWidth": true,
+                            "variant": "outlined",
+                            "styling": {
+                              "marginBottom": "24px",
+                              "input": {
+                                "background": "rgba(255, 255, 255, 0.8)",
+                                "borderRadius": "12px"
+                              }
+                            },
+                            "validation": {
+                              "required": "Email is required",
+                              "pattern": {
+                                "value": "email-regex",
+                                "message": "Please enter a valid email address"
+                              }
+                            }
+                          },
+                          {
+                            "component": "FormControl",
+                            "muiComponent": "FormControl",
+                            "fullWidth": true,
+                            "required": true,
+                            "styling": {
+                              "marginBottom": "24px"
+                            },
+                            "content": {
+                              "label": {
+                                "component": "InputLabel",
+                                "text": "Subject"
+                              },
+                              "select": {
+                                "component": "Select",
+                                "muiComponent": "Select",
+                                "name": "subject",
+                                "label": "Subject",
+                                "styling": {
+                                  "background": "rgba(255, 255, 255, 0.8)",
+                                  "borderRadius": "12px"
+                                },
+                                "options": [
+                                  {
+                                    "component": "MenuItem",
+                                    "value": "general",
+                                    "text": "General Inquiry"
+                                  },
+                                  {
+                                    "component": "MenuItem",
+                                    "value": "collaboration",
+                                    "text": "Collaboration Opportunity"
+                                  },
+                                  {
+                                    "component": "MenuItem",
+                                    "value": "speaking",
+                                    "text": "Speaking Engagement"
+                                  },
+                                  {
+                                    "component": "MenuItem",
+                                    "value": "consulting",
+                                    "text": "Consulting / Advisory"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "component": "TextField",
+                            "name": "message",
+                            "label": "Message",
+                            "required": true,
+                            "fullWidth": true,
+                            "multiline": true,
+                            "rows": 6,
+                            "variant": "outlined",
+                            "styling": {
+                              "marginBottom": "16px",
+                              "textarea": {
+                                "background": "rgba(255, 255, 255, 0.8)",
+                                "borderRadius": "12px"
+                              }
+                            },
+                            "validation": {
+                              "required": "Message is required",
+                              "minLength": {
+                                "value": 10,
+                                "message": "Message must be at least 10 characters"
+                              },
+                              "maxLength": {
+                                "value": 1000,
+                                "message": "Message must not exceed 1000 characters"
+                              }
+                            },
+                            "helperComponent": {
+                              "component": "FormHelperText",
+                              "text": "0/1000 characters",
+                              "styling": {
+                                "textAlign": "right"
+                              }
+                            }
+                          },
+                          {
+                            "component": "Box",
+                            "display": "flex",
+                            "justifyContent": "space-between",
+                            "alignItems": "center",
+                            "marginTop": "24px",
+                            "content": {
+                              "privacyNote": {
+                                "component": "Typography",
+                                "variant": "caption",
+                                "text": "Your information is kept private and secure",
+                                "styling": {
+                                  "color": "text.secondary",
+                                  "display": "flex",
+                                  "alignItems": "center",
+                                  "gap": "4px"
+                                },
+                                "icon": {
+                                  "component": "SvgIcon",
+                                  "icon": "LockOutlined",
+                                  "fontSize": "small"
+                                }
+                              },
+                              "submitButton": {
+                                "component": "Button",
+                                "muiComponent": "Button",
+                                "type": "submit",
+                                "variant": "contained",
+                                "size": "large",
+                                "text": "Send Message",
+                                "endIcon": "SendOutlined",
+                                "styling": {
+                                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                                  "borderRadius": "12px",
+                                  "padding": "12px 32px",
+                                  "textTransform": "none",
+                                  "fontWeight": 600,
+                                  "boxShadow": "0 4px 12px rgba(102, 126, 234, 0.3)",
+                                  "hover": {
+                                    "boxShadow": "0 6px 16px rgba(102, 126, 234, 0.4)",
+                                    "transform": "translateY(-2px)"
+                                  },
+                                  "disabled": {
+                                    "background": "rgba(0, 0, 0, 0.12)"
+                                  }
+                                },
+                                "loadingState": {
+                                  "component": "CircularProgress",
+                                  "size": 24,
+                                  "color": "inherit"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "successState": {
+                          "component": "Alert",
+                          "muiComponent": "Alert",
+                          "severity": "success",
+                          "icon": "CheckCircleOutline",
+                          "showWhen": "form-submitted-successfully",
+                          "styling": {
+                            "marginTop": "24px",
+                            "background": "rgba(76, 175, 80, 0.1)",
+                            "backdropFilter": "blur(10px)",
+                            "borderRadius": "12px"
+                          },
+                          "title": "Message Sent!",
+                          "message": "Thank you for reaching out. I'll get back to you within 24-48 hours."
+                        },
+                        "errorState": {
+                          "component": "Alert",
+                          "severity": "error",
+                          "icon": "ErrorOutline",
+                          "showWhen": "form-submission-failed",
+                          "styling": {
+                            "marginTop": "24px",
+                            "background": "rgba(244, 67, 54, 0.1)",
+                            "backdropFilter": "blur(10px)",
+                            "borderRadius": "12px"
+                          },
+                          "message": "Something went wrong. Please try again or use an alternative contact method."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "id": "alternative-contact-methods",
+                "gridItem": {
+                  "xs": 12,
+                  "md": 5
+                },
+                "content": {
+                  "sectionTitle": {
+                    "component": "Typography",
+                    "variant": "h5",
+                    "text": "Other Ways to Connect",
+                    "styling": {
+                      "fontWeight": 700,
+                      "marginBottom": "24px"
+                    }
+                  },
+                  "contactCards": {
+                    "component": "Box",
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "gap": 2,
+                    "cards": [
+                      {
+                        "component": "Card",
+                        "muiComponent": "Card",
+                        "clickable": true,
+                        "styling": {
+                          "background": "rgba(255, 255, 255, 0.7)",
+                          "backdropFilter": "blur(20px)",
+                          "borderRadius": "16px",
+                          "border": "1px solid rgba(255, 255, 255, 0.18)",
+                          "padding": "20px",
+                          "cursor": "pointer",
+                          "transition": "all 0.3s",
+                          "hover": {
+                            "background": "rgba(255, 255, 255, 0.9)",
+                            "transform": "translateX(4px)",
+                            "boxShadow": "0 8px 24px rgba(0, 0, 0, 0.12)"
+                          }
+                        },
+                        "content": {
+                          "box": {
+                            "component": "Box",
+                            "display": "flex",
+                            "alignItems": "center",
+                            "gap": 2,
+                            "elements": [
+                              {
+                                "component": "Avatar",
+                                "muiComponent": "Avatar",
+                                "styling": {
+                                  "background": "rgba(102, 126, 234, 0.15)",
+                                  "color": "#667eea",
+                                  "width": 48,
+                                  "height": 48
+                                },
+                                "icon": "EmailOutlined"
+                              },
+                              {
+                                "component": "Box",
+                                "flexGrow": 1,
+                                "content": {
+                                  "label": {
+                                    "component": "Typography",
+                                    "variant": "subtitle2",
+                                    "text": "Email",
+                                    "styling": {
+                                      "fontWeight": 600,
+                                      "marginBottom": "4px"
+                                    }
+                                  },
+                                  "value": {
+                                    "component": "Typography",
+                                    "variant": "body2",
+                                    "text": "ronnie@example.com",
+                                    "styling": {
+                                      "color": "text.secondary"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "component": "IconButton",
+                                "size": "small",
+                                "icon": "ContentCopy",
+                                "ariaLabel": "Copy email",
+                                "onClick": "copy-to-clipboard"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "component": "Card",
+                        "clickable": true,
+                        "styling": {
+                          "background": "rgba(255, 255, 255, 0.7)",
+                          "backdropFilter": "blur(20px)",
+                          "borderRadius": "16px",
+                          "border": "1px solid rgba(255, 255, 255, 0.18)",
+                          "padding": "20px",
+                          "cursor": "pointer",
+                          "transition": "all 0.3s",
+                          "hover": {
+                            "background": "rgba(255, 255, 255, 0.9)",
+                            "transform": "translateX(4px)"
+                          }
+                        },
+                        "content": {
+                          "box": {
+                            "component": "Box",
+                            "display": "flex",
+                            "alignItems": "center",
+                            "gap": 2,
+                            "elements": [
+                              {
+                                "component": "Avatar",
+                                "styling": {
+                                  "background": "rgba(0, 119, 181, 0.15)",
+                                  "color": "#0077B5",
+                                  "width": 48,
+                                  "height": 48
+                                },
+                                "icon": "LinkedIn"
+                              },
+                              {
+                                "component": "Box",
+                                "flexGrow": 1,
+                                "content": {
+                                  "label": {
+                                    "component": "Typography",
+                                    "variant": "subtitle2",
+                                    "text": "LinkedIn",
+                                    "styling": {
+                                      "fontWeight": 600,
+                                      "marginBottom": "4px"
+                                    }
+                                  },
+                                  "value": {
+                                    "component": "Typography",
+                                    "variant": "body2",
+                                    "text": "Connect on LinkedIn",
+                                    "styling": {
+                                      "color": "text.secondary"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "component": "IconButton",
+                                "size": "small",
+                                "icon": "OpenInNew",
+                                "ariaLabel": "Open LinkedIn"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "component": "Card",
+                        "clickable": true,
+                        "styling": {
+                          "background": "rgba(255, 255, 255, 0.7)",
+                          "backdropFilter": "blur(20px)",
+                          "borderRadius": "16px",
+                          "padding": "20px",
+                          "cursor": "pointer"
+                        },
+                        "content": {
+                          "box": {
+                            "elements": [
+                              {
+                                "component": "Avatar",
+                                "styling": {
+                                  "background": "rgba(29, 161, 242, 0.15)",
+                                  "color": "#1DA1F2",
+                                  "width": 48,
+                                  "height": 48
+                                },
+                                "icon": "Twitter"
+                              },
+                              {
+                                "component": "Box",
+                                "content": {
+                                  "label": {
+                                    "text": "Twitter"
+                                  },
+                                  "value": {
+                                    "text": "@ronnielutaro"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "component": "Card",
+                        "clickable": true,
+                        "styling": {
+                          "background": "rgba(255, 255, 255, 0.7)",
+                          "backdropFilter": "blur(20px)",
+                          "borderRadius": "16px",
+                          "padding": "20px",
+                          "cursor": "pointer"
+                        },
+                        "content": {
+                          "box": {
+                            "elements": [
+                              {
+                                "component": "Avatar",
+                                "styling": {
+                                  "background": "rgba(51, 51, 51, 0.15)",
+                                  "color": "#333",
+                                  "width": 48,
+                                  "height": 48
+                                },
+                                "icon": "GitHub"
+                              },
+                              {
+                                "component": "Box",
+                                "content": {
+                                  "label": {
+                                    "text": "GitHub"
+                                  },
+                                  "value": {
+                                    "text": "View my code"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "component": "Card",
+                        "clickable": true,
+                        "styling": {
+                          "background": "linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%)",
+                          "backdropFilter": "blur(20px)",
+                          "borderRadius": "16px",
+                          "padding": "20px",
+                          "cursor": "pointer",
+                          "border": "1px solid rgba(102, 126, 234, 0.3)"
+                        },
+                        "content": {
+                          "box": {
+                            "elements": [
+                              {
+                                "component": "Avatar",
+                                "styling": {
+                                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                                  "color": "#fff",
+                                  "width": 48,
+                                  "height": 48
+                                },
+                                "icon": "CalendarMonthOutlined"
+                              },
+                              {
+                                "component": "Box",
+                                "content": {
+                                  "label": {
+                                    "text": "Schedule a Call",
+                                    "styling": {
+                                      "fontWeight": 700
+                                    }
+                                  },
+                                  "value": {
+                                    "text": "Book a 30-minute chat",
+                                    "styling": {
+                                      "color": "primary.main"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "divider": {
+                    "component": "Divider",
+                    "styling": {
+                      "margin": "32px 0"
+                    }
+                  },
+                  "locationCard": {
+                    "component": "Card",
+                    "styling": {
+                      "background": "rgba(255, 255, 255, 0.7)",
+                      "backdropFilter": "blur(20px)",
+                      "borderRadius": "16px",
+                      "padding": "24px",
+                      "textAlign": "center"
+                    },
+                    "content": {
+                      "icon": {
+                        "component": "SvgIcon",
+                        "icon": "LocationOnOutlined",
+                        "styling": {
+                          "fontSize": "40px",
+                          "color": "primary.main",
+                          "marginBottom": "12px"
+                        }
+                      },
+                      "location": {
+                        "component": "Typography",
+                        "variant": "body1",
+                        "text": "Based in [Your Location]",
+                        "styling": {
+                          "fontWeight": 600,
+                          "marginBottom": "4px"
+                        }
+                      },
+                      "timezone": {
+                        "component": "Typography",
+                        "variant": "body2",
+                        "text": "GMT+3 (EAT)",
+                        "styling": {
+                          "color": "text.secondary"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "faq-section",
+        "component": "Container",
+        "maxWidth": "md",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "title": {
+            "component": "Typography",
+            "variant": "h4",
+            "text": "Frequently Asked Questions",
+            "styling": {
+              "fontWeight": 700,
+              "marginBottom": "32px",
+              "textAlign": "center"
+            }
+          },
+          "accordion": {
+            "component": "Box",
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": 2,
+            "items": [
+              {
+                "component": "Accordion",
+                "muiComponent": "Accordion",
+                "styling": {
+                  "background": "rgba(255, 255, 255, 0.7)",
+                  "backdropFilter": "blur(20px)",
+                  "borderRadius": "16px !important",
+                  "border": "1px solid rgba(255, 255, 255, 0.18)",
+                  "boxShadow": "none",
+                  "marginBottom": "8px",
+                  "before": {
+                    "display": "none"
+                  }
+                },
+                "content": {
+                  "summary": {
+                    "component": "AccordionSummary",
+                    "muiComponent": "AccordionSummary",
+                    "expandIcon": "ExpandMoreOutlined",
+                    "text": "What types of projects do you work on?",
+                    "styling": {
+                      "fontWeight": 600,
+                      "fontSize": "1.05rem"
+                    }
+                  },
+                  "details": {
+                    "component": "AccordionDetails",
+                    "muiComponent": "AccordionDetails",
+                    "text": "I work on product management, product strategy, and software engineering projects. I'm particularly interested in early-stage products, marketing technology, and projects that involve both product and technical challenges.",
+                    "styling": {
+                      "color": "text.secondary",
+                      "lineHeight": 1.7
+                    }
+                  }
+                }
+              },
+              {
+                "component": "Accordion",
+                "styling": {
+                  "background": "rgba(255, 255, 255, 0.7)",
+                  "backdropFilter": "blur(20px)",
+                  "borderRadius": "16px !important"
+                },
+                "content": {
+                  "summary": {
+                    "text": "Are you available for consulting or advisory work?"
+                  },
+                  "details": {
+                    "text": "Yes! I'm open to consulting and advisory opportunities, especially for early-stage startups looking for product guidance, customer discovery support, or technical product strategy."
+                  }
+                }
+              },
+              {
+                "component": "Accordion",
+                "styling": {
+                  "background": "rgba(255, 255, 255, 0.7)",
+                  "backdropFilter": "blur(20px)",
+                  "borderRadius": "16px !important"
+                },
+                "content": {
+                  "summary": {
+                    "text": "Do you speak at events or on podcasts?"
+                  },
+                  "details": {
+                    "text": "Absolutely! I enjoy sharing insights about product management, building products users love, and the intersection of product and engineering. Feel free to reach out with speaking opportunities."
+                  }
+                }
+              },
+              {
+                "component": "Accordion",
+                "styling": {
+                  "background": "rgba(255, 255, 255, 0.7)",
+                  "backdropFilter": "blur(20px)",
+                  "borderRadius": "16px !important"
+                },
+                "content": {
+                  "summary": {
+                    "text": "What's the best way to reach you?"
+                  },
+                  "details": {
+                    "text": "For most inquiries, the contact form on this page is best. For quick questions, LinkedIn or Twitter DMs work well. For urgent matters, email is most reliable."
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "formHandling": {
+    "validation": {
+      "type": "client-side and server-side",
+      "library": "react-hook-form + zod"
+    },
+    "submission": {
+      "method": "POST",
+      "endpoint": "/api/contact",
+      "successAction": "show-success-message",
+      "errorAction": "show-error-message"
+    },
+    "spamProtection": {
+      "type": "honeypot or recaptcha",
+      "rateLimit": "5 submissions per hour per IP"
+    }
+  },
+  "features": {
+    "copyToClipboard": {
+      "elements": ["email"],
+      "feedback": "snackbar or tooltip confirmation"
+    },
+    "formPersistence": {
+      "type": "localStorage",
+      "clearOn": "successful-submission"
+    },
+    "characterCount": {
+      "field": "message",
+      "maxLength": 1000,
+      "showAt": "always"
+    }
+  },
+  "accessibility": {
+    "formLabels": "all fields properly labeled",
+    "errorMessages": "announced to screen readers",
+    "focusManagement": "focus on first error on submit",
+    "keyboardNavigation": "full support"
+  },
+  "responsive": {
+    "mobile": {
+      "formPadding": "24px",
+      "stackedLayout": true
+    },
+    "desktop": {
+      "formPadding": "48px",
+      "twoColumnLayout": true
+    }
+  }
+}

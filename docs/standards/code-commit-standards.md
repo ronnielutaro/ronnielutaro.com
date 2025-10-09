@@ -1,0 +1,1 @@
+Thank you! now as a team of 30+ year veteran engineers & experts in their prime following industry standards & best practices. Can you now help write commit messages. Make commits for current changes made to codebase. I prefer small commits that are easy to review.
