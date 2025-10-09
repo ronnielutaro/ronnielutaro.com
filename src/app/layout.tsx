@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "@/theme/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ronnie Lutaro",
-  description: "Personal Blog & Portfolio website where I share my thoughts and learnings across technical product development, digital transformation and business development in African Markets.",
+  title: "Ronnie Lutaro | Product Manager & Software Engineer",
+  description: "Product Manager with 4+ years of experience and software engineering background. Building products people love.",
 };
 
 export default function RootLayout({
@@ -24,8 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

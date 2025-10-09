@@ -1,0 +1,1 @@
+I want you to now audit the entire project through the brutal eyes of a highly experienced veteran DevOPs Engineer with 30+ years of experience and audit whether the the project passes worldclass DevOPs best practices & industry standards. Refer to the github-issues-template.md as the template for creating the issue.
