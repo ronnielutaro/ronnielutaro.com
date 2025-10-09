@@ -1,5 +1,5 @@
-import ThemeDemo from '@/components/ThemeDemo';
+import GlassDemo from '@/components/GlassDemo';
 
 export default function Home() {
-  return <ThemeDemo />;
+  return <GlassDemo />;
 }
