@@ -4,5 +4,6 @@
  */
 
 export { default as ThemeProvider, useThemeMode } from './ThemeProvider';
-export { lightTheme, darkTheme, getTheme } from './theme';
+export { lightTheme, darkTheme, getTheme, codeFontFamily } from './theme';
+export { default } from './theme';
 export { default as theme } from './theme';

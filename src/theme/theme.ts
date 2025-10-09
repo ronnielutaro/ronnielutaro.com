@@ -266,6 +266,9 @@ const darkThemeOptions: ThemeOptions = {
 export const lightTheme = createTheme(lightThemeOptions);
 export const darkTheme = createTheme(darkThemeOptions);
 
+// Export code font family as a constant
+export const codeFontFamily = "'JetBrains Mono', 'Fira Code', 'Courier New', monospace";
+
 // Export a function to get theme by mode
 export const getTheme = (mode: 'light' | 'dark') => {
   return mode === 'dark' ? darkTheme : lightTheme;

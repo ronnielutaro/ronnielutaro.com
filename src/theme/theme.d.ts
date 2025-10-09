@@ -6,6 +6,14 @@
 import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    fontFamilyCode: string;
+  }
+
+  interface TypographyVariantsOptions {
+    fontFamilyCode?: string;
+  }
+
   interface Palette {
     accent: {
       copper: string;
