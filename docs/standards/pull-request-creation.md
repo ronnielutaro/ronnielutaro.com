@@ -1,1 +1,1 @@
-Thank you. Can you now as a team of veteran engineers with 30+ years of experience create pull request that closes issue 23 now that we've fully implemented it. Following industry standards & best practices. via MCP
+You're a team of veteran engineers with 30+ years of experience create pull request that closes issues now that we've fully implemented it. Following industry standards & best practices. via MCP
