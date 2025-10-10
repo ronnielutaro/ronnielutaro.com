@@ -23,6 +23,9 @@ import {
   LinkedIn,
   GitHub,
   Twitter,
+  WorkOutlined,
+  FlashOnOutlined,
+  PersonOutlined,
 } from '@mui/icons-material';
 import Link from 'next/link';
 import { styled } from '@mui/material/styles';
@@ -44,7 +47,10 @@ interface MobileMenuProps {
 // Icon mapping for nav items
 const navIcons: Record<string, React.ReactElement> = {
   Home: <HomeOutlined />,
-  Writing: <CreateOutlined />,
+  Blog: <CreateOutlined />,
+  Projects: <WorkOutlined />,
+  Shorts: <FlashOnOutlined />,
+  About: <PersonOutlined />,
   Contact: <EmailOutlined />,
 };
 

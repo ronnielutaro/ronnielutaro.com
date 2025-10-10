@@ -32,6 +32,7 @@ const navItems: NavItem[] = [
   { label: 'Projects', href: '/projects' },
   { label: 'Shorts', href: '/shorts' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const Header: React.FC<HeaderProps> = ({ onThemeToggle, isDarkMode }) => {
