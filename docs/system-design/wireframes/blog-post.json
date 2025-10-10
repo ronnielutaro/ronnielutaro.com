@@ -2,8 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "screenName": "Individual Blog Post Page",
   "screenId": "blog-post-001",
-  "version": "1.0.0",
-  "designSystem": "Liquid Glass + MUI + MDX",
+  "version": "2.0.1",
+  "designSystem": "Premium Dark Glassmorphism + MUI + MDX",
+  "description": "Updated to include standardized navbar-v2 component",
   "viewport": {
     "mobile": "375x812",
     "tablet": "768x1024",
@@ -11,7 +12,15 @@
   },
   "layout": {
     "type": "article-with-sidebar",
+    "background": "#06080f",
     "sections": [
+      {
+        "id": "navbar",
+        "componentRef": "navbar-v2",
+        "componentPath": "wireframes/components/navbar.json",
+        "activeItem": "Blog",
+        "note": "Fixed centered glass navbar - Blog is highlighted as this is a blog post"
+      },
       {
         "id": "post-hero",
         "component": "Box",

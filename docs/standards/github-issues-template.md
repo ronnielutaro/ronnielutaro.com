@@ -2,16 +2,12 @@
 
 *Based on our Story-First Development Philosophy - always start with the user story, then build technology to serve it.*
 
----
-
 ## 📖 **User Story**
 *Start with the human narrative - what story are we trying to enable or improve?*
 
 **As a** [persona] **I want** [capability] **so that** [emotional outcome/benefit]
 
 **Example:** *As Alice (Agency Lead), I want to see my waste score in 60 seconds so that I can quickly assess if this tool will help me prove ROI to my clients.*
-
----
 
 ## 🎭 **Emotional Journey**
 *What emotions should the user feel at each step?*
@@ -25,14 +21,10 @@
 - **During:** Anticipation as they see "Analyzing 47,283 impressions..."
 - **After:** Clarity and confidence knowing exactly what to fix
 
----
-
 ## 🎯 **Goal**
 *What specific part of the user story does this enable?*
 
 [Clear, one-sentence description of what this achieves for the user]
-
----
 
 ## 📋 **Tasks**
 *Technical implementation to serve the story*
@@ -41,7 +33,6 @@
 2. [Task 2]
 3. [Task 3]
 
----
 
 ## ✅ **Story Validation Criteria**
 *How do we know the story works for users?*
@@ -56,8 +47,6 @@
 - [ ] User knows what to do next without instruction
 - [ ] Feature advances the overall narrative arc
 
----
-
 ## 🎬 **Demo Script**
 *How would Steve Jobs demo this in 30 seconds?*
 
@@ -66,8 +55,6 @@
 > Look how [emotion] they feel because [benefit]."
 
 **Example:** *"Here's what happens when Alice needs to prove ROI. She connects her Google Ads and 60 seconds later sees her Waste Score is 73. Look how confident she feels because she knows exactly what's broken."*
-
----
 
 ## 📊 **Success Metrics**
 *How do we measure if the story is working?*
@@ -82,16 +69,12 @@
 - Technical: API response time < 2s
 - Story: 80% of users can explain waste score to a colleague
 
----
-
 ## 💡 **Business Value**
 *Why this story matters for each stakeholder*
 
 **For [primary persona]:** [Direct benefit]
 **For [secondary persona]:** [Secondary benefit]  
 **For business:** [Company benefit]
-
----
 
 ## 🚫 **Story Anti-Patterns to Avoid**
 *What would break the narrative?*
@@ -101,18 +84,12 @@
 - [ ] Don't add steps that don't advance the story
 - [ ] Don't optimize for technology over emotion
 
----
-
 ## 🔧 **Technical Implementation Notes**
 *Technology details to serve the story*
 
 [Technical details, but always in service of the user story]
 
----
-
 ## 📅 **Estimated Time:** [Duration]
-
----
 
 ## 🎯 **Story First Checklist**
 
@@ -123,8 +100,6 @@ Before marking this issue complete, verify:
 - [ ] **Narrative flow:** Does this advance the overall user journey?
 - [ ] **Simplicity:** Is complexity hidden from the user?
 - [ ] **Value clarity:** Can users explain why this matters to them?
-
----
 
 ## 💭 **Example Issue Using This Template**
 
@@ -167,7 +142,5 @@ Enable the "magic moment" where Alice sees her waste score and immediately under
 ### 💡 Business Value
 - **For Alice:** Instant credibility and proof of value
 - **For business:** Higher conversion from trial to paid
-
----
 
 *Remember: Technology serves the story. If it doesn't advance the user narrative, question whether it belongs in the MVP.*

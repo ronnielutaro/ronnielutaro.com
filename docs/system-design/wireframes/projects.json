@@ -1,0 +1,767 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "screenName": "Projects Portfolio Page",
+  "screenId": "projects-001",
+  "version": "2.0.0",
+  "designSystem": "Premium Dark Glassmorphism + MUI",
+  "description": "Showcases portfolio projects with glassmorphic cards and interactive hover effects",
+  "viewport": {
+    "mobile": "375x812",
+    "tablet": "768x1024",
+    "desktop": "1440x900"
+  },
+  "layout": {
+    "type": "portfolio-grid-layout",
+    "background": {
+      "base": "#06080f",
+      "lightBeams": [
+        {
+          "id": "main-diagonal",
+          "position": "top-right",
+          "width": "1200px",
+          "height": "1200px",
+          "background": "radial-gradient(ellipse at center, rgba(59,130,246,0.8) 0%, rgba(59,130,246,0) 60%)",
+          "blur": "90px",
+          "rotation": "-25deg",
+          "animation": "glow1 16s ease-in-out infinite"
+        },
+        {
+          "id": "secondary-accent",
+          "position": "bottom-left",
+          "width": "800px",
+          "height": "800px",
+          "background": "radial-gradient(circle, rgba(96,165,250,0.5) 0%, rgba(96,165,250,0) 50%)",
+          "blur": "80px",
+          "animation": "pulse 12s ease-in-out infinite"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "id": "navbar",
+        "componentRef": "navbar-v2",
+        "componentPath": "wireframes/components/navbar.json",
+        "activeItem": "Projects",
+        "note": "Fixed centered glass navbar - Projects is highlighted in emerald"
+      },
+      {
+        "id": "projects-hero",
+        "component": "Box",
+        "muiComponent": "Box",
+        "styling": {
+          "background": "transparent",
+          "paddingTop": "120px",
+          "paddingBottom": "60px",
+          "position": "relative"
+        },
+        "content": {
+          "container": {
+            "component": "Container",
+            "maxWidth": "lg",
+            "content": {
+              "title": {
+                "component": "Typography",
+                "variant": "h1",
+                "text": "Projects & Work",
+                "styling": {
+                  "fontWeight": 800,
+                  "fontSize": {
+                    "mobile": "2.5rem",
+                    "desktop": "4rem"
+                  },
+                  "textAlign": "center",
+                  "marginBottom": "16px",
+                  "color": "#ffffff"
+                }
+              },
+              "subtitle": {
+                "component": "Typography",
+                "variant": "h5",
+                "text": "A collection of products and experiences I've built, shaped, and launched",
+                "styling": {
+                  "textAlign": "center",
+                  "color": "rgba(255, 255, 255, 0.7)",
+                  "maxWidth": "600px",
+                  "margin": "0 auto 32px auto",
+                  "fontWeight": 400
+                }
+              },
+              "filterChips": {
+                "component": "Box",
+                "display": "flex",
+                "justifyContent": "center",
+                "gap": 2,
+                "flexWrap": "wrap",
+                "marginBottom": "48px",
+                "chips": [
+                  {
+                    "component": "Chip",
+                    "label": "All Projects",
+                    "variant": "filled",
+                    "active": true,
+                    "styling": {
+                      "background": "rgba(59, 130, 246, 0.15)",
+                      "color": "#60a5fa",
+                      "border": "1px solid rgba(96, 165, 250, 0.3)",
+                      "fontWeight": 600,
+                      "activeBackground": "#34d399",
+                      "activeColor": "#ffffff"
+                    }
+                  },
+                  {
+                    "component": "Chip",
+                    "label": "Product Management",
+                    "variant": "outlined",
+                    "styling": {
+                      "background": "transparent",
+                      "color": "rgba(255, 255, 255, 0.7)",
+                      "border": "1px solid rgba(255, 255, 255, 0.2)",
+                      "hover": {
+                        "background": "rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff"
+                      }
+                    }
+                  },
+                  {
+                    "component": "Chip",
+                    "label": "Development",
+                    "variant": "outlined",
+                    "styling": {
+                      "background": "transparent",
+                      "color": "rgba(255, 255, 255, 0.7)",
+                      "border": "1px solid rgba(255, 255, 255, 0.2)"
+                    }
+                  },
+                  {
+                    "component": "Chip",
+                    "label": "Design",
+                    "variant": "outlined",
+                    "styling": {
+                      "background": "transparent",
+                      "color": "rgba(255, 255, 255, 0.7)",
+                      "border": "1px solid rgba(255, 255, 255, 0.2)"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "featured-project",
+        "component": "Container",
+        "maxWidth": "xl",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "sectionTitle": {
+            "component": "Typography",
+            "variant": "h3",
+            "text": "Featured Project",
+            "styling": {
+              "color": "#ffffff",
+              "fontWeight": 700,
+              "marginBottom": "32px",
+              "textAlign": "center"
+            }
+          },
+          "featuredCard": {
+            "component": "Card",
+            "styling": {
+              "background": "rgba(10, 14, 26, 0.4)",
+              "backdropFilter": "blur(28px) saturate(200%)",
+              "border": "1px solid rgba(96, 165, 250, 0.2)",
+              "borderRadius": "24px",
+              "padding": "48px",
+              "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
+              "transition": "all 0.3s ease",
+              "hover": {
+                "transform": "translateY(-6px)",
+                "border": "1px solid rgba(96, 165, 250, 0.5)",
+                "boxShadow": "0 20px 60px rgba(59, 130, 246, 0.2)"
+              }
+            },
+            "content": {
+              "flexLayout": {
+                "component": "Box",
+                "display": "flex",
+                "flexDirection": { "xs": "column", "md": "row" },
+                "alignItems": "center",
+                "gap": { "xs": 4, "md": 6 },
+                "leftContent": {
+                  "flex": "1 1 50%",
+                  "elements": [
+                    {
+                      "component": "Chip",
+                      "label": "StartHub",
+                      "styling": {
+                        "background": "rgba(52, 211, 153, 0.15)",
+                        "color": "#34d399",
+                        "border": "1px solid rgba(52, 211, 153, 0.3)",
+                        "marginBottom": "16px"
+                      }
+                    },
+                    {
+                      "component": "Typography",
+                      "variant": "h3",
+                      "text": "Unified Ecosystem Platform",
+                      "styling": {
+                        "color": "#ffffff",
+                        "fontWeight": 700,
+                        "marginBottom": "16px",
+                        "fontSize": { "xs": "1.75rem", "md": "2.25rem" }
+                      }
+                    },
+                    {
+                      "component": "Typography",
+                      "variant": "body1",
+                      "text": "Led product development for a comprehensive platform connecting entrepreneurs, investors, and service providers. Designed and shipped features serving 10,000+ active users with 40% month-over-month growth.",
+                      "styling": {
+                        "color": "rgba(255, 255, 255, 0.7)",
+                        "marginBottom": "24px",
+                        "lineHeight": 1.7
+                      }
+                    },
+                    {
+                      "component": "Box",
+                      "display": "flex",
+                      "gap": 1,
+                      "flexWrap": "wrap",
+                      "marginBottom": "32px",
+                      "techStack": [
+                        "Product Strategy",
+                        "User Research", 
+                        "React",
+                        "Node.js",
+                        "PostgreSQL"
+                      ],
+                      "chipStyling": {
+                        "background": "rgba(255, 255, 255, 0.08)",
+                        "color": "rgba(255, 255, 255, 0.8)",
+                        "border": "1px solid rgba(255, 255, 255, 0.15)",
+                        "fontSize": "0.875rem"
+                      }
+                    },
+                    {
+                      "component": "Box",
+                      "display": "flex",
+                      "gap": 2,
+                      "buttons": [
+                        {
+                          "component": "Button",
+                          "variant": "contained",
+                          "text": "View Case Study",
+                          "endIcon": "ArrowForward",
+                          "styling": {
+                            "background": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
+                            "color": "#ffffff",
+                            "borderRadius": "12px",
+                            "padding": "10px 24px",
+                            "textTransform": "none",
+                            "fontWeight": 600,
+                            "boxShadow": "0 4px 16px rgba(52, 211, 153, 0.4)"
+                          }
+                        },
+                        {
+                          "component": "Button",
+                          "variant": "outlined",
+                          "text": "Live Demo",
+                          "endIcon": "OpenInNew",
+                          "styling": {
+                            "color": "#60a5fa",
+                            "border": "2px solid rgba(96, 165, 250, 0.4)",
+                            "borderRadius": "12px",
+                            "padding": "10px 24px",
+                            "textTransform": "none",
+                            "fontWeight": 600,
+                            "hover": {
+                              "background": "rgba(96, 165, 250, 0.1)",
+                              "border": "2px solid rgba(96, 165, 250, 0.6)"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "rightContent": {
+                  "flex": "1 1 50%",
+                  "display": "flex",
+                  "justifyContent": "center",
+                  "element": {
+                    "component": "Box",
+                    "styling": {
+                      "width": { "xs": "100%", "md": "400px" },
+                      "height": "300px",
+                      "background": "linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(96,165,250,0.05) 100%)",
+                      "borderRadius": "16px",
+                      "border": "1px solid rgba(96, 165, 250, 0.2)",
+                      "display": "flex",
+                      "alignItems": "center",
+                      "justifyContent": "center"
+                    },
+                    "placeholder": {
+                      "component": "Typography",
+                      "text": "Project Screenshot/Demo",
+                      "color": "rgba(255, 255, 255, 0.5)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "projects-grid",
+        "component": "Container",
+        "maxWidth": "xl",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "sectionTitle": {
+            "component": "Typography",
+            "variant": "h3",
+            "text": "All Projects",
+            "styling": {
+              "color": "#ffffff",
+              "fontWeight": 700,
+              "marginBottom": "48px",
+              "textAlign": "center"
+            }
+          },
+          "grid": {
+            "component": "Grid",
+            "container": true,
+            "spacing": 4,
+            "projects": [
+              {
+                "gridItem": { "xs": 12, "md": 6, "lg": 4 },
+                "card": {
+                  "component": "Card",
+                  "styling": {
+                    "background": "rgba(255, 255, 255, 0.05)",
+                    "backdropFilter": "blur(24px) saturate(180%)",
+                    "border": "1px solid rgba(255, 255, 255, 0.18)",
+                    "borderRadius": "24px",
+                    "padding": "32px",
+                    "height": "100%",
+                    "cursor": "pointer",
+                    "transition": "all 0.3s ease",
+                    "hover": {
+                      "transform": "translateY(-8px)",
+                      "border": "1px solid rgba(96, 165, 250, 0.4)",
+                      "boxShadow": "0 16px 48px rgba(59, 130, 246, 0.15)"
+                    }
+                  },
+                  "content": {
+                    "header": {
+                      "component": "Box",
+                      "display": "flex",
+                      "justifyContent": "space-between",
+                      "alignItems": "flex-start",
+                      "marginBottom": "16px",
+                      "title": {
+                        "component": "Typography",
+                        "variant": "h5",
+                        "text": "Rocketize Analytics",
+                        "styling": {
+                          "color": "#ffffff",
+                          "fontWeight": 700,
+                          "marginBottom": "8px"
+                        }
+                      },
+                      "icon": {
+                        "component": "Box",
+                        "styling": {
+                          "width": "48px",
+                          "height": "48px",
+                          "background": "rgba(59, 130, 246, 0.15)",
+                          "borderRadius": "12px",
+                          "display": "flex",
+                          "alignItems": "center",
+                          "justifyContent": "center",
+                          "border": "1px solid rgba(96, 165, 250, 0.3)"
+                        },
+                        "iconElement": "AnalyticsOutlined"
+                      }
+                    },
+                    "description": {
+                      "component": "Typography",
+                      "variant": "body2",
+                      "text": "Data analytics platform helping startups make informed decisions with real-time insights and predictive modeling.",
+                      "styling": {
+                        "color": "rgba(255, 255, 255, 0.7)",
+                        "marginBottom": "20px",
+                        "lineHeight": 1.6
+                      }
+                    },
+                    "techStack": {
+                      "component": "Box",
+                      "display": "flex",
+                      "gap": 0.5,
+                      "flexWrap": "wrap",
+                      "marginBottom": "24px",
+                      "chips": ["React", "Python", "MongoDB", "D3.js"],
+                      "chipStyling": {
+                        "background": "rgba(255, 255, 255, 0.08)",
+                        "color": "rgba(255, 255, 255, 0.8)",
+                        "fontSize": "0.75rem",
+                        "padding": "4px 8px"
+                      }
+                    },
+                    "footer": {
+                      "component": "Box",
+                      "display": "flex",
+                      "justifyContent": "space-between",
+                      "alignItems": "center",
+                      "status": {
+                        "component": "Chip",
+                        "label": "In Development",
+                        "size": "small",
+                        "styling": {
+                          "background": "rgba(251, 191, 36, 0.15)",
+                          "color": "#fbbf24",
+                          "border": "1px solid rgba(251, 191, 36, 0.3)"
+                        }
+                      },
+                      "link": {
+                        "component": "IconButton",
+                        "icon": "ArrowOutward",
+                        "styling": {
+                          "color": "#60a5fa",
+                          "hover": {
+                            "color": "#ffffff",
+                            "background": "rgba(96, 165, 250, 0.1)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "gridItem": { "xs": 12, "md": 6, "lg": 4 },
+                "card": {
+                  "component": "Card",
+                  "styling": {
+                    "background": "rgba(255, 255, 255, 0.05)",
+                    "backdropFilter": "blur(24px) saturate(180%)",
+                    "border": "1px solid rgba(255, 255, 255, 0.18)",
+                    "borderRadius": "24px",
+                    "padding": "32px",
+                    "height": "100%",
+                    "cursor": "pointer"
+                  },
+                  "content": {
+                    "header": {
+                      "title": {
+                        "component": "Typography",
+                        "variant": "h5",
+                        "text": "Portfolio Website",
+                        "styling": {
+                          "color": "#ffffff",
+                          "fontWeight": 700,
+                          "marginBottom": "8px"
+                        }
+                      },
+                      "icon": {
+                        "component": "Box",
+                        "styling": {
+                          "width": "48px",
+                          "height": "48px",
+                          "background": "rgba(52, 211, 153, 0.15)",
+                          "borderRadius": "12px",
+                          "border": "1px solid rgba(52, 211, 153, 0.3)"
+                        },
+                        "iconElement": "WebOutlined"
+                      }
+                    },
+                    "description": {
+                      "component": "Typography",
+                      "text": "Premium dark glassmorphism portfolio showcasing product management work and technical skills.",
+                      "styling": {
+                        "color": "rgba(255, 255, 255, 0.7)",
+                        "marginBottom": "20px"
+                      }
+                    },
+                    "techStack": {
+                      "chips": ["Next.js", "TypeScript", "MUI", "Vercel"]
+                    },
+                    "footer": {
+                      "status": {
+                        "component": "Chip",
+                        "label": "Live",
+                        "styling": {
+                          "background": "rgba(52, 211, 153, 0.15)",
+                          "color": "#34d399",
+                          "border": "1px solid rgba(52, 211, 153, 0.3)"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "gridItem": { "xs": 12, "md": 6, "lg": 4 },
+                "card": {
+                  "component": "Card",
+                  "styling": {
+                    "background": "rgba(255, 255, 255, 0.05)",
+                    "backdropFilter": "blur(24px) saturate(180%)",
+                    "border": "1px solid rgba(255, 255, 255, 0.18)",
+                    "borderRadius": "24px",
+                    "padding": "32px",
+                    "height": "100%",
+                    "cursor": "pointer"
+                  },
+                  "content": {
+                    "header": {
+                      "title": {
+                        "component": "Typography",
+                        "variant": "h5",
+                        "text": "Fintech Mobile App",
+                        "styling": {
+                          "color": "#ffffff",
+                          "fontWeight": 700,
+                          "marginBottom": "8px"
+                        }
+                      },
+                      "icon": {
+                        "iconElement": "AccountBalanceWalletOutlined"
+                      }
+                    },
+                    "description": {
+                      "component": "Typography",
+                      "text": "Mobile-first financial management app with budgeting tools and expense tracking for young professionals.",
+                      "styling": {
+                        "color": "rgba(255, 255, 255, 0.7)"
+                      }
+                    },
+                    "techStack": {
+                      "chips": ["React Native", "Node.js", "Stripe", "Firebase"]
+                    },
+                    "footer": {
+                      "status": {
+                        "component": "Chip",
+                        "label": "Concept",
+                        "styling": {
+                          "background": "rgba(139, 92, 246, 0.15)",
+                          "color": "#8b5cf6",
+                          "border": "1px solid rgba(139, 92, 246, 0.3)"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "skills-showcase",
+        "component": "Container",
+        "maxWidth": "lg",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "card": {
+            "component": "Card",
+            "styling": {
+              "background": "rgba(255, 255, 255, 0.05)",
+              "backdropFilter": "blur(24px) saturate(180%)",
+              "border": "1px solid rgba(255, 255, 255, 0.18)",
+              "borderRadius": "24px",
+              "padding": "48px",
+              "textAlign": "center"
+            },
+            "content": {
+              "title": {
+                "component": "Typography",
+                "variant": "h3",
+                "text": "Skills & Technologies",
+                "styling": {
+                  "color": "#ffffff",
+                  "fontWeight": 700,
+                  "marginBottom": "32px"
+                }
+              },
+              "skillsGrid": {
+                "component": "Grid",
+                "container": true,
+                "spacing": 3,
+                "categories": [
+                  {
+                    "gridItem": { "xs": 12, "md": 4 },
+                    "title": "Product Management",
+                    "skills": ["Strategy & Vision", "User Research", "Data Analysis", "Roadmapping", "Agile/Scrum", "Stakeholder Management"],
+                    "color": "#34d399"
+                  },
+                  {
+                    "gridItem": { "xs": 12, "md": 4 },
+                    "title": "Frontend Development",
+                    "skills": ["React/Next.js", "TypeScript", "Material-UI", "Responsive Design", "Performance Optimization", "Testing"],
+                    "color": "#60a5fa"
+                  },
+                  {
+                    "gridItem": { "xs": 12, "md": 4 },
+                    "title": "Backend & Tools",
+                    "skills": ["Node.js", "PostgreSQL", "API Design", "Cloud Platforms", "CI/CD", "Analytics"],
+                    "color": "#8b5cf6"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "cta-section",
+        "component": "Container",
+        "maxWidth": "md",
+        "styling": {
+          "marginBottom": "80px"
+        },
+        "content": {
+          "card": {
+            "component": "Card",
+            "styling": {
+              "background": "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%)",
+              "backdropFilter": "blur(32px) saturate(200%)",
+              "border": "1px solid rgba(96, 165, 250, 0.25)",
+              "borderRadius": "24px",
+              "padding": "48px",
+              "textAlign": "center"
+            },
+            "content": {
+              "title": {
+                "component": "Typography",
+                "variant": "h4",
+                "text": "Let's Build Something Together",
+                "styling": {
+                  "color": "#ffffff",
+                  "fontWeight": 700,
+                  "marginBottom": "16px"
+                }
+              },
+              "description": {
+                "component": "Typography",
+                "variant": "body1",
+                "text": "Have a project in mind? Let's discuss how we can collaborate to bring your vision to life.",
+                "styling": {
+                  "color": "rgba(255, 255, 255, 0.7)",
+                  "marginBottom": "32px",
+                  "maxWidth": "500px",
+                  "margin": "0 auto 32px auto"
+                }
+              },
+              "buttons": {
+                "component": "Box",
+                "display": "flex",
+                "gap": 2,
+                "justifyContent": "center",
+                "flexWrap": "wrap",
+                "items": [
+                  {
+                    "component": "Button",
+                    "variant": "contained",
+                    "text": "Start a Conversation",
+                    "startIcon": "💬",
+                    "styling": {
+                      "background": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
+                      "color": "#ffffff",
+                      "borderRadius": "12px",
+                      "padding": "12px 32px",
+                      "fontSize": "1rem",
+                      "fontWeight": 600,
+                      "textTransform": "none",
+                      "boxShadow": "0 4px 16px rgba(52, 211, 153, 0.4)"
+                    }
+                  },
+                  {
+                    "component": "Button",
+                    "variant": "outlined",
+                    "text": "Download Resume",
+                    "endIcon": "Download",
+                    "styling": {
+                      "color": "#60a5fa",
+                      "border": "2px solid rgba(96, 165, 250, 0.4)",
+                      "borderRadius": "12px",
+                      "padding": "12px 32px",
+                      "fontSize": "1rem",
+                      "fontWeight": 600,
+                      "textTransform": "none"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "interactionStates": {
+    "projectCards": {
+      "hover": {
+        "transform": "translateY(-8px)",
+        "border": "rgba(96, 165, 250, 0.4)",
+        "shadow": "0 16px 48px rgba(59, 130, 246, 0.15)"
+      },
+      "click": {
+        "navigation": "/projects/[project-slug]"
+      }
+    },
+    "filterChips": {
+      "active": {
+        "background": "#34d399",
+        "color": "#ffffff",
+        "fontWeight": 600
+      },
+      "hover": {
+        "background": "rgba(255, 255, 255, 0.05)"
+      }
+    },
+    "ctaButtons": {
+      "primary": {
+        "hover": {
+          "transform": "translateY(-2px)",
+          "boxShadow": "0 8px 24px rgba(52, 211, 153, 0.5)"
+        }
+      },
+      "secondary": {
+        "hover": {
+          "background": "rgba(96, 165, 250, 0.1)",
+          "border": "rgba(96, 165, 250, 0.6)"
+        }
+      }
+    }
+  },
+  "responsiveBehavior": {
+    "mobile": {
+      "projectGrid": "Single column layout",
+      "featuredProject": "Stacked vertical layout",
+      "skillsGrid": "Single column with full-width cards",
+      "filterChips": "Horizontal scroll on small screens"
+    },
+    "tablet": {
+      "projectGrid": "Two column layout",
+      "featuredProject": "Maintains two-column layout"
+    },
+    "desktop": {
+      "projectGrid": "Three column layout",
+      "featuredProject": "Side-by-side content and image"
+    }
+  },
+  "seoMetadata": {
+    "title": "Projects & Portfolio - Ronnie Lutaro",
+    "description": "Explore my product management and development projects including StartHub, Rocketize Analytics, and more.",
+    "keywords": ["projects", "portfolio", "product management", "web development", "startups"],
+    "ogImage": "/projects/projects-og.jpg"
+  }
+}

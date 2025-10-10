@@ -1,0 +1,238 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "componentName": "Fixed Centered Glass Navbar",
+  "componentId": "navbar-v2",
+  "version": "2.0.0",
+  "description": "Premium dark glassmorphism fixed centered navigation bar with emerald active states",
+  "implementation": {
+    "component": "Header",
+    "filePath": "src/components/navigation/Header.tsx",
+    "implementedOn": "2025-10-10"
+  },
+  "structure": {
+    "container": {
+      "component": "Box",
+      "muiComponent": "Box",
+      "htmlElement": "nav",
+      "positioning": {
+        "position": "fixed",
+        "top": "24px",
+        "left": "50%",
+        "transform": "translateX(-50%)",
+        "zIndex": 1000,
+        "width": "fit-content"
+      },
+      "description": "Outer container for the navbar, fixed at the top center of the viewport"
+    },
+    "glassBar": {
+      "component": "Box",
+      "styling": {
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "8px",
+        "px": "24px",
+        "py": "12px",
+        "background": "rgba(255, 255, 255, 0.05)",
+        "backdropFilter": "blur(20px) saturate(180%)",
+        "WebkitBackdropFilter": "blur(20px) saturate(180%)",
+        "borderRadius": "16px",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset"
+      },
+      "description": "Main glass container with blur effect and subtle border"
+    },
+    "mobileMenuButton": {
+      "component": "IconButton",
+      "muiComponent": "IconButton",
+      "icon": "MenuOutlined",
+      "display": {
+        "xs": "flex",
+        "md": "none"
+      },
+      "styling": {
+        "color": "rgba(255, 255, 255, 0.8)"
+      },
+      "action": "Opens mobile drawer navigation",
+      "description": "Hamburger menu button visible only on mobile devices"
+    },
+    "desktopNavItems": {
+      "container": {
+        "component": "Box",
+        "display": {
+          "xs": "none",
+          "md": "flex"
+        },
+        "gap": "8px"
+      },
+      "items": [
+        {
+          "label": "Home",
+          "href": "/",
+          "component": "Button",
+          "muiComponent": "Button",
+          "activeState": false
+        },
+        {
+          "label": "Blog",
+          "href": "/blog",
+          "component": "Button",
+          "muiComponent": "Button",
+          "activeState": false
+        },
+        {
+          "label": "Projects",
+          "href": "/projects",
+          "component": "Button",
+          "muiComponent": "Button",
+          "activeState": false
+        },
+        {
+          "label": "Shorts",
+          "href": "/shorts",
+          "component": "Button",
+          "muiComponent": "Button",
+          "activeState": false
+        },
+        {
+          "label": "About",
+          "href": "/about",
+          "component": "Button",
+          "muiComponent": "Button",
+          "activeState": false
+        }
+      ],
+      "itemStyling": {
+        "default": {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontWeight": 400,
+          "fontSize": "0.95rem",
+          "textTransform": "none",
+          "px": "20px",
+          "py": "8px",
+          "borderRadius": "10px",
+          "transition": "all 0.2s ease"
+        },
+        "active": {
+          "color": "#34d399",
+          "fontWeight": 600,
+          "description": "Emerald green color for the current page"
+        },
+        "hover": {
+          "color": "#ffffff",
+          "background": "rgba(255, 255, 255, 0.08)"
+        }
+      },
+      "description": "Horizontal navigation items displayed on desktop (md breakpoint and above)"
+    },
+    "divider": {
+      "component": "Box",
+      "display": {
+        "xs": "none",
+        "md": "block"
+      },
+      "styling": {
+        "width": "1px",
+        "height": "24px",
+        "background": "rgba(255, 255, 255, 0.15)",
+        "mx": "8px"
+      },
+      "description": "Vertical line separating nav items from More button"
+    },
+    "moreButton": {
+      "component": "Button",
+      "muiComponent": "Button",
+      "label": "More",
+      "endIcon": "KeyboardArrowDownOutlined",
+      "display": {
+        "xs": "none",
+        "md": "flex"
+      },
+      "styling": {
+        "color": "rgba(255, 255, 255, 0.6)",
+        "fontSize": "0.95rem",
+        "textTransform": "none",
+        "px": "16px",
+        "py": "8px",
+        "borderRadius": "10px",
+        "hover": {
+          "color": "#ffffff",
+          "background": "rgba(255, 255, 255, 0.08)"
+        }
+      },
+      "action": "Opens dropdown menu with additional options",
+      "description": "More options button with dropdown menu"
+    }
+  },
+  "visualSpec": {
+    "appearance": "Fixed centered glass bar floating 24px from top of viewport",
+    "glassmorphism": {
+      "background": "rgba(255, 255, 255, 0.05) - Almost transparent white",
+      "backdropFilter": "blur(20px) saturate(180%) - Strong blur with color saturation",
+      "border": "rgba(255, 255, 255, 0.1) - Subtle white border",
+      "borderRadius": "16px - Smooth rounded corners",
+      "shadow": "0 8px 32px rgba(0, 0, 0, 0.4) - Dark shadow below + inset highlight"
+    },
+    "colors": {
+      "defaultText": "rgba(255, 255, 255, 0.7) - Light gray text",
+      "activeText": "#34d399 - Emerald green (same as CTA buttons)",
+      "hoverText": "#ffffff - Pure white",
+      "hoverBackground": "rgba(255, 255, 255, 0.08) - Subtle white overlay",
+      "divider": "rgba(255, 255, 255, 0.15) - Subtle separator line"
+    },
+    "typography": {
+      "fontSize": "0.95rem - Slightly smaller than body text",
+      "fontWeightDefault": 400,
+      "fontWeightActive": 600,
+      "textTransform": "none - Normal case, not uppercase"
+    },
+    "spacing": {
+      "containerPaddingX": "24px",
+      "containerPaddingY": "12px",
+      "itemGap": "8px",
+      "itemPaddingX": "20px",
+      "itemPaddingY": "8px",
+      "dividerMarginX": "8px"
+    },
+    "positioning": {
+      "fixed": "Always visible at top of viewport",
+      "centered": "Horizontally centered using left: 50% + translateX(-50%)",
+      "topOffset": "24px from top edge",
+      "zIndex": 1000
+    },
+    "responsiveBehavior": {
+      "mobile": "Shows hamburger menu button only, nav items hidden",
+      "desktop": "Shows full horizontal navigation with items and More button",
+      "breakpoint": "md (768px) - transition point between mobile/desktop views"
+    }
+  },
+  "integration": {
+    "globalPlacement": "Include this navbar on ALL pages",
+    "activeStateLogic": "Highlight the current page's nav item in emerald (#34d399) with fontWeight 600",
+    "mobileDrawer": "Opens MobileMenu component (see mobile-navigation.json)",
+    "moreDropdown": "Opens Menu component with additional links/actions"
+  },
+  "codeReference": {
+    "implementation": "src/components/navigation/Header.tsx",
+    "lines": "53-206",
+    "keyFeatures": [
+      "Fixed positioning at top center",
+      "Glass effect with backdrop blur",
+      "Emerald active states (#34d399)",
+      "Responsive mobile/desktop views",
+      "Smooth hover transitions"
+    ]
+  },
+  "wireframeUsage": {
+    "include": "Add this navbar section as the first section in all page wireframes",
+    "reference": "Use { 'componentRef': 'navbar-v2' } to reference this spec",
+    "activeStates": {
+      "homepage": "Home is active",
+      "blogListing": "Blog is active",
+      "blogPost": "Blog is active",
+      "projects": "Projects is active",
+      "shorts": "Shorts is active",
+      "about": "About is active",
+      "contact": "No item active (or reference in More dropdown)"
+    }
+  }
+}

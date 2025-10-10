@@ -2,63 +2,102 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "documentName": "Design System & Component Library",
   "documentId": "design-system-001",
-  "version": "1.0.0",
-  "description": "Apple Liquid Glass Design System with MUI Components",
+  "version": "2.0.0",
+  "description": "Premium Dark Glassmorphism Design System with Blue Light Beams & Emerald Accents",
   "themeConfiguration": {
     "colorPalette": {
       "primary": {
-        "main": "#667eea",
-        "light": "#8e9ff5",
-        "dark": "#4d5fd1",
+        "main": "#3b82f6",
+        "light": "#60a5fa",
+        "dark": "#2563eb",
         "contrastText": "#ffffff"
       },
       "secondary": {
-        "main": "#764ba2",
-        "light": "#9169b8",
-        "dark": "#5a3a7d",
+        "main": "#2563eb",
+        "light": "#3b82f6",
+        "dark": "#1d4ed8",
         "contrastText": "#ffffff"
       },
       "accent": {
-        "copper": "#d4a574",
-        "gold": "#f4a460"
+        "emerald": "#34d399",
+        "emeraldDark": "#10b981",
+        "emeraldLight": "#6ee7b7"
       },
       "gradients": {
-        "primary": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
-        "mesh": "linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%)",
-        "subtle": "linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%)"
+        "primary": "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
+        "emerald": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
+        "blue": "linear-gradient(135deg, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.9) 100%)",
+        "subtle": "linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%)"
       },
       "neutral": {
-        "50": "#fafafa",
-        "100": "#f5f5f5",
-        "200": "#eeeeee",
-        "300": "#e0e0e0",
-        "400": "#bdbdbd",
-        "500": "#9e9e9e",
-        "600": "#757575",
-        "700": "#616161",
-        "800": "#424242",
-        "900": "#212121"
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#0f172a"
       },
       "background": {
-        "default": "#ffffff",
-        "paper": "#fafafa",
-        "glass": "rgba(255, 255, 255, 0.7)"
+        "default": "#06080f",
+        "paper": "#0a0e1a",
+        "glass": "rgba(255, 255, 255, 0.05)",
+        "glassDark": "rgba(10, 14, 26, 0.4)"
       },
       "text": {
-        "primary": "rgba(0, 0, 0, 0.87)",
-        "secondary": "rgba(0, 0, 0, 0.6)",
-        "disabled": "rgba(0, 0, 0, 0.38)"
+        "primary": "#ffffff",
+        "secondary": "rgba(255, 255, 255, 0.7)",
+        "disabled": "rgba(255, 255, 255, 0.5)"
+      }
+    },
+    "lightBeams": {
+      "description": "Premium blue light beam effects for backgrounds",
+      "mainDiagonal": {
+        "width": "1400px",
+        "height": "1400px",
+        "background": "radial-gradient(ellipse at center, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.6) 15%, rgba(59,130,246,0.3) 35%, rgba(59,130,246,0) 60%)",
+        "blur": "100px",
+        "rotation": "-35deg",
+        "animation": "glow1 15s ease-in-out infinite"
+      },
+      "secondaryDiagonal": {
+        "width": "1200px",
+        "height": "1200px",
+        "background": "radial-gradient(ellipse at center, rgba(37,99,235,0.8) 0%, rgba(37,99,235,0.5) 15%, rgba(37,99,235,0.2) 35%, rgba(37,99,235,0) 60%)",
+        "blur": "90px",
+        "rotation": "35deg",
+        "animation": "glow2 18s ease-in-out infinite"
+      },
+      "centerAccent": {
+        "width": "800px",
+        "height": "800px",
+        "background": "radial-gradient(circle, rgba(96,165,250,0.4) 0%, rgba(96,165,250,0) 50%)",
+        "blur": "120px",
+        "animation": "pulse 10s ease-in-out infinite"
+      },
+      "sharpBeam": {
+        "width": "1000px",
+        "height": "4px",
+        "background": "linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(59,130,246,0.6) 50%, rgba(59,130,246,0) 100%)",
+        "blur": "3px",
+        "rotation": "-45deg",
+        "boxShadow": "0 0 40px rgba(59,130,246,0.8)"
       }
     },
     "darkMode": {
+      "enabled": true,
+      "default": true,
       "palette": {
         "background": {
-          "default": "#121212",
-          "paper": "#1e1e1e",
-          "glass": "rgba(30, 30, 30, 0.7)"
+          "default": "#06080f",
+          "paper": "#0a0e1a",
+          "glass": "rgba(255, 255, 255, 0.05)"
         },
         "text": {
-          "primary": "rgba(255, 255, 255, 0.95)",
+          "primary": "#ffffff",
           "secondary": "rgba(255, 255, 255, 0.7)",
           "disabled": "rgba(255, 255, 255, 0.5)"
         }
@@ -148,13 +187,15 @@
       "round": "50%"
     },
     "shadows": {
-      "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-      "glassSoft": "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
-      "elevation1": "0 2px 8px rgba(0, 0, 0, 0.08)",
-      "elevation2": "0 4px 16px rgba(0, 0, 0, 0.1)",
-      "elevation3": "0 8px 24px rgba(0, 0, 0, 0.12)",
-      "elevation4": "0 12px 32px rgba(0, 0, 0, 0.15)",
-      "glow": "0 0 20px rgba(102, 126, 234, 0.3)"
+      "glass": "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset",
+      "glassSoft": "0 8px 32px rgba(0, 0, 0, 0.4)",
+      "elevation1": "0 2px 8px rgba(0, 0, 0, 0.3)",
+      "elevation2": "0 4px 16px rgba(0, 0, 0, 0.4)",
+      "elevation3": "0 8px 24px rgba(0, 0, 0, 0.5)",
+      "elevation4": "0 12px 32px rgba(0, 0, 0, 0.6)",
+      "glow": "0 0 20px rgba(59, 130, 246, 0.4)",
+      "glowEmerald": "0 0 20px rgba(52, 211, 153, 0.4)",
+      "blueGlow": "0 20px 60px rgba(59, 130, 246, 0.4)"
     },
     "transitions": {
       "duration": {
@@ -183,134 +224,184 @@
   },
   "liquidGlassComponents": {
     "GlassCard": {
-      "description": "Base card component with glassmorphic effect",
+      "description": "Base card component with dark glassmorphic effect",
       "muiBase": "Card",
       "defaultProps": {
         "elevation": 0
       },
       "styling": {
-        "background": "rgba(255, 255, 255, 0.7)",
-        "backdropFilter": "blur(20px)",
-        "borderRadius": "20px",
+        "background": "rgba(255, 255, 255, 0.05)",
+        "backdropFilter": "blur(24px) saturate(180%)",
+        "borderRadius": "24px",
         "border": "1px solid rgba(255, 255, 255, 0.18)",
-        "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset",
         "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
       },
       "variants": {
         "light": {
-          "background": "rgba(255, 255, 255, 0.6)",
-          "backdropFilter": "blur(15px)"
+          "background": "rgba(255, 255, 255, 0.05)",
+          "backdropFilter": "blur(24px) saturate(180%)",
+          "border": "1px solid rgba(255, 255, 255, 0.18)"
         },
         "dark": {
-          "background": "rgba(255, 255, 255, 0.8)",
-          "backdropFilter": "blur(25px)"
+          "background": "rgba(10, 14, 26, 0.4)",
+          "backdropFilter": "blur(28px) saturate(200%)",
+          "border": "1px solid rgba(96, 165, 250, 0.2)"
         },
         "gradient": {
-          "background": "linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)",
-          "backdropFilter": "blur(30px)"
+          "background": "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%)",
+          "backdropFilter": "blur(32px) saturate(200%)",
+          "border": "1px solid rgba(96, 165, 250, 0.25)"
         }
       },
-      "darkMode": {
-        "background": "rgba(30, 30, 30, 0.7)",
-        "border": "1px solid rgba(255, 255, 255, 0.1)"
-      },
       "hover": {
-        "transform": "translateY(-4px)",
-        "boxShadow": "0 12px 40px rgba(31, 38, 135, 0.2)"
+        "transform": "translateY(-6px)",
+        "border": "1px solid rgba(96, 165, 250, 0.5)",
+        "boxShadow": "0 20px 60px rgba(59, 130, 246, 0.4), 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
       }
     },
     "GlassButton": {
-      "description": "Button with glass effect",
+      "description": "Button with glass effect and blue/emerald variants",
       "muiBase": "Button",
       "variants": {
         "primary": {
-          "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+          "background": "linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%)",
           "color": "#fff",
           "borderRadius": "12px",
           "padding": "12px 32px",
           "fontWeight": 600,
           "textTransform": "none",
-          "boxShadow": "0 4px 12px rgba(102, 126, 234, 0.3)",
+          "border": "1px solid rgba(96, 165, 250, 0.3)",
+          "boxShadow": "0 4px 16px rgba(59, 130, 246, 0.4)",
           "hover": {
-            "boxShadow": "0 6px 16px rgba(102, 126, 234, 0.4)",
+            "background": "linear-gradient(135deg, rgba(37, 99, 235, 1) 0%, rgba(29, 78, 216, 1) 100%)",
+            "boxShadow": "0 6px 20px rgba(59, 130, 246, 0.6)",
             "transform": "translateY(-2px)"
           }
         },
+        "emerald": {
+          "background": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
+          "color": "#fff",
+          "borderRadius": "12px",
+          "padding": "12px 32px",
+          "fontWeight": 600,
+          "textTransform": "none",
+          "boxShadow": "0 4px 16px rgba(52, 211, 153, 0.4)",
+          "hover": {
+            "background": "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            "boxShadow": "0 6px 20px rgba(52, 211, 153, 0.6)"
+          }
+        },
         "glass": {
-          "background": "rgba(255, 255, 255, 0.25)",
-          "backdropFilter": "blur(10px)",
-          "border": "1px solid rgba(255, 255, 255, 0.3)",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "backdropFilter": "blur(20px) saturate(180%)",
+          "border": "1px solid rgba(255, 255, 255, 0.15)",
           "borderRadius": "12px",
           "color": "#fff",
+          "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1)",
           "hover": {
-            "background": "rgba(255, 255, 255, 0.35)"
+            "background": "rgba(255, 255, 255, 0.08)",
+            "border": "1px solid rgba(96, 165, 250, 0.3)"
           }
         },
         "outlined": {
-          "border": "2px solid rgba(255, 255, 255, 0.5)",
+          "border": "2px solid rgba(96, 165, 250, 0.4)",
           "borderRadius": "12px",
+          "background": "transparent",
+          "color": "#60a5fa",
           "backdropFilter": "blur(5px)",
           "hover": {
-            "background": "rgba(255, 255, 255, 0.1)"
+            "background": "rgba(59, 130, 246, 0.1)",
+            "border": "2px solid rgba(96, 165, 250, 0.6)"
           }
         }
       }
     },
     "GlassInput": {
-      "description": "Text field with glass styling",
+      "description": "Text field with dark glass styling",
       "muiBase": "TextField",
       "styling": {
-        "background": "rgba(255, 255, 255, 0.8)",
+        "background": "rgba(255, 255, 255, 0.05)",
         "backdropFilter": "blur(10px)",
         "borderRadius": "12px",
+        "color": "#fff",
         "fieldset": {
-          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderColor": "rgba(96, 165, 250, 0.2)",
           "borderRadius": "12px"
         },
         "hover": {
-          "background": "#fff",
+          "background": "rgba(255, 255, 255, 0.08)",
           "fieldset": {
-            "borderColor": "rgba(102, 126, 234, 0.5)"
+            "borderColor": "rgba(96, 165, 250, 0.4)"
           }
         },
         "focused": {
-          "background": "#fff",
+          "background": "rgba(255, 255, 255, 0.08)",
           "fieldset": {
-            "borderColor": "#667eea",
-            "borderWidth": "2px"
+            "borderColor": "#3b82f6",
+            "borderWidth": "2px",
+            "boxShadow": "0 0 0 4px rgba(59, 130, 246, 0.1)"
           }
         }
       }
     },
     "GlassChip": {
-      "description": "Chip with glass effect",
+      "description": "Chip with dark glass effect",
       "muiBase": "Chip",
       "styling": {
-        "background": "rgba(102, 126, 234, 0.15)",
+        "background": "rgba(59, 130, 246, 0.15)",
         "backdropFilter": "blur(10px)",
-        "border": "1px solid rgba(102, 126, 234, 0.3)",
+        "border": "1px solid rgba(96, 165, 250, 0.3)",
         "borderRadius": "12px",
+        "color": "#60a5fa",
         "fontWeight": 500,
         "hover": {
-          "background": "rgba(102, 126, 234, 0.25)",
+          "background": "rgba(59, 130, 246, 0.25)",
+          "border": "1px solid rgba(96, 165, 250, 0.5)",
           "transform": "translateY(-2px)",
-          "boxShadow": "0 4px 12px rgba(102, 126, 234, 0.3)"
+          "boxShadow": "0 4px 12px rgba(59, 130, 246, 0.3)"
+        }
+      },
+      "variants": {
+        "primary": {
+          "background": "rgba(59, 130, 246, 0.2)",
+          "color": "#60a5fa",
+          "border": "1px solid rgba(96, 165, 250, 0.3)"
+        },
+        "success": {
+          "background": "rgba(52, 211, 153, 0.2)",
+          "color": "#34d399",
+          "border": "1px solid rgba(52, 211, 153, 0.3)"
+        },
+        "warning": {
+          "background": "rgba(251, 191, 36, 0.2)",
+          "color": "#fbbf24",
+          "border": "1px solid rgba(251, 191, 36, 0.3)"
         }
       }
     },
     "GlassNavbar": {
-      "description": "Navigation bar with blur effect",
+      "description": "Navigation bar with dark glass blur effect",
       "muiBase": "AppBar",
       "styling": {
-        "background": "rgba(255, 255, 255, 0.7)",
-        "backdropFilter": "blur(20px)",
-        "borderBottom": "1px solid rgba(255, 255, 255, 0.18)",
-        "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
-        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        "background": "rgba(255, 255, 255, 0.05)",
+        "backdropFilter": "blur(20px) saturate(180%)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "borderRadius": "16px",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.4)",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "position": "fixed",
+        "top": "24px",
+        "left": "50%",
+        "transform": "translateX(-50%)"
+      },
+      "activeLink": {
+        "color": "#34d399",
+        "fontWeight": 600
       },
       "scrolled": {
-        "background": "rgba(255, 255, 255, 0.95)",
-        "boxShadow": "0 4px 20px rgba(0, 0, 0, 0.1)"
+        "background": "rgba(255, 255, 255, 0.08)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.6)"
       }
     }
   },

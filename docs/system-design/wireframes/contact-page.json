@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "screenName": "Contact Page",
   "screenId": "contact-001",
-  "version": "1.0.0",
-  "designSystem": "Liquid Glass + MUI",
+  "version": "2.0.0",
+  "designSystem": "Premium Dark Glassmorphism + MUI",
   "viewport": {
     "mobile": "375x812",
     "tablet": "768x1024",
@@ -11,13 +11,21 @@
   },
   "layout": {
     "type": "centered-form-layout",
+    "background": "#06080f",
     "sections": [
+      {
+        "id": "navbar",
+        "componentRef": "navbar-v2",
+        "componentPath": "wireframes/components/navbar.json",
+        "activeItem": null,
+        "note": "Contact page may not have an active nav item, or 'Contact' might be in the More dropdown"
+      },
       {
         "id": "contact-hero",
         "component": "Box",
         "muiComponent": "Box",
         "styling": {
-          "background": "linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)",
+          "background": "transparent",
           "paddingTop": "120px",
           "paddingBottom": "80px",
           "position": "relative"
@@ -39,10 +47,7 @@
                   },
                   "textAlign": "center",
                   "marginBottom": "16px",
-                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
-                  "backgroundClip": "text",
-                  "WebkitBackgroundClip": "text",
-                  "WebkitTextFillColor": "transparent"
+                  "color": "#ffffff"
                 }
               },
               "subtitle": {
@@ -51,11 +56,10 @@
                 "text": "I'm always open to discussing product work, collaboration opportunities, or just having a chat about building great products",
                 "styling": {
                   "textAlign": "center",
-                  "color": "text.secondary",
+                  "color": "rgba(255, 255, 255, 0.7)",
                   "maxWidth": "700px",
                   "margin": "0 auto",
-                  "fontWeight": 400,
-                  "lineHeight": 1.6
+                  "fontWeight": 400
                 }
               }
             }
