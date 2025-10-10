@@ -1,25 +1,19 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
-  AppBar,
-  Toolbar,
-  Typography,
+  Box,
   Button,
   IconButton,
-  Box,
-  Container,
-  useTheme,
-  useMediaQuery,
+  Menu,
+  MenuItem,
 } from '@mui/material';
 import {
+  KeyboardArrowDownOutlined,
   MenuOutlined,
-  Brightness4Outlined,
-  Brightness7Outlined,
 } from '@mui/icons-material';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { styled } from '@mui/material/styles';
 import MobileMenu from './MobileMenu';
 
 interface HeaderProps {
@@ -34,227 +28,175 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Writing', href: '/writing' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Shorts', href: '/shorts' },
+  { label: 'About', href: '/about' },
 ];
 
-// Styled AppBar with glass effect
-const GlassAppBar = styled(AppBar)(({ theme }) => ({
-  background: 'rgba(255, 255, 255, 0.7)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  borderBottom: '1px solid rgba(255, 255, 255, 0.18)',
-  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  ...(theme.palette.mode === 'dark' && {
-    background: 'rgba(30, 30, 30, 0.7)',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-  }),
-  '@supports not (backdrop-filter: blur(20px))': {
-    background: theme.palette.mode === 'dark' 
-      ? 'rgba(30, 30, 30, 0.95)'
-      : 'rgba(255, 255, 255, 0.95)',
-  },
-}));
-
-// Logo with gradient text
-const Logo = styled(Typography)(() => ({
-  fontWeight: 700,
-  background: 'linear-gradient(45deg, #667eea 30%, #764ba2 90%)',
-  backgroundClip: 'text',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  cursor: 'pointer',
-  userSelect: 'none',
-  transition: 'transform 0.2s ease',
-  '&:hover': {
-    transform: 'scale(1.05)',
-  },
-}));
-
-// Desktop nav button with active state
-const NavButton = styled(Button)<{ active?: boolean }>(({ theme, active }) => ({
-  color: active 
-    ? theme.palette.primary.main 
-    : theme.palette.mode === 'dark' 
-      ? 'rgba(255, 255, 255, 0.9)' 
-      : 'rgba(0, 0, 0, 0.87)',
-  fontWeight: active ? 700 : 600,
-  textTransform: 'none',
-  fontSize: '1rem',
-  padding: '8px 16px',
-  borderRadius: '12px',
-  position: 'relative',
-  transition: 'all 0.2s ease',
-  '&:hover': {
-    background: theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, 0.08)'
-      : 'rgba(102, 126, 234, 0.08)',
-    transform: 'translateY(-2px)',
-  },
-  ...(active && {
-    background: 'rgba(102, 126, 234, 0.15)',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: 0,
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '60%',
-      height: '3px',
-      background: 'linear-gradient(45deg, #667eea 30%, #764ba2 90%)',
-      borderRadius: '2px 2px 0 0',
-    },
-  }),
-}));
-
-// Theme toggle button
-const ThemeToggleButton = styled(IconButton)(({ theme }) => ({
-  background: 'rgba(102, 126, 234, 0.1)',
-  color: theme.palette.primary.main,
-  transition: 'all 0.2s ease',
-  '&:hover': {
-    background: 'rgba(102, 126, 234, 0.2)',
-    transform: 'rotate(180deg)',
-  },
-}));
-
-const Header: React.FC<HeaderProps> = ({ onThemeToggle, isDarkMode = false }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Header: React.FC<HeaderProps> = ({ onThemeToggle, isDarkMode }) => {
   const pathname = usePathname();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreAnchorEl, setMoreAnchorEl] = useState<null | HTMLElement>(null);
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const handleMoreClick = (event: React.MouseEvent<HTMLElement>) => {
+    setMoreAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMenuOpen(false);
+  const handleMoreClose = () => {
+    setMoreAnchorEl(null);
   };
 
-  const isActiveRoute = (href: string): boolean => {
-    if (href === '/') {
-      return pathname === '/';
-    }
-    return pathname.startsWith(href);
-  };
-
-  // Smooth scroll for anchor links
-  const handleNavClick = (href: string, e: React.MouseEvent) => {
-    if (href.startsWith('/#')) {
-      e.preventDefault();
-      const targetId = href.substring(2); // Remove '/#'
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  };
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
-      <GlassAppBar 
-        position="sticky" 
-        elevation={isScrolled ? 2 : 0}
+      {/* Glassmorphism Navbar Container */}
+      <Box
+        component="nav"
         sx={{
-          opacity: isScrolled ? 1 : 0.98,
+          position: 'fixed',
+          top: 24,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 1000,
+          width: 'fit-content',
         }}
       >
-        <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ minHeight: { xs: '64px', md: '72px' } }}>
-            {/* Logo */}
-            <Link href="/" passHref style={{ textDecoration: 'none' }}>
-              <Logo variant="h6">
-                {isMobile ? 'RL' : 'Ronnie Lutaro'}
-              </Logo>
-            </Link>
+        {/* Glass Nav Bar */}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            px: 3,
+            py: 1.5,
+            background: 'rgba(255, 255, 255, 0.05)',
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            borderRadius: '16px',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset',
+          }}
+        >
+          {/* Mobile Menu Button */}
+          <IconButton
+            sx={{
+              display: { xs: 'flex', md: 'none' },
+              color: 'rgba(255, 255, 255, 0.8)',
+            }}
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <MenuOutlined />
+          </IconButton>
 
-            {/* Spacer */}
-            <Box sx={{ flexGrow: 1 }} />
-
-            {/* Desktop Navigation */}
-            {!isMobile && (
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                {navItems.map((item) => (
-                  <Link 
-                    key={item.href} 
-                    href={item.href} 
-                    passHref 
-                    style={{ textDecoration: 'none' }}
-                  >
-                    <NavButton
-                      active={isActiveRoute(item.href)}
-                      onClick={(e) => handleNavClick(item.href, e)}
-                    >
-                      {item.label}
-                    </NavButton>
-                  </Link>
-                ))}
-              </Box>
-            )}
-
-            {/* Theme Toggle - Desktop */}
-            {!isMobile && onThemeToggle && (
-              <ThemeToggleButton
-                onClick={onThemeToggle}
-                aria-label="Toggle theme"
-                sx={{ ml: 2 }}
+          {/* Desktop Nav Items */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+            {navItems.map((item) => (
+              <Button
+                key={item.href}
+                component={Link}
+                href={item.href}
+                sx={{
+                  color: isActive(item.href)
+                    ? '#34d399'
+                    : 'rgba(255, 255, 255, 0.7)',
+                  fontWeight: isActive(item.href) ? 600 : 400,
+                  fontSize: '0.95rem',
+                  textTransform: 'none',
+                  px: 2.5,
+                  py: 1,
+                  borderRadius: '10px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: '#fff',
+                    background: 'rgba(255, 255, 255, 0.08)',
+                  },
+                }}
               >
-                {isDarkMode ? <Brightness7Outlined /> : <Brightness4Outlined />}
-              </ThemeToggleButton>
-            )}
+                {item.label}
+              </Button>
+            ))}
+          </Box>
 
-            {/* Mobile Menu Toggle */}
-            {isMobile && (
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                {onThemeToggle && (
-                  <ThemeToggleButton
-                    onClick={onThemeToggle}
-                    aria-label="Toggle theme"
-                    size="small"
-                  >
-                    {isDarkMode ? <Brightness7Outlined /> : <Brightness4Outlined />}
-                  </ThemeToggleButton>
-                )}
-                <IconButton
-                  onClick={handleMobileMenuToggle}
-                  aria-label="Open menu"
-                  sx={{
-                    background: 'rgba(102, 126, 234, 0.1)',
-                    color: 'primary.main',
-                    '&:hover': {
-                      background: 'rgba(102, 126, 234, 0.2)',
-                    },
-                  }}
-                >
-                  <MenuOutlined />
-                </IconButton>
-              </Box>
-            )}
-          </Toolbar>
-        </Container>
-      </GlassAppBar>
+          {/* Vertical Divider */}
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'block' },
+              width: '1px',
+              height: '24px',
+              background: 'rgba(255, 255, 255, 0.15)',
+              mx: 1,
+            }}
+          />
 
-      {/* Mobile Menu Drawer */}
+          {/* More Button */}
+          <Button
+            onClick={handleMoreClick}
+            endIcon={<KeyboardArrowDownOutlined />}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              color: 'rgba(255, 255, 255, 0.6)',
+              fontSize: '0.95rem',
+              textTransform: 'none',
+              px: 2,
+              py: 1,
+              borderRadius: '10px',
+              '&:hover': {
+                color: '#fff',
+                background: 'rgba(255, 255, 255, 0.08)',
+              },
+            }}
+          >
+            More
+          </Button>
+        </Box>
+      </Box>
+
+      {/* More Menu Dropdown */}
+      <Menu
+        anchorEl={moreAnchorEl}
+        open={Boolean(moreAnchorEl)}
+        onClose={handleMoreClose}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            background: 'rgba(10, 14, 26, 0.9)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '12px',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6)',
+          },
+        }}
+      >
+        <MenuItem
+          onClick={handleMoreClose}
+          sx={{
+            color: 'rgba(255, 255, 255, 0.8)',
+            '&:hover': { background: 'rgba(255, 255, 255, 0.1)' },
+          }}
+        >
+          Contact
+        </MenuItem>
+        <MenuItem
+          onClick={handleMoreClose}
+          sx={{
+            color: 'rgba(255, 255, 255, 0.8)',
+            '&:hover': { background: 'rgba(255, 255, 255, 0.1)' },
+          }}
+        >
+          Resume
+        </MenuItem>
+      </Menu>
+
+      {/* Mobile Menu */}
       <MobileMenu
         open={mobileMenuOpen}
-        onClose={handleMobileMenuClose}
+        onClose={() => setMobileMenuOpen(false)}
         navItems={navItems}
         currentPath={pathname}
-        isDarkMode={isDarkMode}
         onThemeToggle={onThemeToggle}
+        isDarkMode={isDarkMode}
       />
     </>
   );

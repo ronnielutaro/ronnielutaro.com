@@ -54,17 +54,19 @@ const StyledGlassButton = styled(Button, {
   // Variant-specific styles based on design-system.json
   const variants: Record<string, Record<string, unknown>> = {
     primary: {
-      background: 'linear-gradient(45deg, #667eea 30%, #764ba2 90%)',
+      background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%)',
       color: '#fff',
-      boxShadow: '0 4px 12px rgba(102, 126, 234, 0.3)',
+      border: '1px solid rgba(96, 165, 250, 0.3)',
+      boxShadow: '0 4px 16px rgba(59, 130, 246, 0.4)',
       '&:hover': {
-        background: 'linear-gradient(45deg, #5a6fd8 30%, #684090 90%)',
-        boxShadow: '0 6px 16px rgba(102, 126, 234, 0.4)',
+        background: 'linear-gradient(135deg, rgba(59, 130, 246, 1) 0%, rgba(37, 99, 235, 1) 100%)',
+        boxShadow: '0 8px 24px rgba(59, 130, 246, 0.6)',
         transform: 'translateY(-2px)',
+        border: '1px solid rgba(96, 165, 250, 0.5)',
       },
       '&:active': {
         transform: 'translateY(0)',
-        boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)',
+        boxShadow: '0 2px 12px rgba(59, 130, 246, 0.4)',
       },
       '&.Mui-disabled': {
         background: theme.palette.action.disabledBackground,
@@ -72,36 +74,37 @@ const StyledGlassButton = styled(Button, {
       },
     },
     glass: {
-      background: 'rgba(255, 255, 255, 0.25)',
-      backdropFilter: 'blur(10px)',
-      WebkitBackdropFilter: 'blur(10px)', // Safari support
-      border: '1px solid rgba(255, 255, 255, 0.3)',
-      color: theme.palette.mode === 'dark' ? '#fff' : theme.palette.text.primary,
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(20px) saturate(180%)',
+      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+      border: '1px solid rgba(255, 255, 255, 0.15)',
+      color: '#fff',
+      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset',
       '&:hover': {
-        background: 'rgba(255, 255, 255, 0.35)',
+        background: 'rgba(255, 255, 255, 0.1)',
         transform: 'translateY(-2px)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        border: '1px solid rgba(96, 165, 250, 0.4)',
+        boxShadow: '0 8px 24px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.2) inset',
       },
       '&:active': {
         transform: 'translateY(0)',
       },
       // Fallback for browsers without backdrop-filter
       '@supports not (backdrop-filter: blur(10px))': {
-        background: theme.palette.mode === 'dark'
-          ? 'rgba(255, 255, 255, 0.15)'
-          : 'rgba(255, 255, 255, 0.8)',
+        background: 'rgba(10, 14, 26, 0.8)',
       },
     },
     outlined: {
-      border: '2px solid rgba(255, 255, 255, 0.5)',
-      backdropFilter: 'blur(5px)',
-      WebkitBackdropFilter: 'blur(5px)',
+      border: '2px solid rgba(96, 165, 250, 0.4)',
+      backdropFilter: 'blur(10px)',
+      WebkitBackdropFilter: 'blur(10px)',
       background: 'transparent',
-      color: theme.palette.mode === 'dark' ? '#fff' : theme.palette.text.primary,
+      color: '#fff',
       '&:hover': {
-        background: 'rgba(255, 255, 255, 0.1)',
-        borderColor: theme.palette.primary.main,
+        background: 'rgba(59, 130, 246, 0.15)',
+        border: '2px solid rgba(96, 165, 250, 0.6)',
         transform: 'translateY(-2px)',
+        boxShadow: '0 4px 16px rgba(59, 130, 246, 0.3)',
       },
       '&:active': {
         transform: 'translateY(0)',

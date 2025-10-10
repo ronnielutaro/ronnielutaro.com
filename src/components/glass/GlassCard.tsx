@@ -36,23 +36,23 @@ const StyledGlassCard = styled(Card, {
   // Variant configurations based on design-system.json
   const variants: Record<string, { background: string; backdropFilter: string; border: string }> = {
     light: {
-      background: 'rgba(255, 255, 255, 0.6)',
-      backdropFilter: 'blur(15px)',
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(24px) saturate(180%)',
       border: '1px solid rgba(255, 255, 255, 0.18)',
     },
     dark: {
       background: theme.palette.mode === 'dark' 
-        ? 'rgba(30, 30, 30, 0.7)' 
-        : 'rgba(255, 255, 255, 0.8)',
-      backdropFilter: 'blur(25px)',
+        ? 'rgba(10, 14, 26, 0.4)' 
+        : 'rgba(255, 255, 255, 0.08)',
+      backdropFilter: 'blur(28px) saturate(200%)',
       border: theme.palette.mode === 'dark'
-        ? '1px solid rgba(255, 255, 255, 0.1)'
-        : '1px solid rgba(0, 0, 0, 0.1)',
+        ? '1px solid rgba(96, 165, 250, 0.2)'
+        : '1px solid rgba(59, 130, 246, 0.25)',
     },
     gradient: {
-      background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
-      backdropFilter: 'blur(30px)',
-      border: '1px solid rgba(255, 255, 255, 0.18)',
+      background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%)',
+      backdropFilter: 'blur(32px) saturate(200%)',
+      border: '1px solid rgba(96, 165, 250, 0.25)',
     },
   };
 
@@ -61,17 +61,17 @@ const StyledGlassCard = styled(Card, {
   return {
     position: 'relative',
     overflow: 'hidden',
-    borderRadius: '20px',
+    borderRadius: '24px',
     padding: theme.spacing(3),
     background: variantStyle.background,
     backdropFilter: variantStyle.backdropFilter,
     WebkitBackdropFilter: variantStyle.backdropFilter, // Safari support
     border: variantStyle.border,
-    boxShadow: '0 8px 32px rgba(31, 38, 135, 0.15)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset',
     transition: theme.transitions.create(
-      ['transform', 'box-shadow'],
+      ['transform', 'box-shadow', 'border', 'background'],
       {
-        duration: 300,
+        duration: 400,
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
       }
     ),
@@ -79,15 +79,19 @@ const StyledGlassCard = styled(Card, {
     // Fallback for browsers without backdrop-filter support
     '@supports not (backdrop-filter: blur(15px))': {
       background: theme.palette.mode === 'dark'
-        ? 'rgba(30, 30, 30, 0.95)'
+        ? 'rgba(10, 14, 26, 0.95)'
         : 'rgba(255, 255, 255, 0.95)',
     },
 
-    // Hover effect
+    // Hover effect - Match reference's bright glow
     ...(enableHover && {
       '&:hover': {
-        transform: 'translateY(-4px)',
-        boxShadow: '0 12px 40px rgba(31, 38, 135, 0.2)',
+        transform: 'translateY(-6px)',
+        background: glassVariant === 'gradient' 
+          ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)'
+          : 'rgba(255, 255, 255, 0.08)',
+        border: '1px solid rgba(96, 165, 250, 0.5)',
+        boxShadow: '0 20px 60px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(96, 165, 250, 0.3) inset',
       },
     }),
 
