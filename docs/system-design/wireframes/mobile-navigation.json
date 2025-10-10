@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "screenName": "Mobile Navigation",
   "screenId": "mobile-nav-001",
-  "version": "1.0.0",
-  "designSystem": "Liquid Glass + MUI",
+  "version": "2.0.0",
+  "designSystem": "Premium Dark Glassmorphism + MUI",
   "viewport": {
     "mobile": "375x812"
   },
@@ -14,16 +14,16 @@
       "muiComponent": "AppBar",
       "position": "fixed",
       "styling": {
-        "background": "rgba(255, 255, 255, 0.9)",
-        "backdropFilter": "blur(20px)",
-        "borderBottom": "1px solid rgba(0, 0, 0, 0.08)",
-        "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.05)",
+        "background": "rgba(255, 255, 255, 0.05)",
+        "backdropFilter": "blur(20px) saturate(180%)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.4)",
         "padding": "12px 16px",
         "zIndex": 1200
       },
       "darkMode": {
-        "background": "rgba(30, 30, 30, 0.9)",
-        "borderBottom": "1px solid rgba(255, 255, 255, 0.1)"
+        "background": "rgba(255, 255, 255, 0.08)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)"
       },
       "content": {
         "toolbar": {
@@ -44,10 +44,7 @@
               "text": "RL",
               "styling": {
                 "fontWeight": 700,
-                "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
-                "backgroundClip": "text",
-                "WebkitBackgroundClip": "text",
-                "WebkitTextFillColor": "transparent",
+                "color": "#ffffff",
                 "fontSize": "1.5rem"
               }
             },

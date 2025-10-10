@@ -2,8 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "screenName": "Blog Listing Page (Writing)",
   "screenId": "blog-listing-001",
-  "version": "1.0.0",
-  "designSystem": "Liquid Glass + MUI",
+  "version": "2.0.1",
+  "designSystem": "Premium Dark Glassmorphism + MUI",
+  "description": "Updated to include standardized navbar-v2 component",
   "viewport": {
     "mobile": "375x812",
     "tablet": "768x1024",
@@ -11,13 +12,21 @@
   },
   "layout": {
     "type": "full-page-with-filters",
+    "background": "#06080f",
     "sections": [
+      {
+        "id": "navbar",
+        "componentRef": "navbar-v2",
+        "componentPath": "wireframes/components/navbar.json",
+        "activeItem": "Blog",
+        "note": "Fixed centered glass navbar - Blog is highlighted in emerald"
+      },
       {
         "id": "page-hero",
         "component": "Box",
         "muiComponent": "Box",
         "styling": {
-          "background": "linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)",
+          "background": "transparent",
           "paddingTop": "120px",
           "paddingBottom": "80px",
           "position": "relative"
@@ -39,10 +48,7 @@
                   },
                   "textAlign": "center",
                   "marginBottom": "16px",
-                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
-                  "backgroundClip": "text",
-                  "WebkitBackgroundClip": "text",
-                  "WebkitTextFillColor": "transparent"
+                  "color": "#ffffff"
                 }
               },
               "subtitle": {
@@ -51,7 +57,7 @@
                 "text": "Insights on product management, engineering, and lessons learned along the way",
                 "styling": {
                   "textAlign": "center",
-                  "color": "text.secondary",
+                  "color": "rgba(255, 255, 255, 0.7)",
                   "maxWidth": "700px",
                   "margin": "0 auto",
                   "fontWeight": 400
@@ -66,11 +72,11 @@
         "component": "Box",
         "muiComponent": "Box",
         "styling": {
-          "background": "rgba(255, 255, 255, 0.6)",
-          "backdropFilter": "blur(20px)",
-          "borderBottom": "1px solid rgba(0, 0, 0, 0.08)",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "backdropFilter": "blur(20px) saturate(180%)",
+          "borderBottom": "1px solid rgba(96, 165, 250, 0.2)",
           "position": "sticky",
-          "top": "64px",
+          "top": "80px",
           "zIndex": 100,
           "padding": "24px 0"
         },
@@ -138,7 +144,7 @@
                         "text": "Categories:",
                         "styling": {
                           "fontWeight": 600,
-                          "color": "text.secondary",
+                          "color": "rgba(255, 255, 255, 0.7)",
                           "marginRight": "8px"
                         }
                       },
@@ -151,12 +157,12 @@
                           "variant": "filled",
                           "color": "primary",
                           "styling": {
-                            "background": "rgba(102, 126, 234, 0.2)",
+                            "background": "rgba(96, 165, 250, 0.2)",
                             "backdropFilter": "blur(10px)",
                             "borderRadius": "12px",
                             "fontWeight": 500,
                             "selected": {
-                              "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                              "background": "linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)",
                               "color": "#fff"
                             }
                           }
@@ -168,9 +174,9 @@
                           "variant": "outlined",
                           "styling": {
                             "borderRadius": "12px",
-                            "borderColor": "rgba(102, 126, 234, 0.3)",
+                            "borderColor": "rgba(96, 165, 250, 0.3)",
                             "hover": {
-                              "background": "rgba(102, 126, 234, 0.1)"
+                              "background": "rgba(96, 165, 250, 0.1)"
                             }
                           }
                         },
@@ -259,7 +265,7 @@
                 "variant": "body2",
                 "text": "Showing 12 posts",
                 "styling": {
-                  "color": "text.secondary",
+                  "color": "rgba(255, 255, 255, 0.6)",
                   "marginTop": "16px",
                   "textAlign": "center"
                 }
@@ -358,7 +364,7 @@
                               "variant": "caption",
                               "text": "Oct 9, 2025",
                               "styling": {
-                                "color": "text.secondary",
+                                "color": "rgba(255, 255, 255, 0.6)",
                                 "display": "flex",
                                 "alignItems": "center",
                                 "gap": "4px"
@@ -371,7 +377,7 @@
                               "variant": "caption",
                               "text": "•",
                               "styling": {
-                                "color": "text.secondary"
+                                "color": "rgba(255, 255, 255, 0.6)"
                               }
                             },
                             "readTime": {
@@ -379,7 +385,7 @@
                               "variant": "caption",
                               "text": "5 min read",
                               "styling": {
-                                "color": "text.secondary",
+                                "color": "rgba(255, 255, 255, 0.6)",
                                 "display": "flex",
                                 "alignItems": "center",
                                 "gap": "4px"
@@ -408,7 +414,7 @@
                           "variant": "body2",
                           "text": "After supporting 10+ founders from idea to market, here are the key insights I've learned about customer discovery, feature prioritization, and post-launch iteration...",
                           "styling": {
-                            "color": "text.secondary",
+                            "color": "rgba(255, 255, 255, 0.7)",
                             "lineHeight": 1.6,
                             "display": "-webkit-box",
                             "WebkitLineClamp": 3,
@@ -507,7 +513,7 @@
                 "variant": "body2",
                 "text": "Try adjusting your search or filters",
                 "styling": {
-                  "color": "text.secondary",
+                  "color": "rgba(255, 255, 255, 0.6)",
                   "marginBottom": "24px"
                 }
               },
@@ -549,10 +555,10 @@
                     "border": "1px solid rgba(0, 0, 0, 0.08)",
                     "margin": "0 4px",
                     "hover": {
-                      "background": "rgba(102, 126, 234, 0.1)"
+                      "background": "rgba(96, 165, 250, 0.1)"
                     },
                     "selected": {
-                      "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                      "background": "linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)",
                       "color": "#fff",
                       "border": "none"
                     }
@@ -635,7 +641,7 @@
                 "variant": "body1",
                 "text": "Get new posts delivered to your inbox",
                 "styling": {
-                  "color": "text.secondary",
+                  "color": "rgba(255, 255, 255, 0.7)",
                   "marginBottom": "32px"
                 }
               },
@@ -667,7 +673,7 @@
                     "size": "large",
                     "text": "Subscribe",
                     "styling": {
-                      "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
+                      "background": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
                       "borderRadius": "12px",
                       "padding": "12px 32px",
                       "textTransform": "none",

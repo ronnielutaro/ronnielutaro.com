@@ -41,26 +41,7 @@ A personal portfolio website for a Product Manager | Software Engineer showcasin
 
 #### 1.2 About Section
 
-- **Who I Am**
-  - Brief professional summary highlighting:
-    - Product Manager with 4+ years of product work + software engineering background
-    - Translating user needs into Products people deeply love and care about
-    - Work at StartHub supporting 10+ founders from idea to market
-    - Running customer discovery, translating insights into requirements and features
-    - Closing the loop with post-launch iteration
-  - **Featured Project: Rocketize**
-    - Side project building intelligent tools for Marketing Teams
-    - Streamlining operations & campaigns efficiency
-    - Reducing waste & maximizing Return On Ad Spend
-    - End-to-end product cycles showcase
-  - Core competencies displayed as animated glass tags/pills:
-    - Product Management
-    - Customer Discovery
-    - Feature Development
-    - Post-Launch Iteration
-    - Software Engineering
-    - Marketing Tech
-  - Skills visualization with progress indicators or animated icons
+- Consolidated to the dedicated About page. The homepage no longer includes a "Who I Am" block to avoid redundancy. Use a concise link/CTA to the About page from the hero or footer.
 
 #### 1.3 Featured Work Section
 

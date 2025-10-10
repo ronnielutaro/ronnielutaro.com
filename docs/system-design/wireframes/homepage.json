@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "screenName": "Homepage",
   "screenId": "home-001",
-  "version": "1.0.0",
-  "designSystem": "Liquid Glass + MUI",
+  "version": "2.0.0",
+  "designSystem": "Premium Dark Glassmorphism + MUI",
   "viewport": {
     "mobile": "375x812",
     "tablet": "768x1024",
@@ -11,6 +11,50 @@
   },
   "layout": {
     "type": "full-page-scroll",
+    "background": {
+      "base": "#06080f",
+      "lightBeams": [
+        {
+          "id": "main-diagonal",
+          "position": "top-right",
+          "width": "1400px",
+          "height": "1400px",
+          "background": "radial-gradient(ellipse at center, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.6) 15%, rgba(59,130,246,0.3) 35%, rgba(59,130,246,0) 60%)",
+          "blur": "100px",
+          "rotation": "-35deg",
+          "animation": "glow1 15s ease-in-out infinite"
+        },
+        {
+          "id": "secondary-diagonal",
+          "position": "bottom-left",
+          "width": "1200px",
+          "height": "1200px",
+          "background": "radial-gradient(ellipse at center, rgba(37,99,235,0.8) 0%, rgba(37,99,235,0.5) 15%, rgba(37,99,235,0.2) 35%, rgba(37,99,235,0) 60%)",
+          "blur": "90px",
+          "rotation": "35deg",
+          "animation": "glow2 18s ease-in-out infinite"
+        },
+        {
+          "id": "center-accent",
+          "position": "center",
+          "width": "800px",
+          "height": "800px",
+          "background": "radial-gradient(circle, rgba(96,165,250,0.4) 0%, rgba(96,165,250,0) 50%)",
+          "blur": "120px",
+          "animation": "pulse 10s ease-in-out infinite"
+        },
+        {
+          "id": "sharp-beam",
+          "position": "top-right",
+          "width": "1000px",
+          "height": "4px",
+          "background": "linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(59,130,246,0.6) 50%, rgba(59,130,246,0) 100%)",
+          "blur": "3px",
+          "rotation": "-45deg",
+          "boxShadow": "0 0 40px rgba(59,130,246,0.8)"
+        }
+      ]
+    },
     "sections": [
       {
         "id": "navigation",
@@ -19,16 +63,21 @@
         "muiComponent": "AppBar",
         "styling": {
           "background": "glassmorphic-blur",
-          "backdropFilter": "blur(20px)",
-          "backgroundColor": "rgba(255, 255, 255, 0.7)",
-          "borderBottom": "1px solid rgba(255, 255, 255, 0.18)",
-          "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
+          "backdropFilter": "blur(20px) saturate(180%)",
+          "backgroundColor": "rgba(255, 255, 255, 0.05)",
+          "border": "1px solid rgba(255, 255, 255, 0.1)",
+          "borderRadius": "16px",
+          "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.4)",
           "padding": "16px 0",
-          "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+          "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          "position": "fixed",
+          "top": "24px",
+          "left": "50%",
+          "transform": "translateX(-50%)"
         },
         "darkMode": {
-          "backgroundColor": "rgba(30, 30, 30, 0.7)",
-          "borderBottom": "1px solid rgba(255, 255, 255, 0.1)"
+          "backgroundColor": "rgba(255, 255, 255, 0.08)",
+          "border": "1px solid rgba(255, 255, 255, 0.15)"
         },
         "content": {
           "logo": {
@@ -36,26 +85,36 @@
             "variant": "h6",
             "text": "Ronnie Lutaro",
             "fontWeight": 700,
-            "position": "left"
+            "position": "left",
+            "color": "#ffffff"
           },
           "navItems": [
             {
               "label": "Home",
               "href": "/",
               "muiComponent": "Button",
-              "variant": "text"
+              "variant": "text",
+              "color": "rgba(255, 255, 255, 0.9)",
+              "activeColor": "#34d399",
+              "activeFontWeight": 600
             },
             {
               "label": "Writing",
               "href": "/writing",
               "muiComponent": "Button",
-              "variant": "text"
+              "variant": "text",
+              "color": "rgba(255, 255, 255, 0.9)",
+              "activeColor": "#34d399",
+              "activeFontWeight": 600
             },
             {
               "label": "Contact",
               "href": "/contact",
               "muiComponent": "Button",
-              "variant": "text"
+              "variant": "text",
+              "color": "rgba(255, 255, 255, 0.9)",
+              "activeColor": "#34d399",
+              "activeFontWeight": 600
             }
           ],
           "actions": {
@@ -81,130 +140,226 @@
         "height": "100vh",
         "muiComponent": "Box",
         "styling": {
-          "background": "mesh-gradient-animated",
-          "gradientColors": [
-            "#667eea",
-            "#764ba2",
-            "#f093fb",
-            "#4facfe"
-          ],
-          "animation": "gradient-shift 15s ease infinite",
+          "background": "transparent",
           "position": "relative",
           "display": "flex",
           "alignItems": "center",
           "justifyContent": "center",
-          "overflow": "hidden"
+          "overflow": "hidden",
+          "paddingTop": { "xs": "14", "md": "8" }
         },
         "content": {
-          "glassCard": {
-            "component": "Card",
-            "muiComponent": "Card",
-            "styling": {
-              "background": "rgba(255, 255, 255, 0.15)",
-              "backdropFilter": "blur(30px)",
-              "borderRadius": "24px",
-              "border": "1px solid rgba(255, 255, 255, 0.18)",
-              "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-              "padding": "48px",
-              "maxWidth": "800px",
-              "textAlign": "center"
-            },
+          "container": {
+            "component": "Container",
+            "maxWidth": "xl",
+            "content": {
+              "flexContainer": {
+                "display": "flex",
+                "flexDirection": { "xs": "column", "md": "row" },
+                "alignItems": "center",
+                "gap": { "xs": 4, "md": 8 },
+                "maxWidth": "1400px",
+                "margin": "0 auto"
+              }
+            }
+          },
+          "textContent": {
+            "flex": { "md": "1 1 50%" },
+            "maxWidth": { "md": "600px" },
+            "paddingLeft": { "xs": 0, "md": 14, "lg": 18 },
             "elements": [
               {
-                "type": "Avatar",
-                "muiComponent": "Avatar",
-                "size": 160,
+                "type": "Typography",
+                "variant": "h6",
+                "text": "Hello!",
                 "styling": {
-                  "border": "4px solid rgba(255, 255, 255, 0.5)",
-                  "boxShadow": "0 8px 24px rgba(0, 0, 0, 0.15)",
-                  "margin": "0 auto 24px"
-                },
-                "animation": "fade-in-up"
+                  "color": "#34d399",
+                  "fontWeight": 500,
+                  "fontSize": "1.125rem",
+                  "marginBottom": "16px"
+                }
               },
               {
                 "type": "Typography",
                 "variant": "h1",
                 "muiComponent": "Typography",
-                "text": "Ronnie Lutaro",
+                "text": "I'm Ronnie Lutaro",
                 "styling": {
-                  "fontWeight": 800,
+                  "fontWeight": 700,
                   "fontSize": {
                     "mobile": "2.5rem",
                     "tablet": "3.5rem",
-                    "desktop": "4rem"
+                    "desktop": "4.5rem"
                   },
-                  "background": "linear-gradient(45deg, #667eea 30%, #764ba2 90%)",
-                  "backgroundClip": "text",
-                  "WebkitBackgroundClip": "text",
-                  "WebkitTextFillColor": "transparent",
-                  "marginBottom": "16px"
+                  "color": "#ffffff",
+                  "marginBottom": "24px",
+                  "lineHeight": 1.2
                 },
                 "animation": "fade-in-up 0.6s ease-out 0.2s"
               },
               {
                 "type": "Typography",
-                "variant": "h4",
-                "muiComponent": "Typography",
-                "component": "TypeAnimation",
-                "texts": [
-                  "Product Manager",
-                  "Software Engineer",
-                  "Problem Solver",
-                  "Builder"
-                ],
-                "styling": {
-                  "fontWeight": 600,
-                  "fontSize": {
-                    "mobile": "1.25rem",
-                    "tablet": "1.75rem",
-                    "desktop": "2rem"
-                  },
-                  "color": "rgba(255, 255, 255, 0.95)",
-                  "marginBottom": "24px"
-                },
-                "animation": "typing-animation"
-              },
-              {
-                "type": "Typography",
                 "variant": "body1",
                 "muiComponent": "Typography",
-                "text": "I translate user needs into Products they deeply love and care about",
+                "text": "Product Manager with 4+ years of product work and a software engineering background. I translate user needs into Products they deeply love and care about.",
                 "styling": {
-                  "fontSize": "1.125rem",
-                  "color": "rgba(255, 255, 255, 0.85)",
-                  "maxWidth": "600px",
-                  "margin": "0 auto 40px",
-                  "lineHeight": 1.6
+                  "fontSize": { "xs": "1rem", "md": "1.125rem" },
+                  "color": "rgba(255, 255, 255, 0.7)",
+                  "marginBottom": "32px",
+                  "lineHeight": 1.7
                 },
                 "animation": "fade-in-up 0.6s ease-out 0.4s"
               },
               {
-                "type": "ButtonGroup",
-                "muiComponent": "Stack",
-                "direction": "row",
-                "spacing": 2,
-                "justifyContent": "center",
-                "buttons": [
-                  {
-                    "component": "Button",
-                    "muiComponent": "Button",
-                    "variant": "contained",
-                    "size": "large",
-                    "text": "View My Work",
-                    "action": "smooth-scroll-to-featured-work",
-                    "styling": {
-                      "background": "rgba(255, 255, 255, 0.25)",
-                      "backdropFilter": "blur(10px)",
-                      "border": "1px solid rgba(255, 255, 255, 0.3)",
-                      "borderRadius": "12px",
-                      "padding": "12px 32px",
-                      "fontWeight": 600,
-                      "textTransform": "none",
-                      "fontSize": "1rem",
-                      "color": "#fff",
-                      "hover": {
-                        "background": "rgba(255, 255, 255, 0.35)",
-                        "transform": "translateY(-2px)",
+                "type": "Button",
+                "muiComponent": "Button",
+                "component": "GlassButton",
+                "variant": "emerald",
+                "size": "large",
+                "text": "LET'S TALK",
+                "startIcon": "💬",
+                "styling": {
+                  "background": "linear-gradient(135deg, #34d399 0%, #10b981 100%)",
+                  "padding": "12px 32px",
+                  "fontSize": "1rem",
+                  "fontWeight": 600,
+                  "textTransform": "none",
+                  "hover": {
+                    "background": "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+                  }
+                }
+              }
+            ]
+          },
+          "photoContent": {
+            "flex": { "md": "1 1 50%" },
+            "display": "flex",
+            "justifyContent": { "xs": "center", "md": "flex-end" },
+            "paddingRight": { "xs": 0, "md": 8, "lg": 12 },
+            "paddingTop": { "xs": 0, "md": 6, "lg": 8 },
+            "image": {
+              "src": "/media/ronnie_potrait.png",
+              "alt": "Ronnie Lutaro",
+              "maxWidth": { "xs": "400px", "md": "500px", "lg": "600px" },
+              "borderRadius": "24px",
+              "boxShadow": "0 20px 60px rgba(0, 0, 0, 0.4)"
+            }
+          }
+        }
+      },
+      {
+        "id": "skills-section",
+        "component": "Box",
+        "styling": {
+          "paddingBottom": "96px",
+          "position": "relative",
+          "zIndex": 1
+        },
+        "content": {
+          "container": {
+            "maxWidth": "md",
+            "textAlign": "center",
+            "title": {
+              "variant": "h6",
+              "text": "Core Competencies",
+              "styling": {
+                "fontWeight": 600,
+                "color": "rgba(255, 255, 255, 0.9)",
+                "marginBottom": "24px"
+              }
+            },
+            "chips": [
+              { "label": "Product Management", "variant": "primary" },
+              { "label": "Customer Discovery", "variant": "success" },
+              { "label": "Feature Development", "variant": "warning" },
+              { "label": "Post-Launch Iteration", "variant": "primary" },
+              { "label": "Software Engineering", "variant": "success" },
+              { "label": "Marketing Tech", "variant": "warning" }
+            ]
+          }
+        }
+      },
+      {
+      },
+      {
+        "id": "featured-work-section",
+        "component": "Box",
+        "styling": {
+          "paddingY": "96px",
+          "position": "relative",
+          "zIndex": 1
+        },
+        "content": {
+          "container": {
+            "maxWidth": "lg",
+            "title": {
+              "variant": "h2",
+              "text": "Featured Work",
+              "styling": {
+                "fontWeight": 700,
+                "textAlign": "center",
+                "marginBottom": "16px",
+                "color": "#ffffff",
+                "fontSize": { "xs": "2rem", "md": "3rem" }
+              }
+            },
+            "subtitle": {
+              "variant": "subtitle1",
+              "text": "Projects I'm proud of",
+              "styling": {
+                "textAlign": "center",
+                "marginBottom": "48px",
+                "color": "rgba(255, 255, 255, 0.8)"
+              }
+            },
+            "grid": {
+              "component": "Grid",
+              "spacing": 4,
+              "items": [
+                {
+                  "gridSize": { "xs": 12, "md": 6 },
+                  "card": {
+                    "component": "GlassCard",
+                    "variant": "dark",
+                    "enableHover": true,
+                    "content": {
+                      "title": "Rocketize",
+                      "description": "Intelligent tools for Marketing Teams to streamline operations & maximize ROAS",
+                      "tags": ["Product", "Marketing Tech", "SaaS"]
+                    }
+                  }
+                },
+                {
+                  "gridSize": { "xs": 12, "md": 6 },
+                  "card": {
+                    "component": "GlassCard",
+                    "variant": "dark",
+                    "enableHover": true,
+                    "content": {
+                      "title": "StartHub",
+                      "description": "Supporting 10+ founders from idea to market with customer discovery and product development",
+                      "tags": ["Product Management", "Customer Discovery", "Startups"]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "footer": {
+    "styling": {
+      "background": "rgba(255, 255, 255, 0.03)",
+      "backdropFilter": "blur(10px)",
+      "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+      "padding": "64px 0",
+      "color": "rgba(255, 255, 255, 0.7)"
+    }
+  }
+}
+
                         "boxShadow": "0 12px 24px rgba(0, 0, 0, 0.15)"
                       }
                     }
@@ -267,189 +422,10 @@
               "color": "rgba(255, 255, 255, 0.8)",
               "animation": "bounce 2s infinite"
             },
-            "action": "smooth-scroll-to-about"
+            "action": "smooth-scroll-to-featured-work"
           }
         }
       },
-      {
-        "id": "about-section",
-        "component": "Container",
-        "muiComponent": "Container",
-        "maxWidth": "lg",
-        "styling": {
-          "paddingTop": "120px",
-          "paddingBottom": "120px",
-          "background": "transparent"
-        },
-        "content": {
-          "sectionTitle": {
-            "component": "Typography",
-            "variant": "h2",
-            "text": "Who I Am",
-            "styling": {
-              "fontWeight": 700,
-              "textAlign": "center",
-              "marginBottom": "16px",
-              "fontSize": {
-                "mobile": "2rem",
-                "desktop": "3rem"
-              }
-            }
-          },
-          "sectionSubtitle": {
-            "component": "Typography",
-            "variant": "subtitle1",
-            "text": "Product Manager with 4+ years of product work and a software engineering background",
-            "styling": {
-              "textAlign": "center",
-              "marginBottom": "64px",
-              "color": "text.secondary",
-              "fontSize": "1.125rem"
-            }
-          },
-          "bioCard": {
-            "component": "Card",
-            "muiComponent": "Card",
-            "styling": {
-              "background": "rgba(255, 255, 255, 0.4)",
-              "backdropFilter": "blur(20px)",
-              "borderRadius": "24px",
-              "border": "1px solid rgba(255, 255, 255, 0.18)",
-              "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
-              "padding": "48px",
-              "marginBottom": "48px"
-            },
-            "content": {
-              "description": {
-                "component": "Typography",
-                "variant": "body1",
-                "paragraphs": [
-                  "At StartHub, I've supported 10+ founders from idea to market by running customer discovery, translating insights into requirements and features, and closing the loop with post-launch iteration.",
-                  "I'm also building Rocketize, a side project where I run end-to-end product cycles. The project is aimed at building a suite of intelligent tools for Marketing Teams to streamline & improve the efficiency of their operations & campaigns, while reducing Waste & maximizing Return On Ad Spend."
-                ],
-                "styling": {
-                  "fontSize": "1.125rem",
-                  "lineHeight": 1.8,
-                  "color": "text.primary",
-                  "marginBottom": "8px"
-                }
-              }
-            }
-          },
-          "skills": {
-            "component": "Box",
-            "title": {
-              "component": "Typography",
-              "variant": "h5",
-              "text": "Core Competencies",
-              "styling": {
-                "fontWeight": 600,
-                "marginBottom": "24px",
-                "textAlign": "center"
-              }
-            },
-            "chipGroup": {
-              "component": "Box",
-              "muiComponent": "Box",
-              "display": "flex",
-              "flexWrap": "wrap",
-              "gap": 2,
-              "justifyContent": "center",
-              "chips": [
-                {
-                  "component": "Chip",
-                  "muiComponent": "Chip",
-                  "label": "Product Management",
-                  "icon": "WorkOutline",
-                  "styling": {
-                    "background": "rgba(102, 126, 234, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(102, 126, 234, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500,
-                    "hover": {
-                      "background": "rgba(102, 126, 234, 0.25)",
-                      "transform": "translateY(-2px)",
-                      "boxShadow": "0 4px 12px rgba(102, 126, 234, 0.3)"
-                    }
-                  }
-                },
-                {
-                  "component": "Chip",
-                  "label": "Customer Discovery",
-                  "icon": "SearchOutlined",
-                  "styling": {
-                    "background": "rgba(118, 75, 162, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(118, 75, 162, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500
-                  }
-                },
-                {
-                  "component": "Chip",
-                  "label": "Feature Development",
-                  "icon": "BuildOutlined",
-                  "styling": {
-                    "background": "rgba(79, 172, 254, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(79, 172, 254, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500
-                  }
-                },
-                {
-                  "component": "Chip",
-                  "label": "Post-Launch Iteration",
-                  "icon": "AutorenewOutlined",
-                  "styling": {
-                    "background": "rgba(240, 147, 251, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(240, 147, 251, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500
-                  }
-                },
-                {
-                  "component": "Chip",
-                  "label": "Software Engineering",
-                  "icon": "CodeOutlined",
-                  "styling": {
-                    "background": "rgba(102, 126, 234, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(102, 126, 234, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500
-                  }
-                },
-                {
-                  "component": "Chip",
-                  "label": "Marketing Tech",
-                  "icon": "TrendingUpOutlined",
-                  "styling": {
-                    "background": "rgba(118, 75, 162, 0.15)",
-                    "backdropFilter": "blur(10px)",
-                    "border": "1px solid rgba(118, 75, 162, 0.3)",
-                    "borderRadius": "12px",
-                    "padding": "8px 16px",
-                    "fontSize": "0.95rem",
-                    "fontWeight": 500
-                  }
-                }
-              ]
-            }
-          }
-        }
       },
       {
         "id": "featured-work-section",
