@@ -6,6 +6,7 @@ import { Callout } from '@/components/projects/Callout';
 import { Quote } from '@/components/projects/Quote';
 import { ImageGrid } from '@/components/projects/ImageGrid';
 import { MetricsGrid } from '@/components/projects/MetricsGrid';
+import { Footer } from '@/components/Footer';
 
 // Rich case study data matching the reference format
 const caseStudy = {
@@ -233,6 +234,9 @@ export default function CaseStudyPage() {
 
         <CaseStudyNavigation currentId={caseStudy.id} />
       </main>
+
+        {/* Footer */}
+        <Footer />
     </div>
   );
 }

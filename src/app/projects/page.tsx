@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectCard } from '@/components/projects/ProjectCard';
+import { Footer } from '@/components/Footer';
 
 const projects = [
   {
@@ -134,6 +135,9 @@ export default function ProjectsListingPage() {
           </div>
         </section>
       </main>
+
+        {/* Footer */}
+        <Footer />
     </div>
   );
 }
