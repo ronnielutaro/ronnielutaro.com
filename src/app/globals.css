@@ -1,26 +1,182 @@
 @import "tailwindcss";
 
+/* Custom CSS Variables for Glassmorphic Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background Colors */
+  --bg-primary: #06080f;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --bg-glass-active: rgba(255, 255, 255, 0.1);
+  
+  /* Border Colors */
+  --border-glass: rgba(96, 165, 250, 0.20);
+  --border-glass-light: rgba(255, 255, 255, 0.2);
+  --border-glass-category: rgba(255, 255, 255, 0.15);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.70);
+  --text-tertiary: rgba(255, 255, 255, 0.50);
+  --text-muted: rgba(255, 255, 255, 0.40);
+  
+  /* Gradients */
+  --gradient-blue: linear-gradient(135deg, #3b82f6, #60a5fa);
+  --gradient-green: linear-gradient(135deg, #34d399, #10b981);
+  --gradient-teal: linear-gradient(135deg, #4ade80, #14b8a6);
+  --gradient-glass: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.08));
+  
+  /* Shadows */
+  --shadow-glass: 0 0 30px rgba(96, 165, 250, 0.1);
+  --shadow-glass-lg: 0 0 60px rgba(96, 165, 250, 0.15);
+  --shadow-card-hover: 0 0 50px rgba(96, 165, 250, 0.2);
+  
+  /* Blur Effects */
+  --blur-glass: blur(20px);
+  --blur-glass-lg: blur(24px);
+  --blur-glass-xl: blur(30px);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Base Styles */
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-[#06080f] text-white font-sans antialiased;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.5);
+}
+
+/* Selection Styles */
+::selection {
+  background: rgba(96, 165, 250, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(96, 165, 250, 0.3);
+  color: #ffffff;
+}
+
+/* Focus Styles */
+.glass-focus:focus {
+  outline: none;
+  border-color: rgba(96, 165, 250, 0.40);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.1);
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Background Light Beam Animations - From Wireframes */
+@keyframes glow1 {
+  0%, 100% {
+    opacity: 0.8;
+    transform: rotate(-25deg) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: rotate(-25deg) scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Utility Classes for Common Glassmorphic Patterns */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur-glass-lg) saturate(180%);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-panel-hover:hover {
+  background: var(--bg-glass-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.glass-text-primary {
+  color: var(--text-primary);
+}
+
+.glass-text-secondary {
+  color: var(--text-secondary);
+}
+
+.glass-text-muted {
+  color: var(--text-tertiary);
 }
