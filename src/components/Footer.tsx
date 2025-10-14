@@ -102,8 +102,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+  {/* Footer Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 md:ml-24">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <h3 
