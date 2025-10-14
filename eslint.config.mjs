@@ -18,6 +18,9 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      // Ignore reference code and legacy files
+      "reference_code/**",
+      "src/components/layout/Footer.tsx",
     ],
   },
 ];

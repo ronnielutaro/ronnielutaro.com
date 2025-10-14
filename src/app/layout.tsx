@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import ThemeProvider from "@/theme/ThemeProvider";
-import ClientLayout from "@/components/ClientLayout";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Ronnie Lutaro | Product Manager & Software Engineer",
@@ -26,12 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider>
-          <ClientLayout>{children}</ClientLayout>
-        </ThemeProvider>
+      <body className="antialiased bg-[#06080f] text-white font-sans">
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
