@@ -2,7 +2,6 @@ import React from 'react';
 import { PostCard } from '@/components/blog/PostCard';
 import { SearchFilters } from '@/components/blog/SearchFilters';
 import { Pagination } from '@/components/blog/Pagination';
-import { Footer } from '@/components/Footer';
 
 const blogPosts = [
   {
@@ -69,33 +68,7 @@ const blogPosts = [
 
 export default function BlogListingPage() {
   return (
-    <div 
-      className="min-h-screen relative overflow-x-hidden"
-      style={{
-        background: '#06080f',
-      }}
-    >
-      {/* Background Light Beams - Exactly as per wireframe */}
-      <div 
-        className="fixed top-0 right-1/4 w-[1200px] h-[1200px] pointer-events-none opacity-80"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(59,130,246,0.8) 0%, rgba(59,130,246,0) 60%)',
-          filter: 'blur(90px)',
-          transform: 'rotate(-25deg)',
-          animation: 'glow1 16s ease-in-out infinite',
-        }}
-      />
-      <div 
-        className="fixed bottom-0 left-1/4 w-[800px] h-[800px] pointer-events-none opacity-50"
-        style={{
-          background: 'radial-gradient(circle, rgba(96,165,250,0.5) 0%, rgba(96,165,250,0) 50%)',
-          filter: 'blur(80px)',
-          animation: 'pulse 12s ease-in-out infinite',
-        }}
-      />
-
-      {/* Main Content */}
-      <main className="relative z-10 pt-32 pb-24">
+      <main className="pt-32 pb-24">
         {/* Hero Section - Exact styling from wireframe */}
         <section className="text-center mb-16 px-4" style={{ paddingTop: '120px', paddingBottom: '80px' }}>
           <div className="max-w-4xl mx-auto">
@@ -139,9 +112,5 @@ export default function BlogListingPage() {
           <Pagination />
         </div>
       </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
   );
 }
