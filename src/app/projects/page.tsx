@@ -1,25 +1,16 @@
 import React from 'react';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { Footer } from '@/components/Footer';
+import { createProjectsLoader } from '@/lib/content-loader';
 
-const projects = [
-  {
-    id: 1,
-    badge: '0→1 PRODUCT',
-    title: 'AGRILogistics Mobile & Web Platform',
-    subtitle: 'Farmer-to-hub logistics with trackable first-mile delivery',
-    metrics: [
-      { label: 'Driver Activation', value: '40% → 65%' },
-      { label: 'UI/API Performance', value: '20% faster' },
-      { label: 'Usability Score', value: '40% improvement' },
-    ],
-    image: 'https://images.unsplash.com/photo-1630283017802-785b7aff9aac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    href: '/projects/agrilogistics',
-  },
-  // ...add more projects as needed
-];
+// Get all projects from MDX files at build time
+const projectsLoader = createProjectsLoader();
+const projects = await projectsLoader.getAllContent();
 
 export default function ProjectsListingPage() {
+  // For now, show all projects since we can't use searchParams in static export
+  // TODO: Implement client-side pagination if needed
+  const allProjects = projects;
   return (
     <div className="min-h-screen relative overflow-x-hidden" style={{ background: '#06080f' }}>
       {/* Background Light Beams - Exact from wireframe */}
@@ -129,11 +120,27 @@ export default function ProjectsListingPage() {
         {/* Projects Grid */}
         <section className="max-w-7xl mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
+            {allProjects.map((project) => (
+              <ProjectCard 
+                key={project.meta.slug} 
+                image={project.meta.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'}
+                category={project.meta.category || 'Product'}
+                title={project.meta.title}
+                excerpt={project.meta.excerpt}
+                date={new Date(project.meta.date).toLocaleDateString('en-US', { 
+                  month: 'short', 
+                  day: 'numeric', 
+                  year: 'numeric' 
+                })}
+                readTime={project.meta.readTime || '5 min read'}
+                tags={project.meta.tags}
+                slug={project.meta.slug}
+              />
             ))}
           </div>
         </section>
+
+        {/* Note: Pagination temporarily removed due to static export constraints */}
       </main>
 
         {/* Footer */}

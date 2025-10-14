@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
@@ -11,10 +12,12 @@ interface PostCardProps {
   date: string;
   readTime: string;
   tags: string[];
+  slug: string;
 }
 
-export function PostCard({ image, category, title, excerpt, date, readTime, tags }: PostCardProps) {
+export function PostCard({ image, category, title, excerpt, date, readTime, tags, slug }: PostCardProps) {
   return (
+    <Link href={`/blog/${slug}`} className="block" aria-label={`Read ${title}`}>
     <article 
       className="group rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2"
       style={{
@@ -83,14 +86,12 @@ export function PostCard({ image, category, title, excerpt, date, readTime, tags
               </Badge>
             ))}
           </div>
-          <button 
-            className="p-2 rounded-full transition-all hover:bg-white/10"
-            aria-label="Read more"
-          >
+          <div className="p-2 rounded-full transition-all group-hover:bg-white/10">
             <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white" />
-          </button>
+          </div>
         </div>
       </div>
     </article>
+    </Link>
   );
 }

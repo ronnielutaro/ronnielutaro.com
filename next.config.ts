@@ -1,3 +1,4 @@
+import withMDX from '@next/mdx';
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -5,6 +6,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
+  // Silence root inference warning when multiple lockfiles exist
+  outputFileTracingRoot: process.cwd(),
 };
 
-export default nextConfig;
+export default withMDX({ extension: /\.mdx?$/ })({
+  ...nextConfig,
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+});
