@@ -1,19 +1,12 @@
+
 import Image from 'next/image';
-import { Footer } from '@/components/Footer';
+// Content-only page; ClientLayout is applied in src/app/layout.tsx
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#06080f] relative overflow-hidden">
-      {/* Glassmorphic Background Effects */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-30%] right-[-15%] w-[1400px] h-[1400px]" style={{background:'radial-gradient(ellipse at center,rgba(59,130,246,0.9) 0%,rgba(59,130,246,0.6) 15%,rgba(59,130,246,0.3) 35%,rgba(59,130,246,0) 60%)',filter:'blur(100px)',transform:'rotate(-35deg)'}} />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[1200px] h-[1200px]" style={{background:'radial-gradient(ellipse at center,rgba(37,99,235,0.8) 0%,rgba(37,99,235,0.5) 15%,rgba(37,99,235,0.2) 35%,rgba(37,99,235,0) 60%)',filter:'blur(90px)',transform:'rotate(35deg)'}} />
-        <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px]" style={{background:'radial-gradient(circle,rgba(96,165,250,0.4) 0%,rgba(96,165,250,0) 50%)',filter:'blur(120px)',transform:'translate(-50%,-50%)'}} />
-        <div className="absolute top-[10%] right-[20%] w-[1000px] h-1" style={{background:'linear-gradient(90deg,rgba(59,130,246,0) 0%,rgba(59,130,246,0.6) 50%,rgba(59,130,246,0) 100%)',filter:'blur(3px)',transform:'rotate(-45deg)',boxShadow:'0 0 40px rgba(59,130,246,0.8)'}} />
-      </div>
-
-  {/* Hero Section */}
-  <section className="flex items-center justify-center relative z-10 pt-2 pb-0" style={{ minHeight: '85vh' }}>
+  <>
+      {/* Hero Section */}
+      <section className="flex items-center justify-center relative z-10 -mt-24 pt-0 pb-0" style={{ minHeight: '55vh' }}>
         <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 px-4">
           {/* Left Column - Text */}
           <div className="flex-[1.3] max-w-3xl md:pl-14 lg:pl-20 md:pr-6 lg:pr-10">
@@ -37,7 +30,7 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-20 relative z-10">
+  <section className="py-20 relative z-10">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-bold text-center mb-2 text-white text-3xl md:text-4xl">Featured Work</h2>
           <p className="text-center mb-8 text-white/80">Projects I&apos;m proud of</p>
@@ -63,9 +56,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+      
+    </>
   );
 }
+
