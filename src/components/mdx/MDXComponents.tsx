@@ -31,8 +31,8 @@ export const baseMDXComponents = {
   ul: (props: React.HTMLProps<HTMLUListElement>) => (
      <ul className="space-y-2 mb-4" {...props} />
   ),
-  ol: (props: React.HTMLProps<HTMLOListElement>) => (
-     <ol className="space-y-2 mb-4 list-decimal list-inside" {...props} />
+  ol: ({ children, type: _type, ...props }: React.HTMLProps<HTMLOListElement>) => (
+     <ol className="space-y-2 mb-4 list-decimal list-inside" {...props}>{children}</ol>
   ),
   li: (props: React.HTMLProps<HTMLLIElement>) => (
      <li className="text-lg text-white/90 flex items-start gap-3" {...props} />
@@ -93,6 +93,7 @@ export const baseMDXComponents = {
  * @returns Merged component object
  */
 export function createMDXComponents(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   customComponents: Record<string, React.ComponentType<any>> = {}
 ) {
   return {
