@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ExportedImage from 'next-image-export-optimizer';
 import Link from 'next/link';
 import fs from 'fs';
@@ -5,6 +6,22 @@ import path from 'path';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { baseMDXComponents } from '@/components/mdx/MDXComponents';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Learn about Ronnie Lutaro - Product Manager with 4+ years of experience and software engineering background. Passionate about building products people love.',
+  openGraph: {
+    title: 'About | Ronnie Lutaro',
+    description: 'Learn about Ronnie Lutaro - Product Manager with 4+ years of experience and software engineering background.',
+    url: 'https://ronnielutaro.com/about',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About | Ronnie Lutaro',
+    description: 'Learn about Ronnie Lutaro - Product Manager with 4+ years of experience.',
+  },
+};
 
 // Load MDX content at build time
 function getAboutContent() {
