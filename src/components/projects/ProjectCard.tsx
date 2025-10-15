@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 import { Calendar, Clock, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 
@@ -32,7 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ image, category, title
     >
       {/* Image */}
       <div className="relative h-[200px] overflow-hidden flex-shrink-0">
-        <Image 
+        <ExportedImage 
           src={image}
           alt={title}
           width={400}

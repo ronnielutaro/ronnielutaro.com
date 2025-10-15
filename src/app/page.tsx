@@ -1,5 +1,5 @@
 
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 import { FeaturedWork } from '@/components/FeaturedWork';
 // Content-only page; ClientLayout is applied in src/app/layout.tsx
 
@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           {/* Right Column - Photo */}
           <div className="flex-1 flex justify-center md:justify-end pt-0 md:pt-6 lg:pt-10 pr-0 md:pr-8 lg:pr-12">
-            <Image 
+            <ExportedImage 
               src="/media/ronnie_potrait.png" 
               alt="Ronnie Lutaro" 
               width={512}
