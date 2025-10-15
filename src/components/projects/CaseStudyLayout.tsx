@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 
 interface Section {
   title: string;
@@ -93,7 +93,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({ sections, arti
               className="mb-4 overflow-hidden relative h-48"
               style={{ borderRadius: '12px' }}
             >
-              <Image 
+              <ExportedImage 
                 src={artifact.image || '/placeholder-artifact.png'} 
                 alt={artifact.type} 
                 fill

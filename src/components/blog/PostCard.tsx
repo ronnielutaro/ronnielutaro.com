@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 import { Calendar, Clock, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 
@@ -29,7 +29,7 @@ export function PostCard({ image, category, title, excerpt, date, readTime, tags
     >
       {/* Image */}
       <div className="relative h-[220px] overflow-hidden">
-        <Image 
+        <ExportedImage 
           src={image}
           alt={title}
           width={400}

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 
 interface ImageGridProps {
   columns: 1 | 2 | 3;
@@ -33,7 +33,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ columns, images }) => {
               height: '300px',
             }}
           >
-            <Image
+            <ExportedImage
               src={image.src}
               alt={image.alt}
               fill

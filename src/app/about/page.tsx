@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ExportedImage from 'next-image-export-optimizer';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
@@ -58,7 +58,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="text-center pt-12 pb-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <Image 
+          <ExportedImage 
             src={frontmatter.image.src} 
             alt={frontmatter.image.alt} 
             width={320} 
