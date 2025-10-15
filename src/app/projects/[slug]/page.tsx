@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     badge: project.meta.category || 'PROJECT',
     title: project.meta.title,
     oneLiner: project.meta.excerpt,
-    metrics: [],
+    metrics: project.meta.metrics || [],
     role: 'Product Manager',
     timeline: new Date(project.meta.date).getFullYear().toString(),
     duration: project.meta.readTime || '6 months',
