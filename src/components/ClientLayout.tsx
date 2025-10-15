@@ -16,23 +16,23 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         background: '#06080f',
       }}
     >
-      {/* Background Light Beams - Beautiful animated background effects */}
+      {/* Background Light Beams - Optimized animated background effects */}
       <div 
-        className="fixed top-0 right-1/4 w-[1200px] h-[1200px] pointer-events-none opacity-80 hidden md:block"
+        className="fixed top-0 right-1/4 w-[1200px] h-[1200px] pointer-events-none opacity-60 hidden md:block"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(59,130,246,0.8) 0%, rgba(59,130,246,0) 60%)',
-          filter: 'blur(90px)',
+          background: 'radial-gradient(ellipse at center, rgba(59,130,246,0.6) 0%, rgba(59,130,246,0) 60%)',
+          filter: 'blur(60px)',
           transform: 'rotate(-25deg)',
-          animation: 'glow1 16s ease-in-out infinite',
+          animation: 'glow1 20s ease-in-out infinite',
           willChange: 'transform, opacity',
         }}
       />
       <div 
-        className="fixed bottom-0 left-1/4 w-[800px] h-[800px] pointer-events-none opacity-50 hidden md:block"
+        className="fixed bottom-0 left-1/4 w-[800px] h-[800px] pointer-events-none opacity-35 hidden md:block"
         style={{
-          background: 'radial-gradient(circle, rgba(96,165,250,0.5) 0%, rgba(96,165,250,0) 50%)',
-          filter: 'blur(80px)',
-          animation: 'pulse 12s ease-in-out infinite',
+          background: 'radial-gradient(circle, rgba(96,165,250,0.4) 0%, rgba(96,165,250,0) 50%)',
+          filter: 'blur(50px)',
+          animation: 'pulse 16s ease-in-out infinite',
           willChange: 'transform, opacity',
         }}
       />

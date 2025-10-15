@@ -132,26 +132,26 @@ body {
   }
 }
 
-/* Background Light Beam Animations - From Wireframes */
+/* Background Light Beam Animations - Optimized for performance */
 @keyframes glow1 {
   0%, 100% {
-    opacity: 0.8;
-    transform: rotate(-25deg) scale(1);
+    opacity: 0.6;
+    transform: rotate(-25deg) scale(1) translateZ(0);
   }
   50% {
-    opacity: 0.6;
-    transform: rotate(-25deg) scale(1.05);
+    opacity: 0.4;
+    transform: rotate(-25deg) scale(1.03) translateZ(0);
   }
 }
 
 @keyframes pulse {
   0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
+    opacity: 0.35;
+    transform: scale(1) translateZ(0);
   }
   50% {
-    opacity: 0.3;
-    transform: scale(1.1);
+    opacity: 0.25;
+    transform: scale(1.05) translateZ(0);
   }
 }
 
