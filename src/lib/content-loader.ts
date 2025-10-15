@@ -11,6 +11,7 @@ export interface ContentMeta {
   category?: string;
   readTime?: string;
   image?: string;
+  featured?: boolean;
 }
 
 export interface ContentItem {
@@ -96,6 +97,7 @@ export class ContentLoader {
         category: data.category,
         readTime: data.readTime,
         image: data.image,
+        featured: data.featured,
       },
       content,
     };
