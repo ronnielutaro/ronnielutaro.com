@@ -2,6 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+export interface Metric {
+  label: string;
+  value: string;
+}
+
 export interface ContentMeta {
   title: string;
   date: string;
@@ -12,6 +17,7 @@ export interface ContentMeta {
   readTime?: string;
   image?: string;
   featured?: boolean;
+  metrics?: Metric[];
 }
 
 export interface ContentItem {
