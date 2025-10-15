@@ -155,6 +155,17 @@ body {
   }
 }
 
+/* Respect user motion preferences and disable heavy animations on mobile */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Utility Classes for Common Glassmorphic Patterns */
 .glass-panel {
   background: var(--bg-glass);
