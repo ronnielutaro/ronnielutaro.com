@@ -7,26 +7,20 @@ import { Callout } from '@/components/projects/Callout';
 import { Quote } from '@/components/projects/Quote';
 import { ImageGrid } from '@/components/projects/ImageGrid';
 import { MetricsGrid } from '@/components/projects/MetricsGrid';
+import { createMDXComponents } from '@/components/mdx/MDXComponents';
 // Footer removed; using global ClientLayout footer
 import { createProjectsLoader } from '@/lib/content-loader';
 import { notFound } from 'next/navigation';
 
-// MDX Components for rendering
-const mdxComponents = {
+// MDX Components: Base components + project-specific custom components
+const mdxComponents = createMDXComponents({
   CaseStudySection,
   Callout,
   Quote,
   ImageGrid,
   MetricsGrid,
   CaseStudyHero,
-  // Add standard HTML elements with styling
-  h1: (props: React.HTMLProps<HTMLHeadingElement>) => <h1 className="text-4xl font-bold text-white mb-6" {...props} />,
-  h2: (props: React.HTMLProps<HTMLHeadingElement>) => <h2 className="text-3xl font-semibold text-white mb-4" {...props} />,
-  h3: (props: React.HTMLProps<HTMLHeadingElement>) => <h3 className="text-2xl font-semibold text-white mb-3" {...props} />,
-  p: (props: React.HTMLProps<HTMLParagraphElement>) => <p className="text-lg text-white/90 leading-relaxed mb-4" {...props} />,
-  ul: (props: React.HTMLProps<HTMLUListElement>) => <ul className="space-y-2 mb-4" {...props} />,
-  li: (props: React.HTMLProps<HTMLLIElement>) => <li className="text-lg text-white/90 flex items-start gap-3" {...props} />,
-};
+});
 
 export async function generateStaticParams() {
   const projectsLoader = createProjectsLoader();
