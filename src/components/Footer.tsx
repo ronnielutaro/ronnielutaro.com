@@ -102,8 +102,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+  {/* Footer Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 md:ml-24">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <h3 
@@ -136,8 +136,7 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'Projects', href: '/projects' },
-                { label: 'Case Studies', href: '/case-studies' },
-                { label: 'Blog', href: '/blog' },
+                { label: 'Case Studies', href: '/projects' },
                 { label: 'About', href: '/about' },
               ].map((link) => (
                 <li key={link.label}>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Linkedin, Calendar } from "lucide-react";
+import { Mail, Linkedin, Twitter } from "lucide-react";
 
 export default function ContactPageClient() {
   return (
@@ -19,9 +19,8 @@ export default function ContactPageClient() {
             </div>
 
             <h1
-              className="text-white mb-8"
+              className="text-white mb-8 text-4xl md:text-6xl lg:text-7xl"
               style={{
-                fontSize: "72px",
                 fontWeight: "800",
                 letterSpacing: "-0.03em",
                 lineHeight: "1",
@@ -31,11 +30,11 @@ export default function ContactPageClient() {
               Something Great
             </h1>
             <p
-              className="text-white/60 max-w-2xl mx-auto mb-12"
-              style={{ fontSize: "20px", lineHeight: "1.7" }}
+              className="text-white/60 max-w-2xl mx-auto mb-12 text-base md:text-lg lg:text-xl"
+              style={{ lineHeight: "1.7" }}
             >
               Whether you&apos;re looking to discuss a product opportunity, explore a
-              collaboration, or just connect—I&apos;m always open to meaningful
+              collaboration, or just connect, I&apos;m always open to meaningful
               conversations.
             </p>
 
@@ -91,29 +90,29 @@ export default function ContactPageClient() {
                 </p>
               </a>
 
-              {/* Schedule */}
+              {/* Twitter */}
               <a
-                href="https://calendly.com/yourlink"
+                href="https://x.com/ronnielutaro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-6 rounded-2xl transition-all hover:scale-[1.02]"
                 style={{
                   background: "rgba(255, 255, 255, 0.03)",
                   backdropFilter: "blur(20px)",
-                  border: "1px solid rgba(52, 211, 153, 0.2)",
+                  border: "1px solid rgba(96, 165, 250, 0.2)",
                 }}
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-auto transition-colors group-hover:bg-emerald-500/20"
-                  style={{ background: "rgba(52, 211, 153, 0.1)" }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-auto transition-colors group-hover:bg-blue-500/20"
+                  style={{ background: "rgba(96, 165, 250, 0.1)" }}
                 >
-                  <Calendar className="w-6 h-6 text-emerald-400" />
+                  <Twitter className="w-6 h-6 text-blue-400" />
                 </div>
                 <h3 className="text-white mb-1" style={{ fontWeight: 600, fontSize: 16 }}>
-                  Schedule Call
+                  Twitter
                 </h3>
                 <p className="text-white/50" style={{ fontSize: 13 }}>
-                  Book a time to chat
+                  Follow or DM me
                 </p>
               </a>
             </div>

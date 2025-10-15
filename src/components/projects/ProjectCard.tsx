@@ -3,99 +3,101 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Calendar, Clock, ChevronRight } from 'lucide-react';
+import { Badge } from '@/components/ui/Badge';
 
-interface Metric {
-  label: string;
-  value: string;
-}
 
 interface ProjectCardProps {
-  id: number;
-  badge: string;
-  title: string;
-  subtitle: string;
-  metrics: Metric[];
   image: string;
-  href: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  slug: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ badge, title, subtitle, metrics, image, href }) => (
-  <Link 
-    href={href} 
-    className="block group h-full cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2"
-    style={{
-      background: 'rgba(255, 255, 255, 0.05)',
-      backdropFilter: 'blur(24px) saturate(180%)',
-      border: '1px solid rgba(255, 255, 255, 0.18)',
-      borderRadius: '24px',
-      overflow: 'hidden',
-      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.border = '1px solid rgba(96, 165, 250, 0.4)';
-      e.currentTarget.style.boxShadow = '0 16px 48px rgba(59, 130, 246, 0.15)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.18)';
-      e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05)';
-    }}
-  >
-    <div className="relative h-56 w-full overflow-hidden">
-      <Image src={image} alt={title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+export const ProjectCard: React.FC<ProjectCardProps> = ({ image, category, title, excerpt, date, readTime, tags, slug }) => {
+  return (
+    <Link href={`/projects/${slug}`} className="block" aria-label={`View ${title}`}>
+    <article 
+      className="group rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col h-[480px]"
+      style={{
+        background: 'rgba(255, 255, 255, 0.05)',
+        backdropFilter: 'blur(24px) saturate(180%)',
+        border: '1px solid rgba(96, 165, 250, 0.20)',
+        boxShadow: '0 0 30px rgba(96, 165, 250, 0.1)',
+      }}
+    >
+      {/* Image */}
+      <div className="relative h-[200px] overflow-hidden flex-shrink-0">
+        <Image 
+          src={image}
+          alt={title}
+          width={400}
+          height={220}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       <div 
-        className="absolute top-4 left-4 text-white text-xs px-3 py-1 font-semibold"
+        className="absolute top-4 left-4 px-3 py-1 rounded-full"
         style={{
-          background: 'rgba(59, 130, 246, 0.15)',
-          border: '1px solid rgba(96, 165, 250, 0.3)',
-          borderRadius: '12px',
+          background: 'rgba(255, 255, 255, 0.15)',
           backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
         }}
       >
-        {badge}
+        <span className="text-white">{category}</span>
       </div>
     </div>
-    <div className="p-6 flex flex-col h-full">
-      <h2 
-        className="text-white mb-2"
-        style={{
-          fontSize: '1.25rem',
-          fontWeight: 700,
-          lineHeight: 1.3,
-        }}
-      >
-        {title}
-      </h2>
-      <p 
-        className="text-white/70 mb-4 flex-grow"
-        style={{
-          fontSize: '0.875rem',
-          lineHeight: 1.6,
-        }}
-      >
-        {subtitle}
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {metrics.map((metric, idx) => (
-          <div 
-            key={idx} 
-            className="text-white/80 text-xs px-2 py-1"
-            style={{
-              background: 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              borderRadius: '8px',
-            }}
-          >
-            {metric.label}: <span className="font-semibold text-white">{metric.value}</span>
+
+      {/* Content */}
+  <div className="p-6 flex flex-col flex-1">
+        {/* Meta */}
+        <div className="flex items-center gap-3 mb-3 text-white/60">
+          <div className="flex items-center gap-1">
+            <Calendar className="w-3.5 h-3.5" />
+            <span>{date}</span>
           </div>
-        ))}
+          <span>•</span>
+          <div className="flex items-center gap-1">
+            <Clock className="w-3.5 h-3.5" />
+            <span>{readTime}</span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-white mb-2 line-clamp-2">
+        {title}
+        </h3>
+
+        {/* Excerpt */}
+        <p className="text-white/70 mb-4 line-clamp-3 flex-grow">
+          {excerpt}
+        </p>
+
+        {/* Tags and Read More */}
+        <div className="flex items-center justify-between mt-auto">
+          <div className="flex gap-2 flex-wrap max-h-[60px] overflow-hidden">
+            {tags.slice(0,3).map((tag) => (
+              <Badge 
+                key={tag} 
+                variant="outline" 
+                className="text-white/70 border-white/20 hover:bg-white/5"
+              >
+                {tag}
+              </Badge>
+            ))}
+            {tags.length > 3 && (
+              <Badge variant="outline" className="text-white/60 border-white/15">+{tags.length - 3}</Badge>
+            )}
+          </div>
+          <div className="p-2 rounded-full transition-all group-hover:bg-white/10">
+            <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white" />
+          </div>
+        </div>
       </div>
-      <div 
-        className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
-        style={{ marginTop: 'auto' }}
-      >
-        View Full Case Study →
-      </div>
-    </div>
-  </Link>
-);
+    </article>
+    </Link>
+  );
+};

@@ -38,7 +38,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
       <Header />
       
       {/* Main Content Area */}
-      <main className="relative z-10 pt-32 pb-24">
+      <main className="relative z-10 pt-32 pb-0">
         {children}
       </main>
 
