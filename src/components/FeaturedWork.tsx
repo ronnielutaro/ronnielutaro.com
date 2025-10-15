@@ -1,19 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 import { createProjectsLoader } from '@/lib/content-loader';
-
-const tagColors: Record<string, string> = {
-  'Product': 'bg-blue-500/20 text-blue-300',
-  'SaaS': 'bg-green-500/20 text-green-300',
-  'Marketing Tech': 'bg-purple-500/20 text-purple-300',
-  'Product Management': 'bg-yellow-500/20 text-yellow-300',
-  'Customer Discovery': 'bg-red-500/20 text-red-300',
-  'Startups': 'bg-blue-500/20 text-blue-300',
-};
+import { ProjectCard } from '@/components/projects/ProjectCard';
+import { ArrowRight } from 'lucide-react';
 
 async function getProjects() {
   const projectsLoader = createProjectsLoader();
   const projects = await projectsLoader.getAllContent();
-  return projects.slice(0, 2); // Show only first 2 projects on homepage
+  // Filter for featured projects, fallback to first 2 if none are marked as featured
+  const featuredProjects = projects.filter(p => p.meta.featured === true);
+  return featuredProjects.length > 0 ? featuredProjects.slice(0, 2) : projects.slice(0, 2);
 }
 
 export async function FeaturedWork() {
@@ -21,28 +17,34 @@ export async function FeaturedWork() {
 
   return (
     <section className="py-20 relative z-10">
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <h2 className="font-bold text-center mb-2 text-white text-3xl md:text-4xl">Featured Work</h2>
-        <p className="text-center mb-8 text-white/80">Projects I&apos;m proud of</p>
+        <p className="text-center mb-8 text-white/80">Reflections from some of the stuff I&apos;ve worked on</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div key={project.meta.slug} className="bg-gradient-to-br from-blue-500/10 to-indigo-700/10 rounded-2xl p-6 backdrop-blur-lg border border-blue-400/20 shadow-lg">
-              <h3 className="font-semibold text-xl text-white mb-2">{project.meta.title}</h3>
-              <p className="text-white/70 mb-3">{project.meta.excerpt}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.meta.tags.map((tag) => (
-                  <span 
-                    key={tag} 
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      tagColors[tag] || 'bg-gray-500/20 text-gray-300'
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <ProjectCard
+              key={project.meta.slug}
+              image={project.meta.image || 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200'}
+              category={project.meta.category || 'PROJECT'}
+              title={project.meta.title}
+              excerpt={project.meta.excerpt}
+              date={new Date(project.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              readTime={project.meta.readTime || '5 min read'}
+              tags={project.meta.tags || []}
+              slug={project.meta.slug}
+            />
           ))}
+        </div>
+        
+        {/* View More Button */}
+        <div className="flex justify-center mt-8">
+          <Link 
+            href="/projects"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white/70 hover:text-white border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all"
+          >
+            View More
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
