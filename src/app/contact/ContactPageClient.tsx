@@ -19,9 +19,8 @@ export default function ContactPageClient() {
             </div>
 
             <h1
-              className="text-white mb-8"
+              className="text-white mb-8 text-4xl md:text-6xl lg:text-7xl"
               style={{
-                fontSize: "72px",
                 fontWeight: "800",
                 letterSpacing: "-0.03em",
                 lineHeight: "1",
@@ -31,8 +30,8 @@ export default function ContactPageClient() {
               Something Great
             </h1>
             <p
-              className="text-white/60 max-w-2xl mx-auto mb-12"
-              style={{ fontSize: "20px", lineHeight: "1.7" }}
+              className="text-white/60 max-w-2xl mx-auto mb-12 text-base md:text-lg lg:text-xl"
+              style={{ lineHeight: "1.7" }}
             >
               Whether you&apos;re looking to discuss a product opportunity, explore a
               collaboration, or just connect, I&apos;m always open to meaningful

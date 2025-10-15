@@ -38,9 +38,8 @@ export default function AboutPage() {
           </div>
 
           <h1
-            className="text-white mb-6"
+            className="text-white mb-6 text-4xl md:text-6xl lg:text-7xl"
             style={{
-              fontSize: '72px',
               fontWeight: 800,
               letterSpacing: '-0.03em',
               lineHeight: 1,
@@ -49,8 +48,8 @@ export default function AboutPage() {
             {frontmatter.title}
           </h1>
           <p
-            className="text-white/60 max-w-2xl mx-auto"
-            style={{ fontSize: '20px', lineHeight: 1.7 }}
+            className="text-white/60 max-w-2xl mx-auto text-base md:text-lg lg:text-xl"
+            style={{ lineHeight: 1.7 }}
           >
             {frontmatter.subtitle}
           </p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { createProjectsLoader } from '@/lib/content-loader';
 
@@ -15,6 +16,15 @@ export default function ProjectsListingPage() {
       <section className="text-center mb-16 px-4">
         {/* Hero Section - Exact styling from projects wireframe */}
         <div className="max-w-4xl mx-auto">
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-center gap-2 text-white/50 mb-8">
+              <Link href="/" className="hover:text-white/70 transition-colors">
+                Home
+              </Link>
+              <span>›</span>
+              <span className="text-white/70">Projects</span>
+            </div>
+
             <h1 
               className="text-white mb-4"
               style={{
@@ -34,7 +44,7 @@ export default function ProjectsListingPage() {
                 marginBottom: '32px',
               }}
             >
-              A collection of products and experiences I&apos;ve built, shaped, and launched
+              I love to document my thoughts, learnings, reflections & stories from behind the scenes on projects I&apos;m working on. My wish is that what I learn or discover along the way doesn&apos;t die with me.
             </p>
             
             {/* Filter Chips - From wireframe */}
