@@ -18,7 +18,7 @@ export async function FeaturedWork() {
   return (
     <section className="py-20 relative z-10">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="font-bold text-center mb-2 text-white text-3xl md:text-4xl">Featured Work</h2>
+        <h2 className="font-bold text-center mb-2 text-white text-3xl md:text-4xl">Featured Posts</h2>
         <p className="text-center mb-8 text-white/80">Reflections from some of the stuff I&apos;ve worked on</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (

@@ -135,7 +135,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { label: 'Projects', href: '/projects' },
+                { label: 'Blog', href: '/projects' },
                 { label: 'Case Studies', href: '/projects' },
                 { label: 'About', href: '/about' },
               ].map((link) => (

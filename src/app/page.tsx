@@ -15,7 +15,7 @@ export default function Home() {
             <h1 className="font-extrabold text-white text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">I&apos;m Ronnie Lutaro</h1>
             <p className="text-white/70 text-base md:text-lg mb-6 leading-relaxed">Product Manager, Software Engineer, and Storyteller. I&apos;ve Spent the last 4+ years working across Technical Product Development, Enterprise Software & Venture Building. I&apos;ve Supported more than 50 founders across 2 different countries with Product Development & Go-To-Market. My approach translates core user needs into Products that generate real business value.</p>
             <div className="flex justify-center md:justify-start">
-              <a href="mailto:ronnielutaro@gmail.com" className="inline-flex items-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-green-400 to-teal-500 shadow-lg hover:from-teal-500 hover:to-green-400 transition">Get In Touch</a>
+              <a href="/contact" className="inline-flex items-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-green-400 to-teal-500 shadow-lg hover:from-teal-500 hover:to-green-400 transition">Get In Touch</a>
             </div>
           </div>
           {/* Right Column - Photo */}
