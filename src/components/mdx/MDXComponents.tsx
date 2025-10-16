@@ -24,7 +24,7 @@ export const baseMDXComponents = {
   
   // Paragraphs
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
-     <p className="text-lg text-white/90 leading-relaxed mb-4 text-justify" {...props} />
+     <p className="text-lg text-white/90 leading-relaxed mb-4 text-left md:text-justify" {...props} />
   ),
   
   // Lists
@@ -35,7 +35,7 @@ export const baseMDXComponents = {
      <ol className="space-y-2 mb-4 list-decimal list-inside" {...props}>{children}</ol>
   ),
   li: (props: React.HTMLProps<HTMLLIElement>) => (
-     <li className="text-lg text-white/90 flex items-start gap-3 text-justify" {...props} />
+     <li className="text-lg text-white/90 flex items-start gap-3 text-left md:text-justify" {...props} />
   ),
   
   // Links
