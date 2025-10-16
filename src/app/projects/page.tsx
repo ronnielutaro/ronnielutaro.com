@@ -1,7 +1,27 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { createProjectsLoader } from '@/lib/content-loader';
+
+export const metadata: Metadata = {
+  title: 'Projects & Work',
+  description: 'Explore case studies and reflections from product management and engineering projects. Documenting learnings, strategies, and behind-the-scenes insights.',
+  alternates: {
+    canonical: '/projects',
+  },
+  openGraph: {
+    title: 'Projects & Work | Ronnie Lutaro',
+    description: 'Explore case studies and reflections from product management and engineering projects.',
+    url: 'https://ronnielutaro.com/projects',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects & Work | Ronnie Lutaro',
+    description: 'Explore case studies and reflections from product management and engineering projects.',
+  },
+};
 
 // Get all projects from MDX files at build time
 const projectsLoader = createProjectsLoader();

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import ExportedImage from 'next-image-export-optimizer';
 
 interface Metric {
   label: string;
@@ -17,8 +18,10 @@ interface CaseStudyHeroProps {
   heroImage: string;
 }
 
-export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ badge, title, oneLiner, metrics, role, timeline, heroImage }) => (
-  <section className="max-w-6xl mx-auto px-4 mb-16">
+export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ badge, title, oneLiner, metrics, role, timeline, heroImage }) => {
+  const safeMetrics = metrics ?? [];
+  return (
+    <section className="max-w-6xl mx-auto px-4 mb-16">
     {/* Hero Image with Glassmorphic Badge */}
     <div 
       className="relative overflow-hidden mb-12"
@@ -64,10 +67,14 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ badge, title, oneL
           {/* Metadata */}
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <div className="flex items-center gap-2">
-              <div 
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-sm"
-              >
-                RL
+              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30">
+                <ExportedImage 
+                  src="/media/ronnie-headshot.jpg"
+                  alt="Ronnie Lutaro"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-white font-semibold">Ronnie Lutaro</span>
             </div>
@@ -82,19 +89,9 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ badge, title, oneL
 
     {/* Project Summary and Metrics */}
     <div className="max-w-4xl mx-auto">
-      <p 
-        className="text-white/80 leading-relaxed mb-8 text-center"
-        style={{
-          fontSize: '1.25rem',
-          lineHeight: 1.7,
-        }}
-      >
-        {oneLiner}
-      </p>
-      
       {/* Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {metrics.map((metric, idx) => (
+        {safeMetrics.map((metric, idx) => (
           <div 
             key={idx} 
             className="text-center p-6 transition-all duration-300 hover:-translate-y-1"
@@ -118,5 +115,6 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ badge, title, oneL
         ))}
       </div>
     </div>
-  </section>
-);
+    </section>
+  );
+};

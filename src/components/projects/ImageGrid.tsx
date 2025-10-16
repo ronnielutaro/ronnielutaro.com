@@ -23,22 +23,16 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ columns, images }) => {
     <div className={`grid ${gridCols[columns]} gap-6 my-8`}>
       {images.map((image, index) => (
         <div key={index} className="space-y-3">
-          <div 
-            className="relative overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-            style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(24px) saturate(180%)',
-              border: '1px solid rgba(255, 255, 255, 0.18)',
-              borderRadius: '16px',
-              height: '300px',
-            }}
-          >
+          <div className="relative w-full transition-all duration-300 hover:-translate-y-1 cursor-pointer">
             <ExportedImage
               src={image.src}
               alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
-              style={{ borderRadius: '16px' }}
+              width={1200}
+              height={800}
+              className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-105"
+              style={{
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+              }}
             />
           </div>
           <p className="text-sm text-white/70 text-center italic">
