@@ -10,6 +10,9 @@ import { generatePersonSchema, generateWebSiteSchema } from "@/lib/schema";
  */
 export const metadata: Metadata = {
   metadataBase: new URL('https://ronnielutaro.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: "Ronnie Lutaro | Product Manager & Software Engineer",
     template: "%s | Ronnie Lutaro",

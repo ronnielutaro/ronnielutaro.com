@@ -7,6 +7,9 @@ import { createProjectsLoader } from '@/lib/content-loader';
 export const metadata: Metadata = {
   title: 'Projects & Work',
   description: 'Explore case studies and reflections from product management and engineering projects. Documenting learnings, strategies, and behind-the-scenes insights.',
+  alternates: {
+    canonical: '/projects',
+  },
   openGraph: {
     title: 'Projects & Work | Ronnie Lutaro',
     description: 'Explore case studies and reflections from product management and engineering projects.',

@@ -10,6 +10,9 @@ import { baseMDXComponents } from '@/components/mdx/MDXComponents';
 export const metadata: Metadata = {
   title: 'About',
   description: 'Learn about Ronnie Lutaro - Product Manager with 4+ years of experience and software engineering background. Passionate about building products people love.',
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'About | Ronnie Lutaro',
     description: 'Learn about Ronnie Lutaro - Product Manager with 4+ years of experience and software engineering background.',

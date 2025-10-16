@@ -59,6 +59,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     description: project.meta.excerpt,
     keywords: project.meta.tags,
     authors: [{ name: 'Ronnie Lutaro' }],
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
       type: 'article',
       url: pageUrl,
@@ -116,6 +119,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     title: project.meta.title,
     description: project.meta.excerpt,
     date: project.meta.date,
+    modifiedDate: project.meta.dateModified,
     image: project.meta.image 
       ? `https://ronnielutaro.com${project.meta.image}`
       : 'https://ronnielutaro.com/media/ronnie-headshot.jpg',

@@ -23,6 +23,12 @@ const eslintConfig = [
       "src/components/layout/Footer.tsx",
     ],
   },
+  {
+    files: ["jest.config.js", "next.config.js"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
 ];
 
 export default eslintConfig;

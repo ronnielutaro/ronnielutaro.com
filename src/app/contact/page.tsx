@@ -4,6 +4,9 @@ import ContactPageClient from "./ContactPageClient";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Ronnie Lutaro to discuss product opportunities, collaborations, or consulting.",
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: 'Contact | Ronnie Lutaro',
     description: 'Get in touch with Ronnie Lutaro to discuss product opportunities, collaborations, or consulting.',

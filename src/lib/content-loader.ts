@@ -10,6 +10,7 @@ export interface Metric {
 export interface ContentMeta {
   title: string;
   date: string;
+  dateModified?: string;
   tags: string[];
   excerpt: string;
   slug: string;
@@ -97,6 +98,7 @@ export class ContentLoader {
       meta: {
         title: data.title || 'Untitled',
         date: data.date || new Date().toISOString().split('T')[0],
+        dateModified: data.dateModified,
         tags: data.tags || [],
         excerpt: data.excerpt || '',
         slug,
@@ -104,6 +106,7 @@ export class ContentLoader {
         readTime: data.readTime,
         image: data.image,
         featured: data.featured,
+        metrics: data.metrics,
       },
       content,
     };
