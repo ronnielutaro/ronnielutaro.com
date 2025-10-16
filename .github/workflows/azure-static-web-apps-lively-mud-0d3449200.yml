@@ -71,9 +71,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LIVELY_MUD_0D3449200 }}
           action: upload
           github_id_token: ${{ steps.idtoken.outputs.result }}
-          # SWA configuration
-            app_location: "out"
-            api_location: ""
+          app_location: "out"
+          api_location: ""
           production_branch: "main"
           skip_app_build: true
 
