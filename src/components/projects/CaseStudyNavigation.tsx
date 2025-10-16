@@ -125,7 +125,7 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
 
       {/* Back to Projects Button */}
       <div className="text-center">
-        <Link href="/projects" className="inline-block group" aria-label="Back to all projects">
+        <Link href="/projects" className="inline-block group" aria-label="Back to all posts">
           <div 
             className="text-white px-10 py-4 font-semibold text-base transition-all duration-500 group-hover:-translate-y-1 group-focus:-translate-y-1 flex items-center justify-center gap-3"
             style={{
@@ -148,7 +148,7 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
           >
             <ArrowLeft className="w-5 h-5 text-blue-300 group-hover:text-blue-200 transition-colors" />
             <span className="group-hover:text-blue-100 transition-colors">
-              Back to All Projects
+              Back to All Posts
             </span>
           </div>
         </Link>

@@ -77,7 +77,7 @@ export default function ProjectsListingPage() {
                   borderRadius: '12px',
                 }}
               >
-                All Projects
+                All Posts
               </div>
               <div 
                 className="text-white/70 text-sm px-4 py-2 cursor-pointer hover:text-white hover:bg-white/5 transition-all"
@@ -122,7 +122,7 @@ export default function ProjectsListingPage() {
             fontWeight: 700,
           }}
         >
-          All Projects
+          All Prs
         </h3>
       </section>
 
