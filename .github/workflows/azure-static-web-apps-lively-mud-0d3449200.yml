@@ -72,12 +72,11 @@ jobs:
           action: upload
           github_id_token: ${{ steps.idtoken.outputs.result }}
           # SWA configuration
-          app_location: "/"
+            app_location: "out"
           api_location: ""
-          output_location: "out"
+            output_location: ""
           production_branch: "main"
           skip_app_build: true
-          is_static_export: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
