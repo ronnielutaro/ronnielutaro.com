@@ -122,7 +122,7 @@ export default function ProjectsListingPage() {
             fontWeight: 700,
           }}
         >
-          All Prs
+          All Posts
         </h3>
       </section>
 
