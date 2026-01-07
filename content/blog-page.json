@@ -1,0 +1,27 @@
+{
+  "title": "Blog",
+  "subtitle": "A collection of insights from the intersection of technology and business performance. These articles capture lessons learned on the frontlines of innovation across East Africa. My goal is to align digital transformation strategies with core business objectives to drive growth.",
+  "categories": [
+    {
+      "label": "All Posts",
+      "slug": "all",
+      "active": true
+    },
+    {
+      "label": "Product Management",
+      "slug": "product-management",
+      "active": false
+    },
+    {
+      "label": "Development",
+      "slug": "development",
+      "active": false
+    },
+    {
+      "label": "Design",
+      "slug": "design",
+      "active": false
+    }
+  ],
+  "sectionTitle": "All Posts"
+}

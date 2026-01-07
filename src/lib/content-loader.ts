@@ -33,7 +33,7 @@ export interface ContentItem {
 export class ContentLoader {
   private contentDir: string;
 
-  constructor(contentType: 'blog' | 'projects') {
+  constructor(contentType: 'blog') {
     this.contentDir = path.join(process.cwd(), 'content', contentType);
   }
 
@@ -45,8 +45,8 @@ export class ContentLoader {
     const content = await Promise.all(
       files.map(async (file) => this.parseContentFile(file))
     );
-    
-    return content.sort((a, b) => 
+
+    return content.sort((a, b) =>
       new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
     );
   }
@@ -78,7 +78,7 @@ export class ContentLoader {
     if (!fs.existsSync(this.contentDir)) {
       return [];
     }
-    
+
     return fs
       .readdirSync(this.contentDir)
       .filter(file => file.endsWith('.mdx'));
@@ -91,9 +91,9 @@ export class ContentLoader {
     const filePath = path.join(this.contentDir, filename);
     const source = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(source);
-    
+
     const slug = path.basename(filename, '.mdx');
-    
+
     return {
       meta: {
         title: data.title || 'Untitled',
@@ -117,4 +117,3 @@ export class ContentLoader {
  * Factory functions for clean dependency injection
  */
 export const createBlogLoader = () => new ContentLoader('blog');
-export const createProjectsLoader = () => new ContentLoader('projects');

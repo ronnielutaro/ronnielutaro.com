@@ -28,12 +28,12 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
           <div className={`grid gap-6 ${prev && next ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
             {/* Previous Case Study */}
             {prev && (
-              <Link 
-                href={`/projects/${prev.slug}`} 
+              <Link
+                href={`/blog/${prev.slug}`}
                 className="block group"
                 aria-label={`Previous project: ${prev.title}`}
               >
-                <div 
+                <div
                   className="p-8 transition-all duration-500 cursor-pointer group-hover:-translate-y-2 group-focus:-translate-y-2"
                   style={{
                     background: 'rgba(255, 255, 255, 0.06)',
@@ -55,14 +55,14 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <ArrowLeft className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
-                    <span 
+                    <span
                       className="text-white/60 text-sm font-semibold uppercase tracking-wide"
                       style={{ letterSpacing: '0.5px' }}
                     >
                       Previous Case Study
                     </span>
                   </div>
-                  <div 
+                  <div
                     className="text-white font-semibold group-hover:text-blue-300 transition-colors"
                     style={{ fontSize: '1.125rem', lineHeight: '1.4' }}
                   >
@@ -74,12 +74,12 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
 
             {/* Next Case Study */}
             {next && (
-              <Link 
-                href={`/projects/${next.slug}`} 
+              <Link
+                href={`/blog/${next.slug}`}
                 className={`block group ${!prev && next ? 'ml-auto max-w-md' : 'text-right'}`}
                 aria-label={`Next project: ${next.title}`}
               >
-                <div 
+                <div
                   className="p-8 transition-all duration-500 cursor-pointer group-hover:-translate-y-2 group-focus:-translate-y-2"
                   style={{
                     background: 'rgba(255, 255, 255, 0.06)',
@@ -102,7 +102,7 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
                 >
                   <div className={`flex items-center gap-3 mb-3 ${prev ? 'justify-end' : 'justify-start'}`}>
                     {!prev && <ArrowRight className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />}
-                    <span 
+                    <span
                       className="text-white/60 text-sm font-semibold uppercase tracking-wide"
                       style={{ letterSpacing: '0.5px' }}
                     >
@@ -110,7 +110,7 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
                     </span>
                     {prev && <ArrowRight className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />}
                   </div>
-                  <div 
+                  <div
                     className="text-white font-semibold group-hover:text-blue-300 transition-colors"
                     style={{ fontSize: '1.125rem', lineHeight: '1.4' }}
                   >
@@ -123,10 +123,10 @@ export const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ curren
         </div>
       )}
 
-      {/* Back to Projects Button */}
+      {/* Back to blog Button */}
       <div className="text-center">
-        <Link href="/projects" className="inline-block group" aria-label="Back to all posts">
-          <div 
+        <Link href="/blog" className="inline-block group" aria-label="Back to all posts">
+          <div
             className="text-white px-10 py-4 font-semibold text-base transition-all duration-500 group-hover:-translate-y-1 group-focus:-translate-y-1 flex items-center justify-center gap-3"
             style={{
               background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
