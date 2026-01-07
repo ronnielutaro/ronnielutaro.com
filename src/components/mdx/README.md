@@ -38,8 +38,8 @@ For pages that need custom MDX components (like case studies with special compon
 ```tsx
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { createMDXComponents } from '@/components/mdx/MDXComponents';
-import { Callout } from '@/components/projects/Callout';
-import { Quote } from '@/components/projects/Quote';
+import { Callout } from '@/components/blog/Callout';
+import { Quote } from '@/components/blog/Quote';
 
 const mdxComponents = createMDXComponents({
   Callout,

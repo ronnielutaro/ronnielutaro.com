@@ -1,6 +1,7 @@
 # SEO Implementation Summary
 
 ## Overview
+
 Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97.
 
 **Implementation Date:** 2025  
@@ -13,36 +14,41 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
 
 ### ✅ Phase 1: Sitemap and Robots.txt
 
-#### Files Created:
+#### Files Created
+
 - `src/app/sitemap.ts`
 - `src/app/robots.ts`
 
-#### Features:
-- **Dynamic Sitemap:** Automatically loads all projects from `content/projects/`
-- **Static Pages:** Includes home, about, projects, contact, blog
-- **Priority Settings:** 
+#### Features
+
+- **Dynamic Sitemap:** Automatically loads all blog from `content/blog/`
+- **Static Pages:** Includes home, about, blog, contact, blog
+- **Priority Settings:**
   - Homepage: 1.0
-  - Projects/Blog: 0.9
+  - blog/Blog: 0.9
   - About/Contact: 0.8
 - **Change Frequency:** Monthly updates
 - **Robots.txt:** Allows all crawlers, references sitemap.xml
 - **Static Export Compatible:** Uses `force-static` for Next.js static builds
 
 **Testing URLs:**
-- https://ronnielutaro.com/sitemap.xml
-- https://ronnielutaro.com/robots.txt
+
+- <https://ronnielutaro.com/sitemap.xml>
+- <https://ronnielutaro.com/robots.txt>
 
 ---
 
 ### ✅ Phase 2: Enhanced Metadata with Open Graph and Twitter Cards
 
-#### Files Modified:
+#### Files Modified
+
 - `src/app/layout.tsx`
-- `src/app/projects/page.tsx`
+- `src/app/blog/page.tsx`
 - `src/app/about/page.tsx`
 - `src/app/contact/page.tsx`
 
-#### Features:
+#### Features
+
 - **Root Layout (`layout.tsx`):**
   - Title template: `%s | Ronnie Lutaro`
   - Keywords: product management, software engineering, case studies, portfolio
@@ -51,11 +57,12 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
   - Verification placeholders for Google/Bing Search Console
 
 - **Static Pages:**
-  - `/projects`: Open Graph with collection type
+  - `/blog`: Open Graph with collection type
   - `/about`: Open Graph with profile type
   - `/contact`: Enhanced metadata for discoverability
 
 **Testing Tools:**
+
 - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
 - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
@@ -64,10 +71,12 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
 
 ### ✅ Phase 3: Dynamic Metadata for Project Pages
 
-#### Files Modified:
-- `src/app/projects/[slug]/page.tsx`
+#### Files Modified
 
-#### Features:
+- `src/app/blog/[slug]/page.tsx`
+
+#### Features
+
 - **generateMetadata Function:**
   - Dynamically generates unique metadata per project
   - Uses project title, excerpt, and hero image
@@ -75,6 +84,7 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
   - Twitter Card support with large image previews
 
 **Example Output:**
+
 ```typescript
 {
   title: "UICT Industry 4.0 Hackathon | Ronnie Lutaro",
@@ -92,16 +102,19 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
 
 ### ✅ Phase 4: JSON-LD Structured Data
 
-#### Files Created:
+#### Files Created
+
 - `src/lib/schema.ts`
 
-#### Files Modified:
-- `src/app/layout.tsx` (Person + WebSite schemas)
-- `src/app/projects/[slug]/page.tsx` (Article schema)
+#### Files Modified
 
-#### Schema Types Implemented:
+- `src/app/layout.tsx` (Person + WebSite schemas)
+- `src/app/blog/[slug]/page.tsx` (Article schema)
+
+#### Schema Types Implemented
 
 1. **Person Schema** (Root Layout)
+
    ```json
    {
      "@type": "Person",
@@ -116,6 +129,7 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
    ```
 
 2. **WebSite Schema** (Root Layout)
+
    ```json
    {
      "@type": "WebSite",
@@ -126,6 +140,7 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
    ```
 
 3. **Article Schema** (Project Pages)
+
    ```json
    {
      "@type": "Article",
@@ -138,6 +153,7 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
    ```
 
 **Testing Tools:**
+
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
 - [Schema.org Validator](https://validator.schema.org/)
 
@@ -145,17 +161,18 @@ Comprehensive SEO implementation for ronnielutaro.com following GitHub Issue #97
 
 ### ✅ Phase 5: Image Alt Text Audit
 
-#### Audit Results:
+#### Audit Results
+
 All images across the codebase have descriptive alt text:
 
 | Component | File | Alt Text Source |
 |-----------|------|-----------------|
 | About Page | `src/app/about/page.tsx` | `frontmatter.image.alt` |
 | Home Hero | `src/app/page.tsx` | `"Ronnie Lutaro"` |
-| Project Cards | `src/components/projects/ProjectCard.tsx` | `{title}` |
-| Image Grids | `src/components/projects/ImageGrid.tsx` | `{image.alt}` from MDX |
-| Case Study Artifacts | `src/components/projects/CaseStudyLayout.tsx` | `{artifact.type}` |
-| Author Headshot | `src/components/projects/CaseStudyHero.tsx` | `"Ronnie Lutaro"` |
+| Project Cards | `src/components/blog/ProjectCard.tsx` | `{title}` |
+| Image Grids | `src/components/blog/ImageGrid.tsx` | `{image.alt}` from MDX |
+| Case Study Artifacts | `src/components/blog/CaseStudyLayout.tsx` | `{artifact.type}` |
+| Author Headshot | `src/components/blog/CaseStudyHero.tsx` | `"Ronnie Lutaro"` |
 | Blog Cards | `src/components/blog/PostCard.tsx` | `{title}` |
 
 **Accessibility Status:** ✅ All images are properly labeled
@@ -167,30 +184,34 @@ All images across the codebase have descriptive alt text:
 ### Pre-Deployment Testing
 
 - [ ] **Build Verification**
+
   ```powershell
   npm run build
   ```
+
   - Verify `out/sitemap.xml` is generated
   - Verify `out/robots.txt` is generated
   - Check for TypeScript errors
 
 - [ ] **Local Testing**
+
   ```powershell
   npm run dev
   ```
-  - Test routes: `/`, `/about`, `/projects`, `/contact`, `/blog`
+
+  - Test routes: `/`, `/about`, `/blog`, `/contact`, `/blog`
   - View source and verify `<meta>` tags
   - Check `<script type="application/ld+json">` tags
 
 ### Post-Deployment Testing
 
 - [ ] **Sitemap Validation**
-  - Visit: https://ronnielutaro.com/sitemap.xml
+  - Visit: <https://ronnielutaro.com/sitemap.xml>
   - Verify all pages are listed
   - Check lastmod dates
 
 - [ ] **Robots.txt Validation**
-  - Visit: https://ronnielutaro.com/robots.txt
+  - Visit: <https://ronnielutaro.com/robots.txt>
   - Verify sitemap reference
 
 - [ ] **Open Graph Testing**
@@ -218,13 +239,13 @@ All images across the codebase have descriptive alt text:
 ### Search Console Setup
 
 - [ ] **Google Search Console**
-  - Add property: https://ronnielutaro.com
+  - Add property: <https://ronnielutaro.com>
   - Verify ownership (add verification meta tag to `layout.tsx`)
-  - Submit sitemap: https://ronnielutaro.com/sitemap.xml
+  - Submit sitemap: <https://ronnielutaro.com/sitemap.xml>
   - Monitor indexing status
 
 - [ ] **Bing Webmaster Tools**
-  - Add site: https://ronnielutaro.com
+  - Add site: <https://ronnielutaro.com>
   - Verify ownership
   - Submit sitemap
 
@@ -237,6 +258,7 @@ All images across the codebase have descriptive alt text:
 All SEO routes use `export const dynamic = 'force-static'` for static export compatibility.
 
 **Static Export Output:**
+
 - `out/sitemap.xml` - Auto-generated XML sitemap
 - `out/robots.txt` - Crawler instructions
 - All pages include inline `<meta>` tags
@@ -272,10 +294,11 @@ All SEO routes use `export const dynamic = 'force-static'` for static export com
 
 ## Maintenance
 
-### Adding New Projects
+### Adding New blog
 
-1. Create MDX file in `content/projects/`
+1. Create MDX file in `content/blog/`
 2. Include frontmatter fields:
+
    ```yaml
    title: "Project Title"
    excerpt: "Brief description"
@@ -283,6 +306,7 @@ All SEO routes use `export const dynamic = 'force-static'` for static export com
    datePublished: "2025-01-15"
    dateModified: "2025-01-15"
    ```
+
 3. Sitemap auto-updates on next build
 
 ### Updating Metadata
