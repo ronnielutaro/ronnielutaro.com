@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello!",
+  "name": "Ronnie Lutaro",
+  "headline": "I'm Ronnie Lutaro",
+  "bio": "Software Engineer, Product Leader, AI & Cloud. Over the past 5+ years, I've worked across Technical Product Development and Startup Acceleration. My experience in Product Strategy, Project Management, Artificial Intelligence, and Cloud Engineering underpin my ability to deliver impactful solutions to complex challenges. I'm very passionate about digital transformation, emerging technologies and how they enhance business performance.\n\nI've supported more than 50 founders across 2 different countries with Product Development & Go-To-Market.",
+  "ctaText": "Get In Touch",
+  "ctaLink": "/contact",
+  "image": {
+    "src": "/media/ronnie_potrait.png",
+    "alt": "Ronnie Lutaro"
+  }
+}
