@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/projects' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -50,11 +50,11 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
           onClick={closeMobileMenu}
         >
-          <div 
+          <div
             className="fixed top-20 right-4 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl p-4 min-w-[200px]"
             onClick={(e) => e.stopPropagation()}
           >
@@ -64,11 +64,10 @@ const Header = () => {
                   key={item.href}
                   href={item.href}
                   onClick={closeMobileMenu}
-                  className={`px-4 py-3 rounded-xl font-medium text-base transition ${
-                    isActive(item.href) 
-                      ? 'text-green-400 bg-white/10' 
+                  className={`px-4 py-3 rounded-xl font-medium text-base transition ${isActive(item.href)
+                      ? 'text-green-400 bg-white/10'
                       : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </Link>

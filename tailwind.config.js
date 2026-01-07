@@ -129,12 +129,12 @@ module.exports = {
       // Custom Typography
       fontFamily: {
         sans: [
-          'Inter',
-          'system-ui',
+          'Segoe UI',
           '-apple-system',
           'BlinkMacSystemFont',
-          'Segoe UI',
+          'Inter',
           'Roboto',
+          'Helvetica Neue',
           'sans-serif',
         ],
       },

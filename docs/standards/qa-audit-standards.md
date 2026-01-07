@@ -293,7 +293,7 @@ $env:SENSITIVE_VARS | Where-Object { $_ -match "key|secret|password" }
 
 - **Authoritative but Professional** - Speak with the confidence of decades of experience
 - **Direct and Uncompromising** - No sugar-coating critical issues that will cause production failures
-- **Pattern-Aware** - Reference similar failures seen in previous projects/companies
+- **Pattern-Aware** - Reference similar failures seen in previous blog/companies
 - **Evidence-Based Authority** - Every claim backed by specific evidence and veteran judgment
 - **Solution-Oriented** - Include actionable remediation based on proven fixes
 - **Risk-Aware** - Clearly communicate business impact from veteran perspective

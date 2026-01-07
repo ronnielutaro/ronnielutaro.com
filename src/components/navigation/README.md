@@ -9,6 +9,7 @@ Complete navigation system with desktop and mobile support, featuring Apple-insp
 Main navigation header with sticky positioning and glass effect.
 
 #### Features
+
 - ✨ **Glass Morphism**: Backdrop-filter blur with translucent background
 - 📱 **Responsive**: Desktop horizontal menu + mobile hamburger
 - 🎯 **Active States**: Visual indication of current route
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.Node }) {
 Slide-out drawer for mobile navigation.
 
 #### Features
+
 - 📱 **Mobile-First**: Optimized for touch interactions
 - 🎨 **Glass Effect**: Translucent drawer with backdrop blur
 - 🔗 **Auto-Close**: Closes on navigation or outside click
@@ -113,6 +115,7 @@ const navItems = [
 ```
 
 Icons are automatically mapped in MobileMenu:
+
 - Home → `<HomeOutlined />`
 - Writing → `<CreateOutlined />`
 - Contact → `<EmailOutlined />`
@@ -131,6 +134,7 @@ box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 ```
 
 Dark mode:
+
 ```css
 background: rgba(30, 30, 30, 0.7);
 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -170,6 +174,7 @@ For browsers without `backdrop-filter` support:
 ### ARIA Labels
 
 All interactive elements include proper ARIA labels:
+
 - `aria-label="Toggle theme"`
 - `aria-label="Open menu"`
 - `aria-label="Close menu"`
@@ -287,7 +292,7 @@ export default function RootLayout({ children }) {
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Writing', href: '/writing' },
-  { label: 'Projects', href: '/projects' }, // New item
+  { label: 'blog', href: '/blog' }, // New item
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -295,7 +300,7 @@ const navItems: NavItem[] = [
 const navIcons: Record<string, React.ReactElement> = {
   Home: <HomeOutlined />,
   Writing: <CreateOutlined />,
-  Projects: <WorkOutlined />, // New icon
+  blog: <WorkOutlined />, // New icon
   Contact: <EmailOutlined />,
 };
 ```

@@ -16,11 +16,11 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative mt-32">
+    <footer className="relative mt-4">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 pb-8">
         {/* Premium Newsletter Section */}
-        <div 
+        <div
           className="relative p-12 rounded-3xl mb-12 overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.06))',
@@ -29,7 +29,7 @@ export function Footer() {
           }}
         >
           {/* Glow Effect */}
-          <div 
+          <div
             className="absolute inset-0 opacity-30 blur-3xl pointer-events-none"
             style={{
               background: 'radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.4), transparent 70%)',
@@ -37,28 +37,28 @@ export function Footer() {
           />
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <h2 
+            <h2
               className="text-white mb-3"
-              style={{ 
+              style={{
                 fontSize: '32px',
                 fontWeight: '700',
                 letterSpacing: '-0.02em',
               }}
             >
-              Stay in the Loop
+              Join 100+ Builders & Creators
             </h2>
-            <p 
+            <p
               className="text-white/70 mb-8"
               style={{ fontSize: '16px', lineHeight: '1.6' }}
             >
-              Get insights on product management, case studies, and lessons learned from building products in emerging markets.
+              Every month, I share insights from the frontlines of innovation across East Africa. My goal is to align digital transformation strategies with core business objectives to drive growth. Subscribe and be the first to know as soon as I drop something.
             </p>
 
             {/* Newsletter Form */}
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-1 relative">
-                <Mail 
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 pointer-events-none" 
+                <Mail
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 pointer-events-none"
                 />
                 <input
                   type="email"
@@ -88,7 +88,7 @@ export function Footer() {
             </form>
 
             {isSubscribed && (
-              <div 
+              <div
                 className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-emerald-400"
                 style={{
                   background: 'rgba(52, 211, 153, 0.1)',
@@ -102,30 +102,30 @@ export function Footer() {
           </div>
         </div>
 
-  {/* Footer Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 md:ml-24">
+        {/* Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 md:ml-24">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <h3 
+            <h3
               className="text-white mb-2"
               style={{ fontSize: '20px', fontWeight: '700' }}
             >
               Ronnie Lutaro
             </h3>
-            <p 
+            <p
               className="text-white/60 mb-4"
               style={{ fontSize: '14px', lineHeight: '1.6' }}
             >
-              Product Manager building mobile-first products for emerging markets.
+              Software Engineer | Product Leader | AI & Cloud
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 
+            <h4
               className="text-white/90 mb-4"
-              style={{ 
-                fontSize: '14px', 
+              style={{
+                fontSize: '14px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
@@ -135,8 +135,8 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { label: 'Blog', href: '/projects' },
-                { label: 'Case Studies', href: '/projects' },
+                { label: 'Blog', href: '/blog' },
+                { label: 'Case Studies', href: '/blog' },
                 { label: 'About', href: '/about' },
               ].map((link) => (
                 <li key={link.label}>
@@ -155,10 +155,10 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 
+            <h4
               className="text-white/90 mb-4"
-              style={{ 
-                fontSize: '14px', 
+              style={{
+                fontSize: '14px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
@@ -192,10 +192,10 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 
+            <h4
               className="text-white/90 mb-4"
-              style={{ 
-                fontSize: '14px', 
+              style={{
+                fontSize: '14px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
@@ -248,13 +248,13 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div 
+        <div
           className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
           style={{
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
-          <p 
+          <p
             className="text-white/40 text-center"
             style={{ fontSize: '13px' }}
           >

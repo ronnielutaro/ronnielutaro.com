@@ -11,8 +11,8 @@ describe('ContentLoader', () => {
     it('loads all project content with correct metadata', async () => {
       const content = await projectsLoader.getAllContent();
       expect(content).toHaveLength(3);
-      
-      // Check that we have our expected projects
+
+      // Check that we have our expected blog
       const titles = content.map(project => project.meta.title);
       expect(titles).toContain('Rocketize');
       expect(titles).toContain('StartHub');
@@ -38,14 +38,14 @@ describe('ContentLoader', () => {
       expect(slugs).toHaveLength(3);
     });
 
-    it('filters featured projects correctly', async () => {
+    it('filters featured blog correctly', async () => {
       const content = await projectsLoader.getAllContent();
       const featuredProjects = content.filter(p => p.meta.featured === true);
-      
+
       expect(featuredProjects.length).toBeGreaterThan(0);
       expect(featuredProjects.length).toBeLessThanOrEqual(2);
-      
-      // Check that featured projects have the featured flag
+
+      // Check that featured blog have the featured flag
       featuredProjects.forEach(project => {
         expect(project.meta.featured).toBe(true);
       });

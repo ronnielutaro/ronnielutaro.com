@@ -36,12 +36,6 @@ function getAboutContent() {
 
 export default function AboutPage() {
   const { frontmatter, content } = getAboutContent();
-  
-  const colorMap: Record<string, string> = {
-    green: 'text-green-400',
-    blue: 'text-blue-400',
-    yellow: 'text-yellow-400',
-  };
 
   return (
     <>
@@ -67,51 +61,26 @@ export default function AboutPage() {
           >
             {frontmatter.title}
           </h1>
-          <p
-            className="text-white/60 max-w-2xl mx-auto text-base md:text-lg lg:text-xl"
-            style={{ lineHeight: 1.7 }}
-          >
-            {frontmatter.subtitle}
-          </p>
         </div>
       </section>
-      {/* Hero Section */}
-      <section className="text-center pt-12 pb-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <ExportedImage 
-            src={frontmatter.image.src} 
-            alt={frontmatter.image.alt} 
-            width={320} 
-            height={320} 
-            className="mx-auto rounded-full shadow-2xl mb-6 ring-2 ring-white/15 object-cover" 
-            priority 
-          />
-        </div>
-      </section>
-
-      {/* Divider */}
-  <div className="max-w-6xl mx-auto px-4 mb-6">
-        <div
-          className="h-px"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent)',
-          }}
-        />
-      </div>
-
-      {/* Story & Mission */}
-      <section className="max-w-4xl mx-auto px-4 mb-20">
-        <div className="mb-8">
-          <MDXRemote source={content} components={baseMDXComponents} />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {frontmatter.values.map((value: { title: string; description: string; color: string }) => (
-            <div key={value.title} className="bg-white/5 rounded-2xl p-6 shadow-lg">
-              <h4 className={`text-xl font-semibold ${colorMap[value.color]} mb-2`}>{value.title}</h4>
-              <p className="text-white/70">{value.description}</p>
-            </div>
-          ))}
+      {/* Story & Mission - Image Left, Text Right */}
+      <section className="max-w-6xl mx-auto px-4 pt-12 pb-20">
+        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
+          {/* Left - Image */}
+          <div className="flex-shrink-0 mx-auto md:mx-0">
+            <ExportedImage 
+              src={frontmatter.image.src} 
+              alt={frontmatter.image.alt} 
+              width={280} 
+              height={280} 
+              className="rounded-full shadow-2xl ring-2 ring-white/15 object-cover" 
+              priority 
+            />
+          </div>
+          {/* Right - Text Content */}
+          <div className="flex-1">
+            <MDXRemote source={content} components={baseMDXComponents} />
+          </div>
         </div>
       </section>
     </>
